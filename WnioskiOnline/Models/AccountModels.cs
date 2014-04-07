@@ -77,7 +77,7 @@ namespace WnioskiOnline.Models
         public string UserName { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "{0} musi składać się co najmniej z {2} znaków", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Hasło")]
         public string Password { get; set; }
