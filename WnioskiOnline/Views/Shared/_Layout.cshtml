@@ -19,19 +19,19 @@
                     <section id="login">
                         @Html.Partial("_LoginPartial")
                     </section>
-                    <nav>
-                        <ul id="menu">
-                            <li>@Html.ActionLink("Strona Główna", "Index", "Home")</li>
-                            <li>@Html.ActionLink("Przeglądaj recenzje", "Recenzje", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                        </ul>
-                    </nav>
                 </div>
             </div>
         </header>
         <div id="body">
             @RenderSection("featured", required: false)
             <section class="content-wrapper main-content clear-fix">
+                <nav>
+                <ul id="menu">
+                            <li>@Html.ActionLink("Strona Główna", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Przeglądaj recenzje", "Recenzje", "Recenzent")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+            </nav>
                 @RenderBody()
             </section>
         </div>
