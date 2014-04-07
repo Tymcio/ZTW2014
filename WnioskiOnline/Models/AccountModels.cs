@@ -77,15 +77,33 @@ namespace WnioskiOnline.Models
         public string UserName { get; set; }
 
         [Required]
+        [Display(Name = "Imię")]
+        public string Imie { get; set; }
+
+        [Required]
+        [Display(Name = "Nazwisko")]
+        public string Nazwisko { get; set; }
+
+        [Required]
+        [Display(Name = "E-mail")]
+        public string Email { get; set; }
+
+
+        [Required]
         [StringLength(100, ErrorMessage = "{0} musi składać się co najmniej z {2} znaków", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Hasło")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Potwierdź hasło")]
+        [Display(Name = "Powtórz hasło")]
         [Compare("Password", ErrorMessage = "Podane hasła różnią się.")]
         public string ConfirmPassword { get; set; }
+
+
+        [Display(Name = "Telefon")]
+        public string Telefon { get; set; }
+
     }
 
     public class ExternalLogin

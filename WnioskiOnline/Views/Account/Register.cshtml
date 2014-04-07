@@ -1,11 +1,11 @@
 ﻿@model WnioskiOnline.Models.RegisterModel
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "Rejestracja";
 }
 
 <hgroup class="title">
     <h1>@ViewBag.Title.</h1>
-    <h2>Create a new account.</h2>
+    <h2>Stwórz swoje konto.</h2>
 </hgroup>
 
 @using (Html.BeginForm()) {
@@ -19,6 +19,20 @@
                 @Html.LabelFor(m => m.UserName)
                 @Html.TextBoxFor(m => m.UserName)
             </li>
+             <li>
+                @Html.LabelFor(m => m.Imie)
+                @Html.TextBoxFor(m => m.Imie)
+            </li>
+
+            <li>
+                @Html.LabelFor(m => m.Nazwisko)
+                @Html.TextBoxFor(m => m.Nazwisko)
+            </li>
+
+             <li>
+                @Html.LabelFor(m => m.Email)
+                @Html.TextBoxFor(m => m.Email)
+            </li>
             <li>
                 @Html.LabelFor(m => m.Password)
                 @Html.PasswordFor(m => m.Password)
@@ -27,8 +41,12 @@
                 @Html.LabelFor(m => m.ConfirmPassword)
                 @Html.PasswordFor(m => m.ConfirmPassword)
             </li>
+                <li>
+                @Html.LabelFor(m => m.Telefon)
+                @Html.TextBoxFor(m => m.Telefon)
+            </li>
         </ol>
-        <input type="submit" value="Register" />
+        <input type="submit" value="Rejestruj" />
     </fieldset>
 }
 
