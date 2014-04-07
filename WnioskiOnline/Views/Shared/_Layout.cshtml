@@ -12,9 +12,24 @@
         <header>
             <div class="content-wrapper">
                 <div class="float-left">
-                    <img alt="" src="" />
-                    <p class="site-title">@Html.ActionLink("LOGO DS", "Index", "Home") 
-                        @Html.ActionLink("LOGO PWr", "Index", "Home")</p>
+                    <p class="site-title">@Html.ActionLink(
+                                                            " ", 
+                                                            "Index", 
+                                                            "Home", 
+                                                            null , 
+                                                            new { 
+                                                            style = "background: url('" + Url.Content("~/images/logo.png") + "') no-repeat center right; display:block;height:59px; width:388px;" 
+                                                             }
+                                                            )
+                                             @Html.ActionLink(
+                                                            " ", 
+                                                            "Index", 
+                                                            "Home", 
+                                                            null , 
+                                                            new { 
+                                                            style = "background: url('" + Url.Content("~/images/logoPWR.png") + "') no-repeat center right; display:block;" 
+                                                             }
+                                                            )
                 </div>
                 <div class="float-right">
                     <section id="login">
