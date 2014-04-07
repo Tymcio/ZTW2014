@@ -12,7 +12,16 @@
         <header>
             <div class="content-wrapper">
                 <div class="float-left">
-                    <p class="site-title">@Html.ActionLink(
+                    <p class="site-title"> @Html.ActionLink(
+                                                            " ", 
+                                                            "Index", 
+                                                            "Home", 
+                                                            null , 
+                                                            new { 
+                                                            style = "background: url('" + Url.Content("~/images/logoPWR.png") + "') no-repeat bottom right; display:block ;height:176px; width:122px;" 
+                                                             }
+                                                            )
+                                            @Html.ActionLink(
                                                             " ", 
                                                             "Index", 
                                                             "Home", 
@@ -21,15 +30,7 @@
                                                             style = "background: url('" + Url.Content("~/images/logo.png") + "') no-repeat center right; display:block;height:59px; width:388px;" 
                                                              }
                                                             )
-                                             @Html.ActionLink(
-                                                            " ", 
-                                                            "Index", 
-                                                            "Home", 
-                                                            null , 
-                                                            new { 
-                                                            style = "background: url('" + Url.Content("~/images/logoPWR.png") + "') no-repeat center right; display:block;" 
-                                                             }
-                                                            )
+                                            
                 </div>
                 <div class="float-right">
                     <section id="login">
