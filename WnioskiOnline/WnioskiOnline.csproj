@@ -182,6 +182,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CzlonekKomisjiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RecenzentController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -305,6 +306,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Recenzent\Recenzje.cshtml" />
+    <Content Include="Views\CzlonekKomisji\Wnioski.cshtml" />
+    <Content Include="Views\CzlonekKomisji\SzczegolyWnioskow.cshtml" />
+    <Content Include="Views\CzlonekKomisji\Dane.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

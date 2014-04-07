@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Wnioski - Członek komisji";
+}
+
+<h2>Wnioski</h2>
+
+<section class="wnioski">
+<select name="konkurs" class="dropdown">
+    <option>Wybierz konkurs</option>
+    <option value="1">S1</option>
+    <option value="2">K3</option>
+</select>
+
+<form class="status">
+    <input type="radio"name="status"/>Wszystkie
+    <input type="radio"name="status"/>Bez decyzji
+    <input type="radio"name="status"/>Z decyzja
+</form>
+
+<table class="recPrzeglad">
+    <thead>
+        <tr>
+            <td class="lp">LP.</td>
+            <td>Konkurs</td>
+            <td>Nazwa wniosku</td>
+            <td colspan="2">Status</td>
+        </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td class="lp">1</td>
+        <td>Konkurs 1</td>
+        <td>Wniosek 1</td>
+        <td>Decyzja</td>
+        <td><a href="szczegoly">Szczegóły</a></td>
+    </tr>
+        <tr>
+        <td class="lp">2</td>
+        <td>Konkurs 2</td>
+        <td>Wniosek 2</td>
+        <td>Decyzja</td>
+        <td><a href="szczegoly">Szczegóły</a></td>
+    </tr>
+        <tr>
+        <td class="lp">3</td>
+        <td>Konkurs 3</td>
+        <td>Wniosek 3</td>
+        <td>Oczekuje na recenzję</td>
+        <td><a href="szczegoly">Szczegóły</a></td>
+    </tr>
+        <tr>
+        <td class="lp">4</td>
+        <td>Konkurs 4</td>
+        <td>Wniosek 4</td>
+        <td>Decyzja</td>
+        <td><a href="szczegoly">Szczegóły</a></td>
+            <tr>
+        <td class="lp">5</td>
+        <td>Konkurs 5</td>
+        <td>Wniosek 5</td>
+        <td>Decyzja</td>
+        <td><a href="szczegoly">Szczegóły</a></td>
+
+    </tr>
+    </tr>
+    </tbody>
+</table>
+</section>
