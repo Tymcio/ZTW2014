@@ -17,6 +17,19 @@ namespace WnioskiOnline.Controllers
     [InitializeSimpleMembership]
     public class AccountController : Controller
     {
+        [AllowAnonymous]
+        public ActionResult Dane()
+        {
+            ViewBag.Message = "Dane";
+
+            return View();
+        }
+        [AllowAnonymous]
+        public ActionResult ZmianaHasla(string returnUrl)
+        {
+            ViewBag.ReturnUrl = returnUrl;
+            return View();
+        }
         //
         // GET: /Account/Login
 

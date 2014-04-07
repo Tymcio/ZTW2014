@@ -1,11 +1,10 @@
 ﻿@model WnioskiOnline.Models.RegisterModel
 @{
-    ViewBag.Title = "Rejestracja";
+    ViewBag.Title = "Dane osobowe";
 }
 
 <hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-    <h2>Stwórz swoje konto.</h2>
+    <h1>@ViewBag.Title</h1>
 </hgroup>
 
 @using (Html.BeginForm()) {
@@ -13,40 +12,34 @@
     @Html.ValidationSummary()
 
     <fieldset>
-        <legend>Rejestracja</legend>
+        <legend>Dane osobowe</legend>
         <ol>
             <li>
                 @Html.LabelFor(m => m.UserName)
-                @Html.TextBoxFor(m => m.UserName)
+                @Html.Label("login","jan1234")
             </li>
              <li>
                 @Html.LabelFor(m => m.Imie)
-                @Html.TextBoxFor(m => m.Imie)
+                @Html.TextBox("imie","Jan")
             </li>
 
             <li>
                 @Html.LabelFor(m => m.Nazwisko)
-                @Html.TextBoxFor(m => m.Nazwisko)
+                @Html.TextBox("nazwisko","Kowalski")
             </li>
 
              <li>
                 @Html.LabelFor(m => m.Email)
-                @Html.TextBoxFor(m => m.Email)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.Password)
-                @Html.PasswordFor(m => m.Password)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.ConfirmPassword)
-                @Html.PasswordFor(m => m.ConfirmPassword)
+                @Html.TextBox("email", "jan.kowalski@pwr.edu.pl")
             </li>
                 <li>
                 @Html.LabelFor(m => m.Telefon)
-                @Html.TextBoxFor(m => m.Telefon)
+                @Html.TextBox("tel","600100100")
             </li>
+            <li>@Html.ActionLink("Zmień hasło", "ZmianaHasla", "Account")</li>
         </ol>
-        <input type="submit" value="Rejestruj" />
+  
+        <input type="submit" value="Edytuj" />
     </fieldset>
 }
 

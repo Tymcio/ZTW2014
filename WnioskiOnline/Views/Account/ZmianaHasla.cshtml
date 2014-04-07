@@ -1,0 +1,39 @@
+﻿@model WnioskiOnline.Models.LocalPasswordModel
+@{
+    ViewBag.Title = "Zmiana hasła";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title</h1>
+</hgroup>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>Zmiana hasła</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.OldPassword)
+                @Html.TextBoxFor(m => m.OldPassword)
+            </li>
+             <li>
+                @Html.LabelFor(m => m.NewPassword)
+                @Html.TextBoxFor(m => m.NewPassword)
+            </li>
+
+            <li>
+                @Html.LabelFor(m => m.ConfirmPassword)
+                @Html.TextBoxFor(m => m.ConfirmPassword)
+            </li>
+
+          
+        </ol>
+        <input type="submit" value="Zatwierdź" />
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

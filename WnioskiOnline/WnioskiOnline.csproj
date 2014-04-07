@@ -308,7 +308,8 @@
     <Content Include="Views\Recenzent\Recenzje.cshtml" />
     <Content Include="Views\Komisja\Wnioski.cshtml" />
     <Content Include="Views\Komisja\SzczegolyWnioskow.cshtml" />
-    <Content Include="Views\Komisja\Dane.cshtml" />
+    <Content Include="Views\Account\Dane.cshtml" />
+    <Content Include="Views\Account\ZmianaHasla.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
