@@ -1,7 +1,7 @@
 ﻿@model WnioskiOnline.Models.LoginModel
 
 @{
-    ViewBag.Title = "Log in";
+    ViewBag.Title = "Zaloguj się";
 }
 
 <hgroup class="title">
@@ -9,7 +9,6 @@
 </hgroup>
 
 <section id="loginForm">
-<h2>Use a local account to log in.</h2>
 @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
@@ -27,15 +26,11 @@
                 @Html.PasswordFor(m => m.Password)
                 @Html.ValidationMessageFor(m => m.Password)
             </li>
-            <li>
-                @Html.CheckBoxFor(m => m.RememberMe)
-                @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
-            </li>
         </ol>
-        <input type="submit" value="Log in" />
+        <input type="submit" value="Zaloguj" />
     </fieldset>
     <p>
-        @Html.ActionLink("Register", "Register") if you don't have an account.
+        @Html.ActionLink("Zarejestruj się", "Register") jeśli nie masz jeszcze konta.
     </p>
 }
 </section>
