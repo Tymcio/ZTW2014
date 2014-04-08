@@ -227,6 +227,14 @@ ul#menu {
             font-size: 1.1em;
         }
 
+/* top */
+.logos {
+    float: left;
+    height: 176px;
+    width: 510px;
+    display: inline;
+}
+
 /* page titles */
 hgroup.title {
     margin-bottom: 10px;

@@ -183,6 +183,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\WnioskodawcaController.cs" />
     <Compile Include="Controllers\KomisjaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RecenzentController.cs" />
@@ -316,6 +317,9 @@
     <Content Include="Views\Admin\Uzytkownicy.cshtml" />
     <Content Include="Views\Admin\SzczegolyKonta.cshtml" />
     <Content Include="Views\Recenzent\Wniosek.cshtml" />
+    <Content Include="Views\Wnioskodawca\Wnioski.cshtml" />
+    <Content Include="Views\Wnioskodawca\Wniosek.cshtml" />
+    <Content Include="Views\Admin\PrzypiszRec.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
