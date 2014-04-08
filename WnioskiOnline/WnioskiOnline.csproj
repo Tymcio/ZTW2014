@@ -182,6 +182,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\KomisjaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RecenzentController.cs" />
@@ -310,6 +311,9 @@
     <Content Include="Views\Komisja\SzczegolyWnioskow.cshtml" />
     <Content Include="Views\Account\Dane.cshtml" />
     <Content Include="Views\Account\ZmianaHasla.cshtml" />
+    <Content Include="Views\Admin\Konkursy.cshtml" />
+    <Content Include="Views\Admin\SzczegolyKonkursu.cshtml" />
+    <Content Include="Views\Admin\Uzytkownicy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

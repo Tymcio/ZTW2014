@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Uzytkownicy";
+}
+
+<h2>Uzytkownicy</h2>
+
+<section class="wnioski">
+
+<select name="rola" class="dropdown">
+    <option>Wybierz rolę</option>
+    <option value="1">Recenzent</option>
+    <option value="2">Wnioskodawca</option>
+    <option value="2">Członek komisji</option>
+</select>
+
+<form class="status">
+    <input type="radio"name="status"/>Wszyscy
+    <input type="radio"name="status"/>Autoryzowani
+    <input type="radio"name="status"/>Nieautoryzowani
+</form>
+
+<table class="uzytkAdmin">
+    <thead>
+        <tr>
+            <td class="lp">LP.</td>
+            <td>Rola</td>
+            <td>Email</td>
+            <td colspan="2">Autoryzowany</td>
+        </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td class="lp">1</td>
+        <td>Recenzent</td>
+        <td>jan.kowalski@pwr.edu.pl</td>
+        <td>Tak</td>
+        <td><a href="szczegoly">Szczegóły</a></td>
+    </tr>
+        <tr>
+        <td class="lp">2</td>
+        <td>Członek komisji</td>
+        <td>tadeusz.nowak@pwr.edu.pl</td>
+        <td>Nie</td>
+        <td><a href="szczegoly">Szczegóły</a></td>
+    </tr>
+        <tr>
+        <td class="lp">3</td>
+        <td>Wnioskodawca</td>
+        <td>192222@pwr.edu.pl</td>
+        <td>Tak</td>
+        <td><a href="szczegoly">Szczegóły</a></td>
+    </tr>
+        <tr>
+        <td class="lp">4</td>
+        <td>Wnioskodawca</td>
+        <td>191111@pwr.edu.pl</td>
+        <td>Nie</td>
+        <td><a href="szczegoly">Szczegóły</a></td>
+   </tr>
+        <tr>
+        <td class="lp">5</td>
+        <td>Recenzent</td>
+        <td>jan.nowak@pwr.edu.pl</td>
+        <td>Tak</td>
+        <td><a href="szczegoly">Szczegóły</a></td>
+
+    </tr>
+    </tbody>
+</table>
+</section>
