@@ -163,8 +163,8 @@ UpgradeLog*.XML
 UpgradeLog*.htm
 
 # SQL Server files
-*.mdf
-*.ldf
+AppData/*.mdf
+AppData/*.ldf
 
 # Business Intelligence projects
 *.rdl.data
