@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "SzczegolyKonta";
+}
+
+<h2>Szczegóły konta</h2>
+
+<fieldset>
+        <legend>Konto</legend>
+        <ol>
+ 
+             <li>
+                @Html.Label("rola","Rola:")
+                @Html.TextBox("rola","Recenzent")
+            </li>
+
+            <li>
+                @Html.Label("imie","Imię:")
+                @Html.TextBox("imie","Jan")
+            </li>
+
+             <li>
+                @Html.Label("nazwisko","Nazwisko:")
+                @Html.TextBox("nazwisko", "Kowalski")
+            </li>
+                <li>
+                @Html.Label("email","E-mail:")
+                @Html.TextBox("email", "jan.kowalski@pwr.edu.pl")
+                
+            </li>
+
+            <li>
+                @Html.Label("tel","Telefon:")
+                @Html.TextBox("tel", "600100100")
+                
+            </li>
+
+            <li>
+                @Html.Label("login","Login:")
+                @Html.Label("login", "jan1234")
+                
+            </li>
+
+             <li>
+                @Html.Label("status","Autoryzowany?")
+                @Html.CheckBox("autoryzowany")
+                
+            </li>
+ 
+        </ol>
+  
+        <input type="submit" value="Zapisz zmiany" />
+    </fieldset>

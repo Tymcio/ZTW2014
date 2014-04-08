@@ -26,5 +26,10 @@ namespace WnioskiOnline.Controllers
             return View();
         }
 
+        public ActionResult SzczegolyKonta()
+        {
+            return View();
+        }
+
     }
 }
