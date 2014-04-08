@@ -2,6 +2,8 @@
     ViewBag.Title = "SzczegolyKonta";
 }
 
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
 <h2>Szczegóły konta</h2>
 
 <fieldset>
@@ -50,3 +52,4 @@
   
         <input type="submit" value="Zapisz zmiany" />
     </fieldset>
+}

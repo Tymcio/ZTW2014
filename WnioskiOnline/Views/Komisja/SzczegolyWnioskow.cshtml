@@ -3,8 +3,11 @@
     ViewBag.Title = "Szczegóły wnioskow";
 }
 
+
 <h2>Wniosek</h2>
 
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
 <form method="post" >
         <fieldset>
         <legend>Wniosek</legend>
@@ -75,3 +78,4 @@
           </div>
         </fieldset>
       </form>
+}
