@@ -31,5 +31,10 @@ namespace WnioskiOnline.Controllers
             return View();
         }
 
+        public ActionResult PrzypiszRec()
+        {
+            return View();
+        }
+
     }
 }

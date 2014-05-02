@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Szczegóły wniosku - Recenzent";
+}
+
+<h2>Szczegóły wniosku</h2>
+
+<section class="szczegolywniosku">
+    
+    @using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+
+        <fieldset>
+        <legend>Wniosek</legend>
+                  <label>&nbsp;</label>
+            <label for="konkurs">Konkurs:</label>
+            <input type="text" name="konkurs" value="K1" readonly ="readonly"/>
+
+            <label for="org">Organizacja:</label>
+            <input type="text" name="org" value="Nazwa organizacji" readonly ="readonly"/>
+
+            <label for="projekt">Nazwa projektu:</label>
+            <input type="text" name="projekt" value="Projekt 1" readonly ="readonly"/>
+
+            <label for="koordynator">Koordynator projektu:</label>
+            <input type="text" name="koordynator" value="Tadeusz Nowak" readonly ="readonly"/>
+
+            <label for="charakter">Nazwa projektu:</label>
+            <input type="text" name="charakter" value="Jednorazowe" readonly ="readonly"/>
+
+<label>Koszty:</label>
+<table>
+    <thead >
+        <tr>
+            <th style="border: 1px solid; padding-left:5px;">Rodzaj wydatków </th>
+            <th style="border: 1px solid; padding-left:5px;">Wyszczególnienie </th>
+            <th style="border: 1px solid; padding-left:5px;">Kwota ogółem </th>
+            <th style="border: 1px solid; padding-left:5px;">Kwota wnioskowana </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>Rodzaj 1</td>
+            <td>Wyszczególniene 1</td>
+            <td>Kwota 1</td>
+            <td>Kwota wnioskowana 1</td>
+        </tr>
+
+            <tr>
+            <td>Rodzaj 2</td>
+            <td>Wyszczególniene 2</td>
+            <td>Kwota 2</td>
+            <td>Kwota wnioskowana 2</td>
+        </tr>
+    </tbody>
+   
+</table><br />
+    <label for="ocena">Ocena:</label>
+        <input type="radio"name="ocena" value="0"/>0
+        <input type="radio"name="ocena" value="1"/>1
+        <input type="radio"name="ocena" value="2"/>2
+            <br /><br />
+
+        <input type="submit" value="Zapisz decyzję" class="submit" />
+</fieldset>
+    }
+
+</section>

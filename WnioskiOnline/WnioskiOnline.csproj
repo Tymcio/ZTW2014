@@ -183,6 +183,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\WnioskodawcaController.cs" />
     <Compile Include="Controllers\KomisjaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RecenzentController.cs" />
@@ -306,7 +307,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Recenzent\Recenzje.cshtml" />
+    <Content Include="Views\Recenzent\Wnioski.cshtml" />
     <Content Include="Views\Komisja\Wnioski.cshtml" />
     <Content Include="Views\Komisja\SzczegolyWnioskow.cshtml" />
     <Content Include="Views\Account\Dane.cshtml" />
@@ -315,6 +316,10 @@
     <Content Include="Views\Admin\SzczegolyKonkursu.cshtml" />
     <Content Include="Views\Admin\Uzytkownicy.cshtml" />
     <Content Include="Views\Admin\SzczegolyKonta.cshtml" />
+    <Content Include="Views\Recenzent\Wniosek.cshtml" />
+    <Content Include="Views\Wnioskodawca\Wnioski.cshtml" />
+    <Content Include="Views\Wnioskodawca\Wniosek.cshtml" />
+    <Content Include="Views\Admin\PrzypiszRec.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

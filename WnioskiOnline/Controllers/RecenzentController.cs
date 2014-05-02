@@ -11,9 +11,16 @@ namespace WnioskiOnline.Controllers
         //
         // GET: /Recenzent/
 
-        public ActionResult Recenzje()
+        public ActionResult Wnioski()
         {
-            ViewBag.Message = "Recenzje";
+            ViewBag.Message = "Wnioski";
+
+            return View();
+        }
+
+        public ActionResult Wniosek()
+        {
+            ViewBag.Message = "Szczegóły wniosku";
 
             return View();
         }

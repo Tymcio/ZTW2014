@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace WnioskiOnline.Controllers
 {
-    public class KomisjaController : Controller
+    public class WnioskodawcaController : Controller
     {
         //
-        // GET: /Komisja/
+        // GET: /Wnioskodawca/
 
         public ActionResult Wnioski()
         {
@@ -18,9 +18,9 @@ namespace WnioskiOnline.Controllers
             return View();
         }
 
-        public ActionResult SzczegolyWnioskow()
+        public ActionResult Wniosek()
         {
-            ViewBag.Message = "Wnioski - szczegóły";
+            ViewBag.Message = "Dodawanie/Edycja wniosku";
 
             return View();
         }
