@@ -17,13 +17,30 @@ namespace WnioskiOnline.Controllers
     [InitializeSimpleMembership]
     public class AccountController : Controller
     {
-        [AllowAnonymous]
+
+        UsersContext db = new UsersContext();
+
         public ActionResult Dane()
         {
-            ViewBag.Message = "Dane";
+            UserProfile user = db.UserProfiles.Find(WebSecurity.GetUserId(User.Identity.Name));
 
-            return View();
+            return View(user);
+
+
         }
+
+        [HttpPost]
+        public ActionResult Dane(UserProfile user)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(user).State = System.Data.EntityState.Modified;
+                db.SaveChanges();
+          //      return RedirectToAction("ZmianaHasala");
+            }
+            return View(user);
+        }
+
         [AllowAnonymous]
         public ActionResult ZmianaHasla(string returnUrl)
         {

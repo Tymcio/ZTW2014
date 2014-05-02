@@ -1,4 +1,5 @@
-﻿@model WnioskiOnline.Models.RegisterModel
+﻿
+@model WnioskiOnline.Models.UserProfile
 @{
     ViewBag.Title = "Dane osobowe";
 }
@@ -8,33 +9,53 @@
 </hgroup>
 
 @using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary()
+    @Html.ValidationSummary(true)
 
     <fieldset>
         <legend>Dane osobowe</legend>
+         @Html.HiddenFor(model => model.UserId)
         <ol>
             <li>
-                @Html.LabelFor(m => m.UserName)
-                @Html.Label("login","jan1234")
+                <div class="editor-label">
+                @Html.LabelFor(model => model.UserName)
+                </div>
+                <div class="editor-field">
+               @Html.TextBoxFor(model => model.UserName, new { @disabled="disabled" })
+                </div>
             </li>
              <li>
-                @Html.LabelFor(m => m.Imie)
-                @Html.TextBox("imie","Jan")
+                <div class="editor-label">
+                @Html.LabelFor(model => model.Imie)
+                </div>
+                <div class="editor-field">
+                @Html.TextBoxFor(model => model.Imie)
+                </div>
             </li>
 
             <li>
-                @Html.LabelFor(m => m.Nazwisko)
-                @Html.TextBox("nazwisko","Kowalski")
+                <div class="editor-label">
+                @Html.LabelFor(model => model.Nazwisko)
+                </div>
+                <div class="editor-field">
+                @Html.TextBoxFor(model => model.Nazwisko)
+                </div>
             </li>
 
              <li>
-                @Html.LabelFor(m => m.Email)
-                @Html.TextBox("email", "jan.kowalski@pwr.edu.pl")
+                <div class="editor-label">
+                @Html.LabelFor(model => model.Email)
+                </div>
+                <div class="editor-field">
+                @Html.TextBoxFor(model => model.Email)
+                </div>
             </li>
                 <li>
-                @Html.LabelFor(m => m.Telefon)
-                @Html.TextBox("tel","600100100")
+                <div class="editor-label">
+                @Html.LabelFor(model => model.Telefon)
+                </div>
+                <div class="editor-field">
+                @Html.TextBoxFor(model => model.Telefon)
+                </div>
             </li>
             <li>@Html.ActionLink("Zmień hasło", "ZmianaHasla", "Account")</li>
         </ol>

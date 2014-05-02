@@ -24,10 +24,20 @@ namespace WnioskiOnline.Models
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
+
+        [Display(Name = "Login")]
         public string UserName { get; set; }
+
+        [Display(Name = "Imię")]
         public string Imie { get; set; }
+
+        [Display(Name = "Nazwisko")]
         public string Nazwisko { get; set; }
+
+        [Display(Name = "Email")]
         public string Email { get; set; }
+
+        [Display(Name = "Telefon")]
         public string Telefon { get; set; }
     }
 
