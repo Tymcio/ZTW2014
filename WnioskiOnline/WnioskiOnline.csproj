@@ -183,6 +183,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\WnioskiController.cs" />
     <Compile Include="Controllers\WnioskodawcaController.cs" />
     <Compile Include="Controllers\KomisjaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -191,7 +192,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201405022108547_initial.cs" />
+    <Compile Include="Migrations\201405022108547_initial.Designer.cs">
+      <DependentUpon>201405022108547_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Wniosek.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -320,12 +327,22 @@
     <Content Include="Views\Wnioskodawca\Wnioski.cshtml" />
     <Content Include="Views\Wnioskodawca\Wniosek.cshtml" />
     <Content Include="Views\Admin\PrzypiszRec.cshtml" />
+    <Content Include="Views\Wnioski\Index.cshtml" />
+    <Content Include="Views\Wnioski\Details.cshtml" />
+    <Content Include="Views\Wnioski\Create.cshtml" />
+    <Content Include="Views\Wnioski\Edit.cshtml" />
+    <Content Include="Views\Wnioski\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201405022108547_initial.resx">
+      <DependentUpon>201405022108547_initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

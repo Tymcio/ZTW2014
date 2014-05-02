@@ -92,7 +92,8 @@ namespace WnioskiOnline.Controllers
                 // Attempt to register the user
                 try
                 {
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
+                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password,
+                    propertyValues: new { Imie = model.Imie, Nazwisko = model.Nazwisko, Telefon = model.Telefon, Email = model.Email });
                     WebSecurity.Login(model.UserName, model.Password);
                     return RedirectToAction("Index", "Home");
                 }
