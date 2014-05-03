@@ -5,6 +5,7 @@ using System.Threading;
 using System.Web.Mvc;
 using WebMatrix.WebData;
 using WnioskiOnline.Models;
+using System.Web.Security;
 
 namespace WnioskiOnline.Filters
 {
@@ -43,6 +44,26 @@ namespace WnioskiOnline.Filters
                 catch (Exception ex)
                 {
                     throw new InvalidOperationException("The ASP.NET Simple Membership database could not be initialized. For more information, please see http://go.microsoft.com/fwlink/?LinkId=256588", ex);
+                }
+
+                if (!Roles.RoleExists("Administrator"))
+                 {
+                   Roles.CreateRole("Administrator");
+                 }
+
+                if (!Roles.RoleExists("Recenzent"))
+                {
+                    Roles.CreateRole("Recenzent");
+                }
+
+                if (!Roles.RoleExists("Wnioskodawca"))
+                {
+                    Roles.CreateRole("Wnioskodawca");
+                }
+
+                if (!Roles.RoleExists("Komisja"))
+                {
+                    Roles.CreateRole("Komisja");
                 }
             }
         }

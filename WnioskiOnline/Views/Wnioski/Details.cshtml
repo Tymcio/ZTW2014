@@ -1,0 +1,71 @@
+﻿@model WnioskiOnline.Models.Wniosek
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Wniosek</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdKonkursu)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdKonkursu)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdWnioskodawcy)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdWnioskodawcy)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdRecenzenta)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdRecenzenta)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdCzlonkaKomisji)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdCzlonkaKomisji)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Ocena)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Ocena)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataZlozenia)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataZlozenia)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataOceny)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataOceny)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataRozpatrzenia)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataRozpatrzenia)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.IdWniosku }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

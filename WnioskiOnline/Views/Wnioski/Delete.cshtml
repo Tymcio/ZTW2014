@@ -1,0 +1,75 @@
+﻿@model WnioskiOnline.Models.Wniosek
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Wniosek</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdKonkursu)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdKonkursu)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdWnioskodawcy)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdWnioskodawcy)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdRecenzenta)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdRecenzenta)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdCzlonkaKomisji)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdCzlonkaKomisji)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Ocena)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Ocena)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataZlozenia)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataZlozenia)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataOceny)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataOceny)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataRozpatrzenia)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataRozpatrzenia)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

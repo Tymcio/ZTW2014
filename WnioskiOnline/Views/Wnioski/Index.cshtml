@@ -1,0 +1,77 @@
+﻿@model IEnumerable<WnioskiOnline.Models.Wniosek>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<section class="wnioski">
+    <table class="recPrzeglad">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdKonkursu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdWnioskodawcy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdRecenzenta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdCzlonkaKomisji)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ocena)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataZlozenia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataOceny)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataRozpatrzenia)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdKonkursu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdWnioskodawcy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdRecenzenta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdCzlonkaKomisji)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ocena)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataZlozenia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataOceny)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataRozpatrzenia)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.IdWniosku }) |
+                @Html.ActionLink("Details", "Details", new { id=item.IdWniosku }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.IdWniosku })
+            </td>
+        </tr>
+    }
+
+    </table>
+</section>
