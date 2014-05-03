@@ -118,6 +118,9 @@ namespace WnioskiOnline.Models
         [Display(Name = "Telefon")]
         public string Telefon { get; set; }
 
+        [Display(Name = "Rola")]
+        public string Rola { get; set; }
+
     }
 
     public class ExternalLogin

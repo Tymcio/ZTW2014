@@ -16,6 +16,10 @@
         <legend>Rejestracja</legend>
         <ol>
             <li>
+                @Html.Label("Zarejestruj jako: ")
+                @Html.DropDownListFor(m => m.Rola, new SelectList(ViewBag.Roles, "Rola"))
+            </li>
+            <li>
                 @Html.LabelFor(m => m.UserName)
                 @Html.TextBoxFor(m => m.UserName)
             </li>
