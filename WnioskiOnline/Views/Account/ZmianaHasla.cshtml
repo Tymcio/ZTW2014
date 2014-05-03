@@ -7,7 +7,10 @@
     <h1>@ViewBag.Title</h1>
 </hgroup>
 
-@using (Html.BeginForm()) {
+<p class="message-success">@ViewBag.StatusMessage</p>
+
+@using (Html.BeginForm("ZmianaHasla", "Account"))
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary()
 
@@ -16,24 +19,20 @@
         <ol>
             <li>
                 @Html.LabelFor(m => m.OldPassword)
-                @Html.TextBoxFor(m => m.OldPassword)
+                @Html.PasswordFor(m => m.OldPassword)
             </li>
              <li>
                 @Html.LabelFor(m => m.NewPassword)
-                @Html.TextBoxFor(m => m.NewPassword)
+                @Html.PasswordFor(m => m.NewPassword)
             </li>
 
             <li>
                 @Html.LabelFor(m => m.ConfirmPassword)
-                @Html.TextBoxFor(m => m.ConfirmPassword)
+                @Html.PasswordFor(m => m.ConfirmPassword)
             </li>
 
           
         </ol>
         <input type="submit" value="Zatwierdź" />
     </fieldset>
-}
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
 }

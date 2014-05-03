@@ -41,12 +41,6 @@ namespace WnioskiOnline.Controllers
             return View(user);
         }
 
-        [AllowAnonymous]
-        public ActionResult ZmianaHasla(string returnUrl)
-        {
-            ViewBag.ReturnUrl = returnUrl;
-            return View();
-        }
         //
         // GET: /Account/Login
 
@@ -150,21 +144,21 @@ namespace WnioskiOnline.Controllers
                 }
             }
 
-            return RedirectToAction("Manage", new { Message = message });
+            return RedirectToAction("ZmianaHasla", new { Message = message });
         }
 
         //
         // GET: /Account/Manage
 
-        public ActionResult Manage(ManageMessageId? message)
+        public ActionResult ZmianaHasla(ManageMessageId? message)
         {
             ViewBag.StatusMessage =
-                message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
-                : message == ManageMessageId.SetPasswordSuccess ? "Your password has been set."
+                message == ManageMessageId.ChangePasswordSuccess ? "Twoje hasło zostało poprawnie zmienione."
+                : message == ManageMessageId.SetPasswordSuccess ? "Twoje hasło zostało ustawione."
                 : message == ManageMessageId.RemoveLoginSuccess ? "The external login was removed."
                 : "";
             ViewBag.HasLocalPassword = OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
-            ViewBag.ReturnUrl = Url.Action("Manage");
+            ViewBag.ReturnUrl = Url.Action("ZmianaHasla");
             return View();
         }
 
@@ -173,11 +167,11 @@ namespace WnioskiOnline.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Manage(LocalPasswordModel model)
+        public ActionResult ZmianaHasla(LocalPasswordModel model)
         {
             bool hasLocalAccount = OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
             ViewBag.HasLocalPassword = hasLocalAccount;
-            ViewBag.ReturnUrl = Url.Action("Manage");
+            ViewBag.ReturnUrl = Url.Action("ZmianaHasla");
             if (hasLocalAccount)
             {
                 if (ModelState.IsValid)
@@ -195,11 +189,11 @@ namespace WnioskiOnline.Controllers
 
                     if (changePasswordSucceeded)
                     {
-                        return RedirectToAction("Manage", new { Message = ManageMessageId.ChangePasswordSuccess });
+                        return RedirectToAction("ZmianaHasla", new { Message = ManageMessageId.ChangePasswordSuccess });
                     }
                     else
                     {
-                        ModelState.AddModelError("", "The current password is incorrect or the new password is invalid.");
+                        ModelState.AddModelError("", "Podane hasło jest niepoprawne.");
                     }
                 }
             }
@@ -218,11 +212,11 @@ namespace WnioskiOnline.Controllers
                     try
                     {
                         WebSecurity.CreateAccount(User.Identity.Name, model.NewPassword);
-                        return RedirectToAction("Manage", new { Message = ManageMessageId.SetPasswordSuccess });
+                        return RedirectToAction("ZmianaHasla", new { Message = ManageMessageId.SetPasswordSuccess });
                     }
                     catch (Exception)
                     {
-                        ModelState.AddModelError("", String.Format("Unable to create local account. An account with the name \"{0}\" may already exist.", User.Identity.Name));
+                        ModelState.AddModelError("", String.Format("Konto o nazwie \"{0}\" już istnieje.", User.Identity.Name));
                     }
                 }
             }
@@ -288,7 +282,7 @@ namespace WnioskiOnline.Controllers
 
             if (User.Identity.IsAuthenticated || !OAuthWebSecurity.TryDeserializeProviderUserId(model.ExternalLoginData, out provider, out providerUserId))
             {
-                return RedirectToAction("Manage");
+                return RedirectToAction("ZmianaHasla");
             }
 
             if (ModelState.IsValid)
