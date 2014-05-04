@@ -216,10 +216,23 @@
     <Compile Include="Migrations\201405041856005_rename2.Designer.cs">
       <DependentUpon>201405041856005_rename2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201405042042467_newTables.cs" />
+    <Compile Include="Migrations\201405042042467_newTables.Designer.cs">
+      <DependentUpon>201405042042467_newTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Charakter.cs" />
+    <Compile Include="Models\Dziedzina.cs" />
+    <Compile Include="Models\Kompetencja.cs" />
+    <Compile Include="Models\Konkurs.cs" />
+    <Compile Include="Models\Organizacja.cs" />
     <Compile Include="Models\Wniosek.cs" />
     <Compile Include="Models\WnioskiContext.cs" />
+    <Compile Include="Models\Wydatek.cs" />
+    <Compile Include="Models\Zadanie.cs" />
+    <Compile Include="Models\Zasieg.cs" />
+    <Compile Include="Models\ZrodloDofinansowania.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -378,6 +391,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201405041856005_rename2.resx">
       <DependentUpon>201405041856005_rename2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405042042467_newTables.resx">
+      <DependentUpon>201405042042467_newTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
