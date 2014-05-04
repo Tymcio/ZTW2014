@@ -204,9 +204,22 @@
     <Compile Include="Migrations\201405031038550_Wnioski.Designer.cs">
       <DependentUpon>201405031038550_Wnioski.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201405041851392_mergeContext.cs" />
+    <Compile Include="Migrations\201405041851392_mergeContext.Designer.cs">
+      <DependentUpon>201405041851392_mergeContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405041853153_rename.cs" />
+    <Compile Include="Migrations\201405041853153_rename.Designer.cs">
+      <DependentUpon>201405041853153_rename.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405041856005_rename2.cs" />
+    <Compile Include="Migrations\201405041856005_rename2.Designer.cs">
+      <DependentUpon>201405041856005_rename2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Wniosek.cs" />
+    <Compile Include="Models\WnioskiContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -356,6 +369,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201405031038550_Wnioski.resx">
       <DependentUpon>201405031038550_Wnioski.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405041851392_mergeContext.resx">
+      <DependentUpon>201405041851392_mergeContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405041853153_rename.resx">
+      <DependentUpon>201405041853153_rename.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405041856005_rename2.resx">
+      <DependentUpon>201405041856005_rename2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

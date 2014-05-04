@@ -24,9 +24,4 @@ namespace WnioskiOnline.Models
         public DateTime DataRozpatrzenia { get; set; }
 
     }
-
-    public class WnioskiDBContext : DbContext
-    {
-        public DbSet<Wniosek> Wnioski { get; set; }
-    }
 }

@@ -5,14 +5,14 @@ namespace WnioskiOnline.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<WnioskiOnline.Models.WnioskiDBContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<WnioskiOnline.Models.WnioskiContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(WnioskiOnline.Models.WnioskiDBContext context)
+        protected override void Seed(WnioskiOnline.Models.WnioskiContext context)
         {
             //  This method will be called after migrating to the latest version.
 

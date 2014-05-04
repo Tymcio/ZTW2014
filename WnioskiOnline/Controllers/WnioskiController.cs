@@ -11,7 +11,7 @@ namespace WnioskiOnline.Controllers
 {
     public class WnioskiController : Controller
     {
-        private WnioskiDBContext db = new WnioskiDBContext();
+        private WnioskiContext db = new WnioskiContext();
 
         //
         // GET: /Wnioski/

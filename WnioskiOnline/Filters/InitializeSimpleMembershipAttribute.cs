@@ -26,11 +26,11 @@ namespace WnioskiOnline.Filters
         {
             public SimpleMembershipInitializer()
             {
-                Database.SetInitializer<UsersContext>(null);
+                Database.SetInitializer<WnioskiContext>(null);
 
                 try
                 {
-                    using (var context = new UsersContext())
+                    using (var context = new WnioskiContext())
                     {
                         if (!context.Database.Exists())
                         {

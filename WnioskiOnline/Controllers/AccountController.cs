@@ -18,7 +18,7 @@ namespace WnioskiOnline.Controllers
     public class AccountController : Controller
     {
 
-        UsersContext db = new UsersContext();
+        WnioskiContext db = new WnioskiContext();
 
         public ActionResult Dane()
         {
@@ -290,7 +290,7 @@ namespace WnioskiOnline.Controllers
             if (ModelState.IsValid)
             {
                 // Insert a new user into the database
-                using (UsersContext db = new UsersContext())
+                using (WnioskiContext db = new WnioskiContext())
                 {
                     UserProfile user = db.UserProfiles.FirstOrDefault(u => u.UserName.ToLower() == model.UserName.ToLower());
                     // Check if user already exists
