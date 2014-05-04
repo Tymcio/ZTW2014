@@ -220,12 +220,28 @@
     <Compile Include="Migrations\201405042042467_newTables.Designer.cs">
       <DependentUpon>201405042042467_newTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201405042203516_Formularze.cs" />
+    <Compile Include="Migrations\201405042203516_Formularze.Designer.cs">
+      <DependentUpon>201405042203516_Formularze.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405042206293_formularze2.cs" />
+    <Compile Include="Migrations\201405042206293_formularze2.Designer.cs">
+      <DependentUpon>201405042206293_formularze2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405042209119_formularze3.cs" />
+    <Compile Include="Migrations\201405042209119_formularze3.Designer.cs">
+      <DependentUpon>201405042209119_formularze3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Charakter.cs" />
     <Compile Include="Models\Dziedzina.cs" />
+    <Compile Include="Models\FormularzK1.cs" />
+    <Compile Include="Models\FormularzK2.cs" />
+    <Compile Include="Models\FormularzK3.cs" />
     <Compile Include="Models\Kompetencja.cs" />
     <Compile Include="Models\Konkurs.cs" />
+    <Compile Include="Models\Koordynator.cs" />
     <Compile Include="Models\Organizacja.cs" />
     <Compile Include="Models\Wniosek.cs" />
     <Compile Include="Models\WnioskiContext.cs" />
@@ -394,6 +410,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201405042042467_newTables.resx">
       <DependentUpon>201405042042467_newTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405042203516_Formularze.resx">
+      <DependentUpon>201405042203516_Formularze.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405042206293_formularze2.resx">
+      <DependentUpon>201405042206293_formularze2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405042209119_formularze3.resx">
+      <DependentUpon>201405042209119_formularze3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
