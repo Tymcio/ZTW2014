@@ -8,16 +8,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WnioskiOnline.Models
 {
-    [Table("Konkursy")]
-    public class Konkurs
+    [Table("Statusy")]
+    public class Status
     {
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
-        public int IdKonkursu { get; set; }
+        public int IdStatusu { get; set; }
+        [Display(Name = "Status")]
+        public string NazwaStatusu { get; set; }
 
-        [Display(Name = "Nazwa konkursu ")]
-        public string NazwaKonkursu { get; set; }
-        public DateTime DataRozpoczecia { get; set; }
-        public DateTime DataZakonczenia { get; set; }
+
     }
 }

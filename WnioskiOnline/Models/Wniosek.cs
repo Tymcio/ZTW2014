@@ -15,6 +15,9 @@ namespace WnioskiOnline.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int IdWniosku { get; set; }
 
+        [Display(Name = "Tytuł wniosku ")]
+        public string TytulWniosku {get; set;}
+
         public virtual Konkurs Konkurs { get; set; }
 
 
@@ -25,10 +28,24 @@ namespace WnioskiOnline.Models
 
         public virtual UserProfile CzlonekKomisji { get; set; }
 
+        [Display(Name = "Ocena ")]
         public int Ocena { get; set; }
+
+        [Display(Name = "Data złożenia ")]
         public DateTime DataZlozenia { get; set; }
+
+        public Status Status { get; set; }
+
         public DateTime DataOceny { get; set; }
         public DateTime DataRozpatrzenia { get; set; }
 
+    }
+
+    public class WnioskiWnioskodawcaModel
+    {
+        public string Konkurs;
+        public string TytulWniosku;
+        public DateTime DataZlozenia;
+        public string Status;
     }
 }

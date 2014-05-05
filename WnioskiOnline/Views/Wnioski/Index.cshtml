@@ -1,51 +1,59 @@
 ﻿@model IEnumerable<WnioskiOnline.Models.Wniosek>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Wnioski";
 }
 
-<h2>Index</h2>
+<h2>Wnioski</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Nowy wniosek", "Create")
 </p>
-<table>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Ocena)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DataZlozenia)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DataOceny)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DataRozpatrzenia)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ocena)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DataZlozenia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DataOceny)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DataRozpatrzenia)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdWniosku }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdWniosku }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdWniosku })
-        </td>
-    </tr>
+@if (Model.Count()==0)
+{
+    <p>
+       Nie masz jeszcze złożonych żadnych wniosków.
+    </p>
 }
+else
+{
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Konkurs.NazwaKonkursu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TytulWniosku)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataZlozenia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status.NazwaStatusu)
+            </th>
+            <th></th>
+        </tr>
 
-</table>
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Konkurs.NazwaKonkursu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TytulWniosku)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataZlozenia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status.NazwaStatusu)
+            </td>
+            <td>
+                @Html.ActionLink("Szczegóły", "Szczegoly", new { id=item.IdWniosku }) |
+            </td>
+        </tr>
+    }
+
+    </table>
+}

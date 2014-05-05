@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WnioskiOnline.Models;
+using WebMatrix.WebData;
 
 namespace WnioskiOnline.Controllers
 {
@@ -18,8 +19,25 @@ namespace WnioskiOnline.Controllers
 
         public ActionResult Index()
         {
-            return View(db.Wnioski.ToList());
+            List<Wniosek> Wnioski = db.Wnioski.ToList();
+            if (User.IsInRole("Wnioskodawca"))
+            {
+                return View(db.Wnioski.ToList().FindAll(x => x.Wnioskodawca.UserId == WebSecurity.GetUserId(User.Identity.Name)));
+            }
+
+            else if (User.IsInRole("Recenzent"))
+            {
+                return View(db.Wnioski.ToList().FindAll(x => x.Recenzent.UserId == WebSecurity.GetUserId(User.Identity.Name)));
+            }
+            else if (User.IsInRole("Komisja"))
+            {
+                return View(db.Wnioski.ToList().FindAll(x => x.CzlonekKomisji.UserId == WebSecurity.GetUserId(User.Identity.Name)));
+            }
+            else
+                return View(db.Wnioski.ToList());
         }
+
+
 
         //
         // GET: /Wnioski/Details/5

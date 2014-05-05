@@ -27,7 +27,8 @@ namespace WnioskiOnline.Models
         public DbSet<Koordynator> Koordynatorzy { get; set; }
         public DbSet<FormularzK1N> FormularzeK1N { get; set; }
         public DbSet<FormularzK2> FormularzeK2 { get; set; }
-        public DbSet<FormularzK3> FormularzeK3 { get; set; }  
+        public DbSet<FormularzK3> FormularzeK3 { get; set; }
+        public DbSet<Status> Statusy { get; set; }  
 
 
     }

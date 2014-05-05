@@ -244,6 +244,14 @@
     <Compile Include="Migrations\201405051226573_foreign_keys3.Designer.cs">
       <DependentUpon>201405051226573_foreign_keys3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201405051644163_wnioski_tytul.cs" />
+    <Compile Include="Migrations\201405051644163_wnioski_tytul.Designer.cs">
+      <DependentUpon>201405051644163_wnioski_tytul.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405051655106_wniosek_zmiana.cs" />
+    <Compile Include="Migrations\201405051655106_wniosek_zmiana.Designer.cs">
+      <DependentUpon>201405051655106_wniosek_zmiana.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Charakter.cs" />
@@ -255,6 +263,7 @@
     <Compile Include="Models\Konkurs.cs" />
     <Compile Include="Models\Koordynator.cs" />
     <Compile Include="Models\Organizacja.cs" />
+    <Compile Include="Models\Status.cs" />
     <Compile Include="Models\Wniosek.cs" />
     <Compile Include="Models\WnioskiContext.cs" />
     <Compile Include="Models\Wydatek.cs" />
@@ -394,6 +403,7 @@
     <Content Include="Views\Wnioski\Create.cshtml" />
     <Content Include="Views\Wnioski\Edit.cshtml" />
     <Content Include="Views\Wnioski\Delete.cshtml" />
+    <Content Include="Views\Wnioski\WnioskiAdministrator.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -440,6 +450,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201405051226573_foreign_keys3.resx">
       <DependentUpon>201405051226573_foreign_keys3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405051644163_wnioski_tytul.resx">
+      <DependentUpon>201405051644163_wnioski_tytul.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405051655106_wniosek_zmiana.resx">
+      <DependentUpon>201405051655106_wniosek_zmiana.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

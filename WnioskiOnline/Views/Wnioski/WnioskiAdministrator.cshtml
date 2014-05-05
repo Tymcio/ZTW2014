@@ -1,0 +1,49 @@
+﻿@model IEnumerable<WnioskiOnline.Models.Wniosek>
+
+@{
+    ViewBag.Title = "Wnioski";
+}
+
+<h2>Wnioski</h2>
+
+<p>
+    @Html.ActionLink("Nowy wniosek", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Konkurs.NazwaKonkursu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TytulWniosku)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataZlozenia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status.NazwaStatusu)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Konkurs.NazwaKonkursu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TytulWniosku)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataZlozenia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status.NazwaStatusu)
+        </td>
+        <td>
+            @Html.ActionLink("Szczegóły", "Szczegoly", new { id=item.IdWniosku }) |
+        </td>
+    </tr>
+}
+
+</table>
