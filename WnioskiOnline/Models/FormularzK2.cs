@@ -15,27 +15,30 @@ namespace WnioskiOnline.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int IdFormularza{ get; set; }
 
-        public Wniosek Wniosek { get; set; }
+        public virtual Wniosek Wniosek { get; set; }
 
         public string TytulProjektu { get; set; }
 
-        public Organizacja Organizacja { get; set; }
 
-        public Koordynator PierwszyKoord { get; set; }
+        public virtual Organizacja Organizacja { get; set; }
 
-        public Koordynator DrugiKoord { get; set; }
+
+        public virtual Koordynator PierwszyKoord { get; set; }
+
+
+        public virtual Koordynator DrugiKoord { get; set; }
 
         public double KwotaWnioskowana { get; set; }
 
-        public Dziedzina Dziedzina { get; set; }
+        public virtual Dziedzina Dziedzina { get; set; }
 
         // koszty
 
         // harmonogram
 
-        public Zasieg Zasieg { get; set; }
+        public virtual Zasieg Zasieg { get; set; }
 
-        public Charakter Charakter { get; set; }
+        public virtual Charakter Charakter { get; set; }
 
         [Display(Name = "Uzasadnienie celowości realizowanego zadania, przewidywane efekty merytoryczne")]
         public string Celowosc { get; set; }

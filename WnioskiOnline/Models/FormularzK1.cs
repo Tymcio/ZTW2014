@@ -15,7 +15,9 @@ namespace WnioskiOnline.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int IdFormularza { get; set; }
 
-        public Wniosek Wniosek { get; set; }
+        public virtual Wniosek Wniosek { get; set; }
+
+        public virtual Organizacja Organizacja { get; set; }
 
         public string CelProjektu { get; set; }
 

@@ -14,8 +14,10 @@ namespace WnioskiOnline.Models
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int IdKompetencji { get; set; }
-        public UserProfile Recenzent { get; set; }
-        public Dziedzina Dziedzina { get; set; }
+
+        public virtual UserProfile Recenzent { get; set; }
+
+        public virtual Dziedzina Dziedzina { get; set; }
 
 
     }

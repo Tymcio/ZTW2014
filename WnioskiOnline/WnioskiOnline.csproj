@@ -232,6 +232,18 @@
     <Compile Include="Migrations\201405042209119_formularze3.Designer.cs">
       <DependentUpon>201405042209119_formularze3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201405051217420_foreign_keys.cs" />
+    <Compile Include="Migrations\201405051217420_foreign_keys.Designer.cs">
+      <DependentUpon>201405051217420_foreign_keys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405051221568_foreign_keys2.cs" />
+    <Compile Include="Migrations\201405051221568_foreign_keys2.Designer.cs">
+      <DependentUpon>201405051221568_foreign_keys2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405051226573_foreign_keys3.cs" />
+    <Compile Include="Migrations\201405051226573_foreign_keys3.Designer.cs">
+      <DependentUpon>201405051226573_foreign_keys3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Charakter.cs" />
@@ -419,6 +431,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201405042209119_formularze3.resx">
       <DependentUpon>201405042209119_formularze3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405051217420_foreign_keys.resx">
+      <DependentUpon>201405051217420_foreign_keys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405051221568_foreign_keys2.resx">
+      <DependentUpon>201405051221568_foreign_keys2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405051226573_foreign_keys3.resx">
+      <DependentUpon>201405051226573_foreign_keys3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

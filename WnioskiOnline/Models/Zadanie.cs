@@ -18,7 +18,8 @@ namespace WnioskiOnline.Models
         public DateTime DataRozpoczecia { get; set; }
         public DateTime DataZakonczenia { get; set; }
         public double UdzialFinansowyUczelni { get; set; }
-        public Wniosek Wniosek { get; set; }
+
+        public virtual Wniosek Wniosek { get; set; }
 
 
     }

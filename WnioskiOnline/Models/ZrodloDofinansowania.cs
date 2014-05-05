@@ -17,7 +17,8 @@ namespace WnioskiOnline.Models
         public string NazwaZrodla { get; set; }
         public string Wyszczegolnienie { get; set; }
         public double Kwota { get; set; }
-        public Wniosek Wniosek { get; set; }
+
+        public virtual Wniosek Wniosek { get; set; }
 
 
     }

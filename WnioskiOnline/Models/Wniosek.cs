@@ -14,10 +14,17 @@ namespace WnioskiOnline.Models
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int IdWniosku { get; set; }
-        public Konkurs Konkurs { get; set; }
-        public UserProfile Wnioskodawca { get; set; }
-        public UserProfile Recenzent { get; set; }
-        public UserProfile CzlonekKomisji { get; set; }
+
+        public virtual Konkurs Konkurs { get; set; }
+
+
+        public virtual UserProfile Wnioskodawca { get; set; }
+
+
+        public virtual UserProfile Recenzent { get; set; }
+
+        public virtual UserProfile CzlonekKomisji { get; set; }
+
         public int Ocena { get; set; }
         public DateTime DataZlozenia { get; set; }
         public DateTime DataOceny { get; set; }
