@@ -271,6 +271,7 @@
     <Compile Include="Models\Zasieg.cs" />
     <Compile Include="Models\ZrodloDofinansowania.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\WnioskiViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -404,6 +405,7 @@
     <Content Include="Views\Wnioski\Edit.cshtml" />
     <Content Include="Views\Wnioski\Delete.cshtml" />
     <Content Include="Views\Wnioski\WnioskiAdministrator.cshtml" />
+    <Content Include="Views\Wnioski\Nowy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

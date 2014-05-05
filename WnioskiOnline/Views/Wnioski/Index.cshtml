@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WnioskiOnline.Models.Wniosek>
+﻿@model WnioskiOnline.ViewModels.WnioskiViewModel
 
 @{
     ViewBag.Title = "Wnioski";
@@ -6,36 +6,61 @@
 
 <h2>Wnioski</h2>
 
+<section class="wnioski">
+
+
 <p>
-    @Html.ActionLink("Nowy wniosek", "Create")
+    Nowy wniosek: @Html.ActionLink("K1N", "WniosekK1N"), @Html.ActionLink("K2", "WniosekK2"), @Html.ActionLink("K3", "WniosekK3")
 </p>
 
-@if (Model.Count()==0)
+@if (!Model.Wnioski.Any())
 {
     <p>
        Nie masz jeszcze złożonych żadnych wniosków.
     </p>
+  
 }
 else
 {
+    using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>Wyszukaj</legend>
+        <ol>
+            <li>
+                @Html.Label("Konkurs: ")
+                @Html.DropDownListFor(m => m.Konkurs, new SelectList(Model.Konkursy, "Konkurs"))
+            </li>
+
+            <li>
+                @Html.Label("Status: ")
+                @Html.DropDownListFor(m => m.Status, new SelectList(Model.Statusy, "Status"))
+            </li>
+
+        </ol>
+        <input type="submit" value="Wyszukaj" />
+    </fieldset>
+    }
     <table>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Konkurs.NazwaKonkursu)
+                @Html.DisplayNameFor(model => model.Wnioski.First().Konkurs.NazwaKonkursu)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TytulWniosku)
+                @Html.DisplayNameFor(model => model.Wnioski.First().TytulWniosku)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DataZlozenia)
+                @Html.DisplayNameFor(model => model.Wnioski.First().DataZlozenia)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Status.NazwaStatusu)
+                @Html.DisplayNameFor(model =>model.Wnioski.First().Status.NazwaStatusu)
             </th>
             <th></th>
         </tr>
 
-    @foreach (var item in Model) {
+    @foreach (var item in Model.Wnioski) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Konkurs.NazwaKonkursu)
@@ -56,4 +81,7 @@ else
     }
 
     </table>
+
 }
+
+</section>

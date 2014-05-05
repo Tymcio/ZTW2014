@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using WnioskiOnline.Models;
 using WebMatrix.WebData;
+using WnioskiOnline.ViewModels;
 
 namespace WnioskiOnline.Controllers
 {
@@ -19,22 +20,60 @@ namespace WnioskiOnline.Controllers
 
         public ActionResult Index()
         {
-            List<Wniosek> Wnioski = db.Wnioski.ToList();
+            List<Status> Statusy = db.Statusy.ToList();
+            List<Konkurs> Konkursy = db.Konkursy.ToList();
+            List<string> NazwyStatusow = new List<string>();
+            List<string> NazwyKonkursow = new List<string>();
+
+            WnioskiViewModel model = new WnioskiViewModel();
+            foreach (Konkurs k in Konkursy)
+            {
+                NazwyKonkursow.Add(k.NazwaKonkursu);
+            }
+            model.Konkursy = NazwyKonkursow;
+
             if (User.IsInRole("Wnioskodawca"))
             {
-                return View(db.Wnioski.ToList().FindAll(x => x.Wnioskodawca.UserId == WebSecurity.GetUserId(User.Identity.Name)));
+                foreach (Status s in Statusy)
+                {
+                    NazwyStatusow.Add(s.NazwaStatusu);
+                }
+                model.Statusy = NazwyStatusow;
+                model.Wnioski = db.Wnioski.ToList().FindAll(x => x.Wnioskodawca.UserId == WebSecurity.GetUserId(User.Identity.Name));
+                return View(model);
             }
 
             else if (User.IsInRole("Recenzent"))
             {
-                return View(db.Wnioski.ToList().FindAll(x => x.Recenzent.UserId == WebSecurity.GetUserId(User.Identity.Name)));
+                Statusy.RemoveAt(0);
+                foreach (Status s in Statusy)
+                {
+                    NazwyStatusow.Add(s.NazwaStatusu);
+                }
+                model.Statusy = NazwyStatusow;
+                model.Wnioski = db.Wnioski.ToList().FindAll(x => x.Recenzent.UserId == WebSecurity.GetUserId(User.Identity.Name));
+                return View(model);
             }
             else if (User.IsInRole("Komisja"))
             {
-                return View(db.Wnioski.ToList().FindAll(x => x.CzlonekKomisji.UserId == WebSecurity.GetUserId(User.Identity.Name)));
+                Statusy.RemoveAt(0);
+                Statusy.RemoveAt(1);
+                foreach (Status s in Statusy)
+                {
+                    NazwyStatusow.Add(s.NazwaStatusu);
+                }
+                model.Statusy = NazwyStatusow;
+                model.Wnioski = db.Wnioski.ToList().FindAll(x => x.CzlonekKomisji.UserId == WebSecurity.GetUserId(User.Identity.Name));
+                return View(model);
             }
             else
-                return View(db.Wnioski.ToList());
+                foreach (Status s in Statusy)
+                {
+                    NazwyStatusow.Add(s.NazwaStatusu);
+                }
+                 model.Statusy = NazwyStatusow;
+                model.Wnioski = db.Wnioski.ToList();
+                return View(model);
         }
 
 
