@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WnioskiOnline.Models;
 
 namespace WnioskiOnline.Controllers
 {
     public class RecenzentController : Controller
     {
+        private WnioskiContext db = new WnioskiContext();
         //
         // GET: /Recenzent/
 
@@ -18,11 +20,17 @@ namespace WnioskiOnline.Controllers
             return View();
         }
 
-        public ActionResult Wniosek()
+       // GET: /Recenzent/Wniosek/
+        public ActionResult Wniosek(int id =0)
         {
             ViewBag.Message = "Szczegóły wniosku";
-
-            return View();
+            Wniosek w = db.Wnioski.Find(id);
+            
+            if (w == null)
+            {
+                return HttpNotFound();
+            }
+            return View(w);
         }
 
     }
