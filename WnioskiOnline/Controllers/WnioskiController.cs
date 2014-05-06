@@ -96,7 +96,52 @@ namespace WnioskiOnline.Controllers
 
         public ActionResult Create()
         {
-            return View();
+
+            return RedirectToAction("K3Wnioskodawca");
+        //    return View();
+        }
+
+        public ActionResult K3Wnioskodawca()
+        {
+            SzczegolyWnioskuViewModel model = new SzczegolyWnioskuViewModel();
+            List<string> NazwyDziedzin = new List<string>();
+            List<string> NazwyOrganizacji = new List<string>();
+            List<string> NazwyZasiegow = new List<string>();
+            List<string> NazwyCharakterow = new List<string>();
+            List<string> NazwyRodzajowWydatku = new List<string>();
+
+            foreach (Dziedzina d in db.Dziedziny.ToList())
+            {
+                NazwyDziedzin.Add(d.NazwaDziedziny);
+            }
+
+            foreach (Organizacja o in db.Organizacje.ToList())
+            {
+                NazwyOrganizacji.Add(o.NazwaOrganizacji);
+            }
+
+            foreach (Zasieg z in db.Zasiegi.ToList())
+            {
+                NazwyZasiegow.Add(z.NazwaZasiegu);
+            }
+
+            foreach (Charakter c in db.Charaktery.ToList())
+            {
+                NazwyCharakterow.Add(c.NazwaCharakteru);
+            }
+
+            foreach (RodzajWydatku r in db.RodzajeWydatku.ToList())
+            {
+                NazwyRodzajowWydatku.Add(r.NazwaRodzaju);
+            }
+
+            model.Dziedziny = NazwyDziedzin;
+            model.Organizacje = NazwyOrganizacji;
+            model.Zasiegi = NazwyZasiegow;
+            model.Charaktery = NazwyCharakterow;
+            model.RodzajeWydatku = NazwyRodzajowWydatku;
+
+            return View(model);
         }
 
         //

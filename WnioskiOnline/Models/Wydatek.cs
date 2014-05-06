@@ -14,7 +14,7 @@ namespace WnioskiOnline.Models
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int IdWydatku { get; set; }
-        public string RodzajWydatku { get; set; }
+        public RodzajWydatku RodzajWydatku { get; set; }
         public string Wyszczegolnienie { get; set; }
         public double KwotaOgolem { get; set; }
         public double KwotaDoSfinans { get; set; }

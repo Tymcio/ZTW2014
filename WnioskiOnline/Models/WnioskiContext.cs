@@ -16,6 +16,7 @@ namespace WnioskiOnline.Models
 
         public DbSet<UserProfile> UserProfiles { get; set; }
         public DbSet<Wniosek> Wnioski { get; set; }
+        public DbSet<Charakter> Charaktery { get; set; }
         public DbSet<Dziedzina> Dziedziny { get; set; }
         public DbSet<Organizacja> Organizacje { get; set; }
         public DbSet<Kompetencja> Kompetencje { get; set; }
@@ -28,7 +29,9 @@ namespace WnioskiOnline.Models
         public DbSet<FormularzK1N> FormularzeK1N { get; set; }
         public DbSet<FormularzK2> FormularzeK2 { get; set; }
         public DbSet<FormularzK3> FormularzeK3 { get; set; }
-        public DbSet<Status> Statusy { get; set; }  
+        public DbSet<Status> Statusy { get; set; }
+        public DbSet<RodzajWydatku> RodzajeWydatku { get; set; }
+        
 
 
     }
