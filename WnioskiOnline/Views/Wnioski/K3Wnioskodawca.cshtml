@@ -9,8 +9,7 @@
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
-
-<form method="post">    
+ 
 <fieldset>
  <legend>Wypełnij wniosek</legend>
 <section class="szczegolywniosku">
@@ -125,7 +124,7 @@
 
         </ol>
 
-
+<section class="wnioski">
         <table>
         <tr>
             <th>
@@ -160,6 +159,7 @@
             </td>
         </tr>
     </table>
+    </section>
     <input type="button" name="dodajkoszt" value=" + Dodaj wiersz + "/>
     <br /><br />
     <div style="display:inline;">
@@ -168,7 +168,7 @@
     </div>
 </section>    
 </fieldset>
-</form>
+
 }
 
              
