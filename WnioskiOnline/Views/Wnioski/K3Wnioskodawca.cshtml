@@ -25,12 +25,12 @@
                 @Html.DropDownListFor(m => m.Formularz.IdOrganizacji, Model.Organizacje)
             </li>
 
-@*            <li>
+            <li>
                 @Html.Label("Nazwa projektu: ")
-                @Html.EditorFor(m => m.Wniosek.TytulWniosku)
-            </li>*@
+                @Html.EditorFor(m => m.Formularz.Wniosek.TytulWniosku)
+            </li>
 
-@*            <li>
+            <li>
                 @Html.Label("Główny koordynator projektu: ")
             </li>
 
@@ -85,8 +85,8 @@
 
             <li>
                 @Html.Label("Numer indeksu ")
-                @Html.EditorFor(m => m.Formularz.PierwszyKoord.NrIndeksu)
-            </li>*@
+                @Html.EditorFor(m => m.Formularz.DrugiKoord.NrIndeksu)
+            </li>
 
              <li>
                 @Html.Label("Termin projektu: ")

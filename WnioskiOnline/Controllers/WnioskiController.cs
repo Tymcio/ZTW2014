@@ -127,17 +127,21 @@ namespace WnioskiOnline.Controllers
                 return RedirectToAction("Index");
             else
             {
-                //if (ZapiszRobocza != null)
-                //    return RedirectToAction("Robocza");
-                //else
-                //    if (WyslijDoRec != null)
-                //        return RedirectToAction("Cos");
+                model.Formularz.Wniosek.DataZlozenia = DateTime.Now;
+                model.Formularz.Wniosek.IdKonkursu = db.Konkursy.ToList().Find(k => k.NazwaKonkursu == "K3").IdKonkursu;
+                //    model.Wniosek.IdWnioskodawcy = WebSecurity.GetUserId(User.Identity.Name);
+                model.Formularz.Wniosek.IdWnioskodawcy = 1;
+
+                if (ZapiszRobocza != null)
+                    model.Formularz.Wniosek.IdStatusu = db.Statusy.ToList().First().IdStatusu;
+                else
+                    if (WyslijDoRec != null)
+                        model.Formularz.Wniosek.IdStatusu = db.Statusy.ToList().ElementAt(1).IdStatusu;
             }
 
             if (ModelState.IsValid)
             {
                 db.FormularzeK3.Add(model.Formularz);
-                //  db.Wnioski.Add(model.Wniosek);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

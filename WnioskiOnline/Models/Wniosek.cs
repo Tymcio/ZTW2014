@@ -39,7 +39,7 @@ namespace WnioskiOnline.Models
         public virtual UserProfile CzlonekKomisji { get; set; }
 
         [Display(Name = "Ocena ")]
-        public int Ocena { get; set; }
+        public int? Ocena { get; set; }
 
         [Display(Name = "Data złożenia ")]
         public DateTime DataZlozenia { get; set; }
@@ -49,8 +49,8 @@ namespace WnioskiOnline.Models
         [ForeignKey("IdStatusu")]
         public Status Status { get; set; }
 
-        public DateTime DataOceny { get; set; }
-        public DateTime DataRozpatrzenia { get; set; }
+        public DateTime? DataOceny { get; set; }
+        public DateTime? DataRozpatrzenia { get; set; }
 
     }
 

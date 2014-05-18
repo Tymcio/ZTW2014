@@ -18,8 +18,8 @@ namespace WnioskiOnline.ViewModels
         public SelectList RodzajeWydatku { get; set; }
         //   public Wydatek Wydatek { get; set; }
         //  public ZrodloDofinansowania Zrodlo { get; set; }
-        //   public Wniosek Wniosek { get; set; }
         public FormularzK3 Formularz { get; set; }
+
 
     }
 }
