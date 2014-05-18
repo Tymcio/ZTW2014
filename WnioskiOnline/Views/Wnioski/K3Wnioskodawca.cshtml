@@ -1,5 +1,6 @@
 ﻿@model WnioskiOnline.ViewModels.SzczegolyWnioskuViewModel
 
+
 @{
     ViewBag.Title = "Wniosek K3";
 }
@@ -16,20 +17,20 @@
         <ol>
             <li>
                 @Html.Label("Dziedzina: ")
-                @Html.DropDownListFor(m => m.Dziedzina, new SelectList(Model.Dziedziny, "Dziedzina"))
+                @Html.DropDownListFor(m => m.Formularz.IdDziedziny, Model.Dziedziny)
             </li>
 
             <li>
                 @Html.Label("Organizacja wnioskująca: ")
-                @Html.DropDownListFor(m => m.Organizacja, new SelectList(Model.Organizacje, "Organizacja"))
+                @Html.DropDownListFor(m => m.Formularz.IdOrganizacji, Model.Organizacje)
             </li>
 
-            <li>
+@*            <li>
                 @Html.Label("Nazwa projektu: ")
                 @Html.EditorFor(m => m.Wniosek.TytulWniosku)
-            </li>
+            </li>*@
 
-            <li>
+@*            <li>
                 @Html.Label("Główny koordynator projektu: ")
             </li>
 
@@ -85,7 +86,7 @@
             <li>
                 @Html.Label("Numer indeksu ")
                 @Html.EditorFor(m => m.Formularz.PierwszyKoord.NrIndeksu)
-            </li>
+            </li>*@
 
              <li>
                 @Html.Label("Termin projektu: ")
@@ -104,12 +105,12 @@
 
             <li>
                 @Html.Label("Zasięg zadania: ")
-                @Html.DropDownListFor(m => m.Zasieg, new SelectList(Model.Zasiegi, "Zasieg"))
+                @Html.DropDownListFor(m => m.Formularz.IdZasiegu, Model.Zasiegi)
             </li>
 
             <li>
                 @Html.Label("Charakter zadania: ")
-                @Html.DropDownListFor(m => m.Charakter, new SelectList(Model.Charaktery, "Charakter"))
+                @Html.DropDownListFor(m => m.Formularz.IdCharakteru, Model.Charaktery)
             </li>
 
             <li>
@@ -124,7 +125,7 @@
 
         </ol>
 
-<section class="wnioski">
+@*<section class="wnioski">
         <table>
         <tr>
             <th>
@@ -143,7 +144,7 @@
         </tr>
           <tr>
             <td>
-                @Html.DropDownListFor(m => m.RodzajWydatku, new SelectList(Model.RodzajeWydatku, "RodzajWydatku"))
+                @Html.DropDownListFor(m => m.Wydatek.RodzajWydatku, Model.RodzajeWydatku)
             </td>
             <td>
                 @Html.EditorFor(m => m.Wydatek.Wyszczegolnienie)
@@ -159,12 +160,13 @@
             </td>
         </tr>
     </table>
-    </section>
+    </section>*@
     <input type="button" name="dodajkoszt" value=" + Dodaj wiersz + "/>
     <br /><br />
     <div style="display:inline;">
-        <input type="submit" name="zapiszrobocza" value="Zapisz jako wersję roboczą"/>
-        <input type="submit" name="wyslijrec" value="Wyślij do recenzji"/>
+        <input type="submit" name="ZapiszRobocza" value="Zapisz wersję roboczą" />
+        <input type="submit" name="WyslijDoRec" value="Wyślij do recenzji"/>
+        <input type="submit" name="Anuluj" value="Anuluj"/>
     </div>
 </section>    
 </fieldset>

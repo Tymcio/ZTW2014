@@ -264,6 +264,10 @@
     <Compile Include="Migrations\201405052356022_rodzaj_wydatku2.Designer.cs">
       <DependentUpon>201405052356022_rodzaj_wydatku2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201405181020275_foreign_keys1.cs" />
+    <Compile Include="Migrations\201405181020275_foreign_keys1.Designer.cs">
+      <DependentUpon>201405181020275_foreign_keys1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Charakter.cs" />
@@ -480,6 +484,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201405052356022_rodzaj_wydatku2.resx">
       <DependentUpon>201405052356022_rodzaj_wydatku2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405181020275_foreign_keys1.resx">
+      <DependentUpon>201405181020275_foreign_keys1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

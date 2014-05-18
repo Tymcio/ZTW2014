@@ -16,16 +16,26 @@ namespace WnioskiOnline.Models
         public int IdWniosku { get; set; }
 
         [Display(Name = "Tytuł wniosku ")]
-        public string TytulWniosku {get; set;}
+        public string TytulWniosku { get; set; }
 
+        public int IdKonkursu { get; set; }
+
+        [ForeignKey("IdKonkursu")]
         public virtual Konkurs Konkurs { get; set; }
 
+        public int IdWnioskodawcy { get; set; }
 
+        [ForeignKey("IdWnioskodawcy")]
         public virtual UserProfile Wnioskodawca { get; set; }
 
+        public int? IdRecenzenta { get; set; }
 
+        [ForeignKey("IdRecenzenta")]
         public virtual UserProfile Recenzent { get; set; }
 
+        public int? IdCzlonkaKomisji { get; set; }
+
+        [ForeignKey("IdCzlonkaKomisji")]
         public virtual UserProfile CzlonekKomisji { get; set; }
 
         [Display(Name = "Ocena ")]
@@ -34,6 +44,9 @@ namespace WnioskiOnline.Models
         [Display(Name = "Data złożenia ")]
         public DateTime DataZlozenia { get; set; }
 
+        public int IdStatusu { get; set; }
+
+        [ForeignKey("IdStatusu")]
         public Status Status { get; set; }
 
         public DateTime DataOceny { get; set; }

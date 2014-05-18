@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using WnioskiOnline.Models;
 using WebMatrix.WebData;
 using WnioskiOnline.ViewModels;
+using WnioskiOnline.Filters;
 
 namespace WnioskiOnline.Controllers
 {
@@ -71,9 +72,9 @@ namespace WnioskiOnline.Controllers
                 {
                     NazwyStatusow.Add(s.NazwaStatusu);
                 }
-                 model.Statusy = NazwyStatusow;
-                model.Wnioski = db.Wnioski.ToList();
-                return View(model);
+            model.Statusy = NazwyStatusow;
+            model.Wnioski = db.Wnioski.ToList();
+            return View(model);
         }
 
 
@@ -98,48 +99,18 @@ namespace WnioskiOnline.Controllers
         {
 
             return RedirectToAction("K3Wnioskodawca");
-        //    return View();
+            //    return View();
         }
 
         public ActionResult K3Wnioskodawca()
         {
             SzczegolyWnioskuViewModel model = new SzczegolyWnioskuViewModel();
-            List<string> NazwyDziedzin = new List<string>();
-            List<string> NazwyOrganizacji = new List<string>();
-            List<string> NazwyZasiegow = new List<string>();
-            List<string> NazwyCharakterow = new List<string>();
-            List<string> NazwyRodzajowWydatku = new List<string>();
 
-            foreach (Dziedzina d in db.Dziedziny.ToList())
-            {
-                NazwyDziedzin.Add(d.NazwaDziedziny);
-            }
-
-            foreach (Organizacja o in db.Organizacje.ToList())
-            {
-                NazwyOrganizacji.Add(o.NazwaOrganizacji);
-            }
-
-            foreach (Zasieg z in db.Zasiegi.ToList())
-            {
-                NazwyZasiegow.Add(z.NazwaZasiegu);
-            }
-
-            foreach (Charakter c in db.Charaktery.ToList())
-            {
-                NazwyCharakterow.Add(c.NazwaCharakteru);
-            }
-
-            foreach (RodzajWydatku r in db.RodzajeWydatku.ToList())
-            {
-                NazwyRodzajowWydatku.Add(r.NazwaRodzaju);
-            }
-
-            model.Dziedziny = NazwyDziedzin;
-            model.Organizacje = NazwyOrganizacji;
-            model.Zasiegi = NazwyZasiegow;
-            model.Charaktery = NazwyCharakterow;
-            model.RodzajeWydatku = NazwyRodzajowWydatku;
+            model.Dziedziny = new SelectList(db.Dziedziny, "IdDziedziny", "NazwaDziedziny");
+            model.Organizacje = new SelectList(db.Organizacje, "IdOrganizacji", "NazwaOrganizacji");
+            model.Zasiegi = new SelectList(db.Zasiegi, "IdZasiegu", "NazwaZasiegu");
+            model.Charaktery = new SelectList(db.Charaktery, "IdCharakteru", "NazwaCharakteru");
+            model.RodzajeWydatku = new SelectList(db.RodzajeWydatku, "IdRodzaju", "NazwaRodzaju");
 
             return View(model);
         }
@@ -149,17 +120,38 @@ namespace WnioskiOnline.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Wniosek wniosek)
+
+        public ActionResult K3Wnioskodawca(string ZapiszRobocza, string WyslijDoRec, string Anuluj, SzczegolyWnioskuViewModel model)
         {
+            if (Anuluj != null)
+                return RedirectToAction("Index");
+            else
+            {
+                //if (ZapiszRobocza != null)
+                //    return RedirectToAction("Robocza");
+                //else
+                //    if (WyslijDoRec != null)
+                //        return RedirectToAction("Cos");
+            }
+
             if (ModelState.IsValid)
             {
-                db.Wnioski.Add(wniosek);
+                db.FormularzeK3.Add(model.Formularz);
+                //  db.Wnioski.Add(model.Wniosek);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(wniosek);
+            model.Dziedziny = new SelectList(db.Dziedziny, "IdDziedziny", "NazwaDziedziny");
+            model.Organizacje = new SelectList(db.Organizacje, "IdOrganizacji", "NazwaOrganizacji");
+            model.Zasiegi = new SelectList(db.Zasiegi, "IdZasiegu", "NazwaZasiegu");
+            model.Charaktery = new SelectList(db.Charaktery, "IdCharakteru", "NazwaCharakteru");
+            model.RodzajeWydatku = new SelectList(db.RodzajeWydatku, "IdRodzaju", "NazwaRodzaju");
+
+            return View(model);
         }
+
+
 
         //
         // GET: /Wnioski/Edit/5

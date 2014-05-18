@@ -106,7 +106,7 @@ namespace WnioskiOnline.Controllers
                 {
                     WebSecurity.CreateUserAndAccount(model.UserName, model.Password,
                     propertyValues: new { Imie = model.Imie, Nazwisko = model.Nazwisko, Telefon = model.Telefon, Email = model.Email });
-                    Roles.AddUserToRole(model.UserName, model.Rola);
+                    Roles.AddUserToRole(model.UserName, "Wnioskodawca");
                     WebSecurity.Login(model.UserName, model.Password);
                     return RedirectToAction("Index", "Home");
                 }

@@ -2,25 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data;
+using System.Data.Entity;
+using System.Web.Mvc;
+using WnioskiOnline.Models;
 
 namespace WnioskiOnline.ViewModels
 {
     public class SzczegolyWnioskuViewModel
     {
-        public IEnumerable<string> Dziedziny { get; set; }
-        public IEnumerable<string> Organizacje { get; set; }
-        public IEnumerable<string> Zasiegi { get; set; }
-        public IEnumerable<string> Charaktery { get; set; }
-        public IEnumerable<string> RodzajeWydatku { get; set; }
-        public WnioskiOnline.Models.Wydatek Wydatek { get; set; }
-        public WnioskiOnline.Models.ZrodloDofinansowania Zrodlo { get; set; }
-        public WnioskiOnline.Models.Wniosek Wniosek { get; set; }
-        public WnioskiOnline.Models.FormularzK3 Formularz { get; set; }
-        public string Dziedzina { get; set; }
-        public string Organizacja { get; set; }
-        public string Zasieg { get; set; }
-        public string Charakter { get; set; }
-        public string RodzajWydatku { get; set; }
+        public SelectList Dziedziny { get; set; }
+        public SelectList Organizacje { get; set; }
+        public SelectList Zasiegi { get; set; }
+        public SelectList Charaktery { get; set; }
+        public SelectList RodzajeWydatku { get; set; }
+        //   public Wydatek Wydatek { get; set; }
+        //  public ZrodloDofinansowania Zrodlo { get; set; }
+        //   public Wniosek Wniosek { get; set; }
+        public FormularzK3 Formularz { get; set; }
 
     }
 }
