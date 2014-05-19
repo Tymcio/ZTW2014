@@ -102,7 +102,7 @@ namespace WnioskiOnline.Controllers
             //    return View();
         }
 
-        public ActionResult K1NWnioskodawca()
+        public ActionResult DodajK1N()
         {
             SzczegolyK1NViewModel model = new SzczegolyK1NViewModel();
 
@@ -115,7 +115,7 @@ namespace WnioskiOnline.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public ActionResult K1NWnioskodawca(string ZapiszRobocza, string WyslijDoRec, string Anuluj, SzczegolyK1NViewModel model)
+        public ActionResult DodajK1N(string ZapiszRobocza, string WyslijDoRec, string Anuluj, SzczegolyK1NViewModel model)
         {
             if (Anuluj != null)
                 return RedirectToAction("Index");
@@ -146,9 +146,9 @@ namespace WnioskiOnline.Controllers
             return View(model);
         }
 
-        public ActionResult K3Wnioskodawca()
+        public ActionResult DodajK3()
         {
-            SzczegolyWnioskuViewModel model = new SzczegolyWnioskuViewModel();
+            SzczegolyK3ViewModel model = new SzczegolyK3ViewModel();
 
             model.Dziedziny = new SelectList(db.Dziedziny, "IdDziedziny", "NazwaDziedziny");
             model.Organizacje = new SelectList(db.Organizacje, "IdOrganizacji", "NazwaOrganizacji");
@@ -165,7 +165,7 @@ namespace WnioskiOnline.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public ActionResult K3Wnioskodawca(string ZapiszRobocza, string WyslijDoRec, string Anuluj, SzczegolyWnioskuViewModel model)
+        public ActionResult DodajK3(string ZapiszRobocza, string WyslijDoRec, string Anuluj, SzczegolyK3ViewModel model)
         {
             if (Anuluj != null)
                 return RedirectToAction("Index");

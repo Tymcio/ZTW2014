@@ -317,7 +317,7 @@
     <Compile Include="Models\ZrodloDofinansowania.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\SzczegolyK1NViewModel.cs" />
-    <Compile Include="ViewModels\SzczegolyWnioskuViewModel.cs" />
+    <Compile Include="ViewModels\SzczegolyK3ViewModel.cs" />
     <Compile Include="ViewModels\WnioskiViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -451,8 +451,8 @@
     <Content Include="Views\Wnioski\Create.cshtml" />
     <Content Include="Views\Wnioski\Edit.cshtml" />
     <Content Include="Views\Wnioski\Delete.cshtml" />
-    <Content Include="Views\Wnioski\K3Wnioskodawca.cshtml" />
-    <Content Include="Views\Wnioski\K1NWnioskodawca.cshtml" />
+    <Content Include="Views\Wnioski\DodajK3.cshtml" />
+    <Content Include="Views\Wnioski\DodajK1N.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

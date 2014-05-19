@@ -9,7 +9,7 @@ using WnioskiOnline.Models;
 
 namespace WnioskiOnline.ViewModels
 {
-    public class SzczegolyWnioskuViewModel
+    public class SzczegolyK3ViewModel
     {
         public SelectList Dziedziny { get; set; }
         public SelectList Organizacje { get; set; }

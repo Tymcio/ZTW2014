@@ -28,21 +28,25 @@ namespace WnioskiOnline.Models
 
         public virtual Organizacja Organizacja { get; set; }
 
+        [Display(Name = "Cel projektu: ")]
         public string CelProjektu { get; set; }
 
+        [Display(Name = "Informacja o posiadaniu warunków niezbędnych do realizacji projektu (finansowych, lokalowych, technicznych, kadrowych): ")]
         public string InfoOWarunkach { get; set; }
 
+        [Display(Name = "Aktualny stan zaawansowania projektu: ")]
         public string StanZaawans { get; set; }
 
         [Display(Name = "Charakterystyka stanu wiedzy i osiągnięć technicznych w dziedzinie projektu: ")]
         public string StanWiedzy { get; set; }
 
+        [Display(Name = "Skład zespołu realizatorów projektu (indywidualnie wymienić max. 10 osób): ")]
         public string SkladZespolu { get; set; }
 
-        [Display(Name = "Współpraca z innymi kołami naukowymi lub instytucjami")]
+        [Display(Name = "Współpraca z innymi kołami naukowymi lub instytucjami: ")]
         public string Wspolpraca { get; set; }
 
-        [Display(Name = "Tytuł i numer umowy/zlecenia oraz nazwisko kierownika zespołu badawczego Politechniki Wrocławskiej, z którym związany jest projekt")]
+        [Display(Name = "Tytuł i numer umowy/zlecenia oraz nazwisko kierownika zespołu badawczego Politechniki Wrocławskiej, z którym związany jest projekt: ")]
         public string TytulNumerUmowy { get; set; }
 
         [Display(Name = "Przewidywany rezultat materialny realizacji projektu: ")]
@@ -54,22 +58,22 @@ namespace WnioskiOnline.Models
         [Display(Name = "Przewidywany rezultat spoleczny realizacji projektu: ")]
         public string RezultatSpoleczny { get; set; }
 
-        [Display(Name = "Elementy nowości w sformułowaniu celu projektu")]
+        [Display(Name = "Elementy nowości w sformułowaniu celu projektu: ")]
         public string NowosciCelu { get; set; }
 
-        [Display(Name = "Elementy nowości rozwiązań przewidywanych w projekcie")]
+        [Display(Name = "Elementy nowości rozwiązań przewidywanych w projekcie: ")]
         public string NowosciRozwiazan { get; set; }
 
-        [Display(Name = "Elementy nowości w sposobie realizacji projektu")]
+        [Display(Name = "Elementy nowości w sposobie realizacji projektu: ")]
         public string NowosciRealizacji { get; set; }
 
-        [Display(Name = "Elementy nowości w doborze obiektu prac")]
+        [Display(Name = "Elementy nowości w doborze obiektu prac: ")]
         public string NowosciDoboru { get; set; }
 
-        [Display(Name = "Planowane upowszechnienie uzyskanych wyników")]
+        [Display(Name = "Planowane upowszechnienie uzyskanych wyników: ")]
         public string Upowszechnienie { get; set; }
 
-        [Display(Name = "Opis strategii pozyskiwania sposorów")]
+        [Display(Name = "Opis strategii pozyskiwania sposorów: ")]
         public string PozyskiwanieSponsorow { get; set; }
     }
 }
