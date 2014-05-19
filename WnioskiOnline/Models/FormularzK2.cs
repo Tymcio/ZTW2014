@@ -17,27 +17,48 @@ namespace WnioskiOnline.Models
 
         public virtual Wniosek Wniosek { get; set; }
 
-        public string TytulProjektu { get; set; }
+        public int IdOrganizacji { get; set; }
 
-
+        [ForeignKey("IdOrganizacji")]
         public virtual Organizacja Organizacja { get; set; }
 
+        public int? IdPierwszegoKoord { get; set; }
 
+        [Display(Name = "Koordynator projektu: ")]
+        [ForeignKey("IdPierwszegoKoord")]
         public virtual Koordynator PierwszyKoord { get; set; }
 
+        public int? IdDrugiegoKoord { get; set; }
 
+        [Display(Name = "Drugi koordynator projektu: ")]
+        [ForeignKey("IdDrugiegoKoord")]
         public virtual Koordynator DrugiKoord { get; set; }
 
+        [Display(Name = "Kwota wnioskowana: ")]
         public double KwotaWnioskowana { get; set; }
 
+        [Display(Name = "Dziedzina zadania")]
+        public int IdDziedziny { get; set; }
+
+      
+        [ForeignKey("IdDziedziny")]
         public virtual Dziedzina Dziedzina { get; set; }
 
         // koszty
 
-        // harmonogram
+        // harmonogram 
+        
+        [Display(Name = "Zasięg zadania: ")]
+        public int IdZasiegu { get; set; }
 
+       
+        [ForeignKey("IdZasiegu")]
         public virtual Zasieg Zasieg { get; set; }
 
+        [Display(Name = "Charakter zadania: ")]
+        public int IdCharakteru { get; set; }
+
+        [ForeignKey("IdCharakteru")]
         public virtual Charakter Charakter { get; set; }
 
         [Display(Name = "Uzasadnienie celowości realizowanego zadania, przewidywane efekty merytoryczne")]

@@ -296,6 +296,10 @@
     <Compile Include="Migrations\201405192131496_dziedzina1.Designer.cs">
       <DependentUpon>201405192131496_dziedzina1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201405192247389_formK2.cs" />
+    <Compile Include="Migrations\201405192247389_formK2.Designer.cs">
+      <DependentUpon>201405192247389_formK2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Charakter.cs" />
@@ -317,6 +321,7 @@
     <Compile Include="Models\ZrodloDofinansowania.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\SzczegolyK1NViewModel.cs" />
+    <Compile Include="ViewModels\SzczegolyK2ViewModel.cs" />
     <Compile Include="ViewModels\SzczegolyK3ViewModel.cs" />
     <Compile Include="ViewModels\WnioskiViewModel.cs" />
   </ItemGroup>
@@ -453,6 +458,7 @@
     <Content Include="Views\Wnioski\Delete.cshtml" />
     <Content Include="Views\Wnioski\DodajK3.cshtml" />
     <Content Include="Views\Wnioski\DodajK1N.cshtml" />
+    <Content Include="Views\Wnioski\DodajK2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -538,6 +544,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201405192131496_dziedzina1.resx">
       <DependentUpon>201405192131496_dziedzina1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405192247389_formK2.resx">
+      <DependentUpon>201405192247389_formK2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

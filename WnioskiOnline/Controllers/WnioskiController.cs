@@ -146,6 +146,59 @@ namespace WnioskiOnline.Controllers
             return View(model);
         }
 
+        public ActionResult DodajK2()
+        {
+            SzczegolyK2ViewModel model = new SzczegolyK2ViewModel();
+
+            model.Dziedziny = new SelectList(db.Dziedziny, "IdDziedziny", "NazwaDziedziny");
+            model.Organizacje = new SelectList(db.Organizacje, "IdOrganizacji", "NazwaOrganizacji");
+            model.Zasiegi = new SelectList(db.Zasiegi, "IdZasiegu", "NazwaZasiegu");
+            model.Charaktery = new SelectList(db.Charaktery, "IdCharakteru", "NazwaCharakteru");
+            model.RodzajeWydatku = new SelectList(db.RodzajeWydatku, "IdRodzaju", "NazwaRodzaju");
+
+            return View(model);
+        }
+
+        //
+        // POST: /Wnioski/Create
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+
+        public ActionResult DodajK2(string ZapiszRobocza, string WyslijDoRec, string Anuluj, SzczegolyK2ViewModel model)
+        {
+            if (Anuluj != null)
+                return RedirectToAction("Index");
+            else
+            {
+                model.Formularz.Wniosek.DataZlozenia = DateTime.Now;
+                model.Formularz.Wniosek.IdKonkursu = db.Konkursy.ToList().Find(k => k.NazwaKonkursu == "K2").IdKonkursu;
+                //    model.Wniosek.IdWnioskodawcy = WebSecurity.GetUserId(User.Identity.Name);
+                model.Formularz.Wniosek.IdWnioskodawcy = 1;
+
+                if (ZapiszRobocza != null)
+                    model.Formularz.Wniosek.IdStatusu = db.Statusy.ToList().First().IdStatusu;
+                else
+                    if (WyslijDoRec != null)
+                        model.Formularz.Wniosek.IdStatusu = db.Statusy.ToList().ElementAt(1).IdStatusu;
+            }
+
+            if (ModelState.IsValid)
+            {
+                db.FormularzeK2.Add(model.Formularz);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            model.Dziedziny = new SelectList(db.Dziedziny, "IdDziedziny", "NazwaDziedziny");
+            model.Organizacje = new SelectList(db.Organizacje, "IdOrganizacji", "NazwaOrganizacji");
+            model.Zasiegi = new SelectList(db.Zasiegi, "IdZasiegu", "NazwaZasiegu");
+            model.Charaktery = new SelectList(db.Charaktery, "IdCharakteru", "NazwaCharakteru");
+            model.RodzajeWydatku = new SelectList(db.RodzajeWydatku, "IdRodzaju", "NazwaRodzaju");
+
+            return View(model);
+        }
+
         public ActionResult DodajK3()
         {
             SzczegolyK3ViewModel model = new SzczegolyK3ViewModel();
