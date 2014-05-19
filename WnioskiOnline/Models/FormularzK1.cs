@@ -17,6 +17,15 @@ namespace WnioskiOnline.Models
 
         public virtual Wniosek Wniosek { get; set; }
 
+        [ForeignKey("Dziedzina")]
+        public int IdDziedziny { get; set; }
+
+        [Display(Name = "Dziedzina projektu: ")]
+        public virtual Dziedzina Dziedzina { get; set; }
+
+        [ForeignKey("Organizacja")]
+        public int IdOrganizacji { get; set; }
+
         public virtual Organizacja Organizacja { get; set; }
 
         public string CelProjektu { get; set; }
@@ -25,7 +34,7 @@ namespace WnioskiOnline.Models
 
         public string StanZaawans { get; set; }
 
-        [Display(Name= "Charakterystyka stanu wiedzy i osiągnięć technicznych w dziedzinie projektu: ")]
+        [Display(Name = "Charakterystyka stanu wiedzy i osiągnięć technicznych w dziedzinie projektu: ")]
         public string StanWiedzy { get; set; }
 
         public string SkladZespolu { get; set; }

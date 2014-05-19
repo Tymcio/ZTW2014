@@ -102,6 +102,50 @@ namespace WnioskiOnline.Controllers
             //    return View();
         }
 
+        public ActionResult K1NWnioskodawca()
+        {
+            SzczegolyK1NViewModel model = new SzczegolyK1NViewModel();
+
+            model.Dziedziny = new SelectList(db.Dziedziny, "IdDziedziny", "NazwaDziedziny");
+            model.Organizacje = new SelectList(db.Organizacje, "IdOrganizacji", "NazwaOrganizacji");
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+
+        public ActionResult K1NWnioskodawca(string ZapiszRobocza, string WyslijDoRec, string Anuluj, SzczegolyK1NViewModel model)
+        {
+            if (Anuluj != null)
+                return RedirectToAction("Index");
+            else
+            {
+                model.Formularz.Wniosek.DataZlozenia = DateTime.Now;
+                model.Formularz.Wniosek.IdKonkursu = db.Konkursy.ToList().Find(k => k.NazwaKonkursu == "K1N").IdKonkursu;
+                //    model.Wniosek.IdWnioskodawcy = WebSecurity.GetUserId(User.Identity.Name);
+                model.Formularz.Wniosek.IdWnioskodawcy = 1;
+
+                if (ZapiszRobocza != null)
+                    model.Formularz.Wniosek.IdStatusu = db.Statusy.ToList().First().IdStatusu;
+                else
+                    if (WyslijDoRec != null)
+                        model.Formularz.Wniosek.IdStatusu = db.Statusy.ToList().ElementAt(1).IdStatusu;
+            }
+
+            if (ModelState.IsValid)
+            {
+                db.FormularzeK1N.Add(model.Formularz);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            model.Dziedziny = new SelectList(db.Dziedziny, "IdDziedziny", "NazwaDziedziny");
+            model.Organizacje = new SelectList(db.Organizacje, "IdOrganizacji", "NazwaOrganizacji");
+
+            return View(model);
+        }
+
         public ActionResult K3Wnioskodawca()
         {
             SzczegolyWnioskuViewModel model = new SzczegolyWnioskuViewModel();

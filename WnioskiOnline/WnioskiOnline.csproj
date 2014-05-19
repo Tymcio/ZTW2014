@@ -272,6 +272,30 @@
     <Compile Include="Migrations\201405181117496_null.Designer.cs">
       <DependentUpon>201405181117496_null.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201405192125520_K1N.cs" />
+    <Compile Include="Migrations\201405192125520_K1N.Designer.cs">
+      <DependentUpon>201405192125520_K1N.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405192127579_nowa.cs" />
+    <Compile Include="Migrations\201405192127579_nowa.Designer.cs">
+      <DependentUpon>201405192127579_nowa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405192128355_org.cs" />
+    <Compile Include="Migrations\201405192128355_org.Designer.cs">
+      <DependentUpon>201405192128355_org.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405192129371_dziedzina.cs" />
+    <Compile Include="Migrations\201405192129371_dziedzina.Designer.cs">
+      <DependentUpon>201405192129371_dziedzina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405192131057_n.cs" />
+    <Compile Include="Migrations\201405192131057_n.Designer.cs">
+      <DependentUpon>201405192131057_n.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405192131496_dziedzina1.cs" />
+    <Compile Include="Migrations\201405192131496_dziedzina1.Designer.cs">
+      <DependentUpon>201405192131496_dziedzina1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Charakter.cs" />
@@ -292,6 +316,7 @@
     <Compile Include="Models\Zasieg.cs" />
     <Compile Include="Models\ZrodloDofinansowania.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\SzczegolyK1NViewModel.cs" />
     <Compile Include="ViewModels\SzczegolyWnioskuViewModel.cs" />
     <Compile Include="ViewModels\WnioskiViewModel.cs" />
   </ItemGroup>
@@ -427,6 +452,7 @@
     <Content Include="Views\Wnioski\Edit.cshtml" />
     <Content Include="Views\Wnioski\Delete.cshtml" />
     <Content Include="Views\Wnioski\K3Wnioskodawca.cshtml" />
+    <Content Include="Views\Wnioski\K1NWnioskodawca.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -494,6 +520,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201405181117496_null.resx">
       <DependentUpon>201405181117496_null.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405192125520_K1N.resx">
+      <DependentUpon>201405192125520_K1N.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405192127579_nowa.resx">
+      <DependentUpon>201405192127579_nowa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405192128355_org.resx">
+      <DependentUpon>201405192128355_org.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405192129371_dziedzina.resx">
+      <DependentUpon>201405192129371_dziedzina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405192131057_n.resx">
+      <DependentUpon>201405192131057_n.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405192131496_dziedzina1.resx">
+      <DependentUpon>201405192131496_dziedzina1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
