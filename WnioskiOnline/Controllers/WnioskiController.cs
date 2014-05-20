@@ -386,6 +386,38 @@ namespace WnioskiOnline.Controllers
             }
             return RedirectToAction("Invalid");
         }
+
+        public ActionResult Szczegoly(string konkurs, int id = 0)
+        {
+
+            Wniosek wniosek = db.Wnioski.Find(id);
+            if (wniosek != null)
+            {
+                if (konkurs == "K1N")
+                {
+                    FormularzK1N model = db.FormularzeK1N.ToList().Find(f => f.IdWniosku == wniosek.IdWniosku);
+
+                    return View("SzczegolyK1N", model);
+                }
+                else if (konkurs == "K2")
+                {
+                    FormularzK2 model = db.FormularzeK2.ToList().Find(f => f.IdWniosku == wniosek.IdWniosku);
+
+                    return View("SzczegolyK2", model);
+                }
+                else if (konkurs == "K3")
+                {
+                    FormularzK3 model = db.FormularzeK3.ToList().Find(f => f.IdWniosku == wniosek.IdWniosku);
+
+                    return View("SzczegolyK3", model);
+                }
+            }
+            else
+            {
+                return HttpNotFound();
+            }
+            return View(wniosek);
+        }
         //
         // POST: /Wnioski/Edit/5
 
