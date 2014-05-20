@@ -257,16 +257,135 @@ namespace WnioskiOnline.Controllers
         //
         // GET: /Wnioski/Edit/5
 
-        public ActionResult Edit(int id = 0)
+        public ActionResult Edytuj(string konkurs, int id = 0)
         {
+        
             Wniosek wniosek = db.Wnioski.Find(id);
-            if (wniosek == null)
+            if (wniosek !=null)
+            {
+                if (konkurs == "K1N")
+                {
+                    SzczegolyK1NViewModel model = new SzczegolyK1NViewModel();
+                    model.Formularz = db.FormularzeK1N.ToList().Find(f => f.IdWniosku == wniosek.IdWniosku);
+                    model.Dziedziny = new SelectList(db.Dziedziny, "IdDziedziny", "NazwaDziedziny", model.Formularz.IdDziedziny);
+                    model.Organizacje = new SelectList(db.Organizacje, "IdOrganizacji", "NazwaOrganizacji", model.Formularz.IdOrganizacji);
+
+                    return View("EdytujK1N", model);
+                }
+                else if (konkurs == "K2")
+                {
+                    SzczegolyK2ViewModel model = new SzczegolyK2ViewModel();
+                    model.Formularz = db.FormularzeK2.ToList().Find(f => f.IdWniosku == wniosek.IdWniosku);
+                    model.Dziedziny = new SelectList(db.Dziedziny, "IdDziedziny", "NazwaDziedziny", model.Formularz.IdDziedziny);
+                    model.Organizacje = new SelectList(db.Organizacje, "IdOrganizacji", "NazwaOrganizacji", model.Formularz.IdOrganizacji);
+                    model.Zasiegi = new SelectList(db.Zasiegi, "IdZasiegu", "NazwaZasiegu", model.Formularz.IdZasiegu);
+                    model.Charaktery = new SelectList(db.Charaktery, "IdCharakteru", "NazwaCharakteru", model.Formularz.IdCharakteru);
+                    model.RodzajeWydatku = new SelectList(db.RodzajeWydatku, "IdRodzaju", "NazwaRodzaju");
+
+                    return View("EdytujK2", model);
+                }
+                else if (konkurs == "K3")
+                {
+                    SzczegolyK3ViewModel model = new SzczegolyK3ViewModel();
+                    model.Formularz = db.FormularzeK3.ToList().Find(f => f.IdWniosku == wniosek.IdWniosku);
+                    model.Dziedziny = new SelectList(db.Dziedziny, "IdDziedziny", "NazwaDziedziny", model.Formularz.IdDziedziny);
+                    model.Organizacje = new SelectList(db.Organizacje, "IdOrganizacji", "NazwaOrganizacji", model.Formularz.IdOrganizacji);
+                    model.Zasiegi = new SelectList(db.Zasiegi, "IdZasiegu", "NazwaZasiegu", model.Formularz.IdZasiegu);
+                    model.Charaktery = new SelectList(db.Charaktery, "IdCharakteru", "NazwaCharakteru", model.Formularz.IdCharakteru);
+                    model.RodzajeWydatku = new SelectList(db.RodzajeWydatku, "IdRodzaju", "NazwaRodzaju");
+
+                    return View("EdytujK3", model);
+                }
+            }
+            else
             {
                 return HttpNotFound();
             }
             return View(wniosek);
         }
 
+        [HttpPost]
+        public ActionResult EdytujK1N(string ZapiszRobocza, string WyslijDoRec, string Anuluj, SzczegolyK1NViewModel model)
+        {
+            if (Anuluj != null)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                model.Formularz.Wniosek.DataZlozenia = DateTime.Now;
+
+                if (ZapiszRobocza != null)
+                    model.Formularz.Wniosek.IdStatusu = db.Statusy.ToList().First().IdStatusu;
+                else
+                    if (WyslijDoRec != null)
+                        model.Formularz.Wniosek.IdStatusu = db.Statusy.ToList().ElementAt(1).IdStatusu;
+            }
+            if (ModelState.IsValid)
+            {
+                db.Entry(model.Formularz).State = System.Data.EntityState.Modified;
+                db.Entry(model.Formularz.Wniosek).State = System.Data.EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            System.Diagnostics.Debug.WriteLine("Not valid");
+            return RedirectToAction("Invalid");
+        }
+
+        [HttpPost]
+        public ActionResult EdytujK2(string ZapiszRobocza, string WyslijDoRec, string Anuluj, SzczegolyK2ViewModel model)
+        {
+            if (Anuluj != null)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                model.Formularz.Wniosek.DataZlozenia = DateTime.Now;
+
+                if (ZapiszRobocza != null)
+                    model.Formularz.Wniosek.IdStatusu = db.Statusy.ToList().First().IdStatusu;
+                else
+                    if (WyslijDoRec != null)
+                        model.Formularz.Wniosek.IdStatusu = db.Statusy.ToList().ElementAt(1).IdStatusu;
+            }
+            if (ModelState.IsValid)
+            {
+                db.Entry(model.Formularz).State = System.Data.EntityState.Modified;
+                db.Entry(model.Formularz.Wniosek).State = System.Data.EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            System.Diagnostics.Debug.WriteLine("Not valid");
+            return RedirectToAction("Invalid");
+        }
+
+        [HttpPost]
+        public ActionResult EdytujK3(string ZapiszRobocza, string WyslijDoRec, string Anuluj, SzczegolyK3ViewModel model)
+        {
+            if (Anuluj != null)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                model.Formularz.Wniosek.DataZlozenia = DateTime.Now;
+
+                if (ZapiszRobocza != null)
+                    model.Formularz.Wniosek.IdStatusu = db.Statusy.ToList().First().IdStatusu;
+                else
+                    if (WyslijDoRec != null)
+                        model.Formularz.Wniosek.IdStatusu = db.Statusy.ToList().ElementAt(1).IdStatusu;
+            }
+            if (ModelState.IsValid)
+            {
+                db.Entry(model.Formularz).State = System.Data.EntityState.Modified;
+                db.Entry(model.Formularz.Wniosek).State = System.Data.EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return RedirectToAction("Invalid");
+        }
         //
         // POST: /Wnioski/Edit/5
 

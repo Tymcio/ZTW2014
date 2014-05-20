@@ -75,7 +75,16 @@ else
                 @Html.DisplayFor(modelItem => item.Status.NazwaStatusu)
             </td>
             <td>
-                @Html.ActionLink("Szczegóły", "Szczegoly", new { id=item.IdWniosku }) |
+                @{ if (item.Status.NazwaStatusu == "Do zatwierdzenia")
+                   {
+                    @Html.ActionLink("Edytuj", "Edytuj", new { id=item.IdWniosku, konkurs = item.Konkurs.NazwaKonkursu }) 
+                    }
+                    else
+                    {
+                       @Html.ActionLink("Szczegóły", "SzczegolyK1N", new { id=item.IdWniosku, konkurs = item.Konkurs.NazwaKonkursu }) 
+                    }
+                }
+
             </td>
         </tr>
     }

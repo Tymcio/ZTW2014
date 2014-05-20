@@ -300,6 +300,14 @@
     <Compile Include="Migrations\201405192247389_formK2.Designer.cs">
       <DependentUpon>201405192247389_formK2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201405192340144_Idwniosku.cs" />
+    <Compile Include="Migrations\201405192340144_Idwniosku.Designer.cs">
+      <DependentUpon>201405192340144_Idwniosku.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405192344218_Idwniosku1.cs" />
+    <Compile Include="Migrations\201405192344218_Idwniosku1.Designer.cs">
+      <DependentUpon>201405192344218_Idwniosku1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Charakter.cs" />
@@ -459,6 +467,9 @@
     <Content Include="Views\Wnioski\DodajK3.cshtml" />
     <Content Include="Views\Wnioski\DodajK1N.cshtml" />
     <Content Include="Views\Wnioski\DodajK2.cshtml" />
+    <Content Include="Views\Wnioski\EdytujK1N.cshtml" />
+    <Content Include="Views\Wnioski\EdytujK2.cshtml" />
+    <Content Include="Views\Wnioski\EdytujK3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -547,6 +558,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201405192247389_formK2.resx">
       <DependentUpon>201405192247389_formK2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405192340144_Idwniosku.resx">
+      <DependentUpon>201405192340144_Idwniosku.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405192344218_Idwniosku1.resx">
+      <DependentUpon>201405192344218_Idwniosku1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
