@@ -458,7 +458,6 @@ textarea {
         width: auto;
     }
 
-    input[type="submit"],
     input[type="button"],
     button {
         background-color: #d3dce0;
@@ -619,6 +618,23 @@ table.recPrzeglad, td, tr {
 td.lp {
     border:1px solid;
     width:auto;
+}
+
+/************
+    Wnioski
+*************/
+
+.dropdown-wnioski {
+    height: 30px;
+    border-radius: 3px;
+    border: 1px solid #A2A2A2;
+    font-size:1.2em;
+    color:#333;
+}
+
+.przycisk-wn {
+    height: 35px;
+    border-radius:5px;
 }
 
 /********************

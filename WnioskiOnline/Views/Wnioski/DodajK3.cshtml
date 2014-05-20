@@ -17,12 +17,12 @@
         <ol>
             <li>
                 @Html.Label("Dziedzina: ")
-                @Html.DropDownListFor(m => m.Formularz.IdDziedziny, Model.Dziedziny)
+                @Html.DropDownListFor(m => m.Formularz.IdDziedziny, Model.Dziedziny, new { @class = "dropdown-wnioski" })
             </li>
 
             <li>
                 @Html.Label("Organizacja wnioskująca: ")
-                @Html.DropDownListFor(m => m.Formularz.IdOrganizacji, Model.Organizacje)
+                @Html.DropDownListFor(m => m.Formularz.IdOrganizacji, Model.Organizacje, new { @class = "dropdown-wnioski" })
             </li>
 
             <li>
@@ -162,11 +162,10 @@
     </table>
     </section>
     <input type="button" name="dodajkoszt" value=" + Dodaj wiersz + "/>*@
-    <br /><br />
     <div style="display:inline;">
-        <input type="submit" name="ZapiszRobocza" value="Zapisz wersję roboczą" />
-        <input type="submit" name="WyslijDoRec" value="Wyślij do recenzji"/>
-        <input type="submit" name="Anuluj" value="Anuluj"/>
+        <input class="przycisk-wn" type="submit" name="ZapiszRobocza" value="Zapisz wersję roboczą" />
+        <input class="przycisk-wn" type="submit" name="WyslijDoRec" value="Wyślij do recenzji"/>
+        <input class="przycisk-wn" type="submit" name="Anuluj" value="Anuluj"/>
     </div>
 </section>    
 </fieldset>
