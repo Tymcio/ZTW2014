@@ -29,6 +29,12 @@ namespace WnioskiOnline.Models
         [Display(Name = "Dziedzina")]
         public virtual Dziedzina Dziedzina { get; set; }
 
+        [ForeignKey("Decyzja")]
+        public int? IdDecyzji { get; set; }
+
+        [Display(Name = "Decyzja")]
+        public virtual Decyzja Decyzja { get; set; }
+
         public int IdWnioskodawcy { get; set; }
 
         [ForeignKey("IdWnioskodawcy")]
@@ -58,13 +64,5 @@ namespace WnioskiOnline.Models
         public DateTime? DataOceny { get; set; }
         public DateTime? DataRozpatrzenia { get; set; }
 
-    }
-
-    public class WnioskiWnioskodawcaModel
-    {
-        public string Konkurs;
-        public string TytulWniosku;
-        public DateTime DataZlozenia;
-        public string Status;
     }
 }

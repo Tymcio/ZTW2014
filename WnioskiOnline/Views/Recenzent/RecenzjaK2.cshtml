@@ -224,12 +224,7 @@
             </div>
 
      <br/>
-            <div class="display-label">
-                 @Html.DisplayNameFor(model => model.Wniosek.Ocena)
-            </div>
-            <div class="display-field">
-                @Html.DisplayFor(model => model.Wniosek.Ocena)
-            </div>
+
 @*<section class="wnioski">
         <table>
         <tr>
@@ -270,34 +265,15 @@
              <ol>
             <li>
                 @Html.LabelFor(m => m.Wniosek.Ocena)
-                @Html.EditorFor(m => m.Wniosek.Ocena)
-            </li>
-            <li>
-                @Html.HiddenFor(model => model.Wniosek.IdKonkursu)
-            </li>
-            <li>
-                @Html.HiddenFor(model => model.Wniosek.IdWnioskodawcy)
-            </li>
-             <li>
-                @Html.HiddenFor(model => model.IdFormularza)
+                @Html.RadioButtonFor(m => m.Wniosek.Ocena, 0) 0
+                @Html.RadioButtonFor(m => m.Wniosek.Ocena, 1) 1
+                @Html.RadioButtonFor(m => m.Wniosek.Ocena, 2) 2
             </li>
              <li>
                 @Html.HiddenFor(model => model.IdWniosku)
             </li>
              <li>
                 @Html.HiddenFor(model => model.Wniosek.IdWniosku)
-            </li>
-            <li>
-                @Html.HiddenFor(model => model.IdPierwszegoKoord)
-            </li>
-            <li>
-                @Html.HiddenFor(model => model.PierwszyKoord.IdKoord)
-            </li>
-            <li>
-                @Html.HiddenFor(model => model.IdDrugiegoKoord)
-            </li>
-            <li>
-                @Html.HiddenFor(model => model.DrugiKoord.IdKoord)
             </li>
             </ol>
     

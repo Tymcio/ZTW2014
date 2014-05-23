@@ -85,14 +85,15 @@ namespace WnioskiOnline.Controllers
             }
             else
             {
-                var dbPost = db.Wnioski.FirstOrDefault(p => p.IdWniosku == model.Wniosek.IdWniosku);
-                if (dbPost == null)
+                var dbWniosek = db.Wnioski.FirstOrDefault(p => p.IdWniosku == model.Wniosek.IdWniosku);
+                if (dbWniosek == null)
                 {
                     return HttpNotFound();
                 }
 
-                dbPost.Ocena = model.Wniosek.Ocena;
-                dbPost.IdStatusu = db.Statusy.ToList().ElementAt(2).IdStatusu;
+                dbWniosek.Ocena = model.Wniosek.Ocena;
+                dbWniosek.DataOceny = DateTime.Now;
+                dbWniosek.IdStatusu = db.Statusy.ToList().ElementAt(2).IdStatusu;
 
             }
 
@@ -101,10 +102,7 @@ namespace WnioskiOnline.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            else
-            {
 
-            }
             System.Diagnostics.Debug.WriteLine("Not valid");
 
             return View(model);
@@ -119,17 +117,26 @@ namespace WnioskiOnline.Controllers
             }
             else
             {
-                model.Wniosek.DataOceny = DateTime.Now;
-                model.Wniosek.IdStatusu = db.Statusy.ToList().ElementAt(2).IdStatusu;
+                var dbWniosek = db.Wnioski.FirstOrDefault(p => p.IdWniosku == model.Wniosek.IdWniosku);
+                if (dbWniosek == null)
+                {
+                    return HttpNotFound();
+                }
+
+                dbWniosek.Ocena = model.Wniosek.Ocena;
+                dbWniosek.DataOceny = DateTime.Now;
+                dbWniosek.IdStatusu = db.Statusy.ToList().ElementAt(2).IdStatusu;
+
             }
+
             if (ModelState.IsValid)
             {
-                db.Entry(model).State = System.Data.EntityState.Modified;
-                db.Entry(model.Wniosek).State = System.Data.EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
             System.Diagnostics.Debug.WriteLine("Not valid");
+
             return View(model);
         }
 
@@ -142,16 +149,26 @@ namespace WnioskiOnline.Controllers
             }
             else
             {
-                model.Wniosek.DataOceny = DateTime.Now;
-                model.Wniosek.IdStatusu = db.Statusy.ToList().ElementAt(2).IdStatusu;
+                var dbWniosek = db.Wnioski.FirstOrDefault(p => p.IdWniosku == model.Wniosek.IdWniosku);
+                if (dbWniosek == null)
+                {
+                    return HttpNotFound();
+                }
+
+                dbWniosek.Ocena = model.Wniosek.Ocena;
+                dbWniosek.DataOceny = DateTime.Now;
+                dbWniosek.IdStatusu = db.Statusy.ToList().ElementAt(2).IdStatusu;
+
             }
+
             if (ModelState.IsValid)
             {
-                db.Entry(model).State = System.Data.EntityState.Modified;
-                db.Entry(model.Wniosek).State = System.Data.EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
+            System.Diagnostics.Debug.WriteLine("Not valid");
+
             return View(model);
         }
 

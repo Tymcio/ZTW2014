@@ -1,0 +1,188 @@
+﻿@model WnioskiOnline.Models.FormularzK1N
+
+
+@{
+    ViewBag.Title = "Szczegóły wniosku K1N";
+}
+
+<h3>WNIOSEK O DOFINANSOWANIE PROJEKTU NAUKOWO-BADAWCZEGO, INŻYNIERYJNO-KONSTRUKTORSKIEGO ZE ŚRODKÓW PRZEZNACZONYCH PRZEZ UCZELNI NA DZIAŁALNOŚĆ STUDENCKĄ I DOKTORANCKĄ</h3>
+
+
+<section class="szczegolywniosku">
+ <fieldset>
+     <legend>Wniosek K1N</legend>
+      <br/>
+   <div>
+    
+   </div>
+
+
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Wniosek.Dziedzina)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Wniosek.Dziedzina.NazwaDziedziny)
+            </div>
+            <br/>
+             <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Organizacja)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Organizacja.NazwaOrganizacji)
+            </div>
+             <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Wniosek.TytulWniosku)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Wniosek.TytulWniosku)
+            </div>
+            <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.CelProjektu)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.CelProjektu)
+            </div>
+     <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.InfoOWarunkach)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.InfoOWarunkach)
+            </div>
+     <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.StanZaawans)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.StanZaawans)
+            </div>
+<br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.StanWiedzy)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.StanWiedzy)
+            </div>
+     <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.SkladZespolu)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.SkladZespolu)
+            </div>
+     <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Wspolpraca)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Wspolpraca)
+            </div>
+     <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.TytulNumerUmowy)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.TytulNumerUmowy)
+            </div>
+     <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.RezultatMaterialny)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.RezultatMaterialny)
+            </div>
+     <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.RezultatPoznawczy)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.RezultatPoznawczy)
+            </div>
+     <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.RezultatSpoleczny)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.RezultatSpoleczny)
+            </div>
+     <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.NowosciCelu)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.NowosciCelu)
+            </div>
+     <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.NowosciRozwiazan)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.NowosciRozwiazan)
+            </div>
+     <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.NowosciRealizacji)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.NowosciRealizacji)
+            </div>
+     <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.NowosciDoboru)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.NowosciDoboru)
+            </div>
+     <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Upowszechnienie)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Upowszechnienie)
+            </div>
+     <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.PozyskiwanieSponsorow)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.PozyskiwanieSponsorow)
+            </div>
+
+     <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Wniosek.Ocena)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Wniosek.Ocena)
+            </div>
+
+     <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Wniosek.DataOceny)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Wniosek.DataOceny)
+            </div>
+     <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Wniosek.Decyzja)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Wniosek.Decyzja.NazwaDecyzji)
+            </div>
+     <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Wniosek.DataRozpatrzenia)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Wniosek.DataRozpatrzenia)
+            </div>
+</fieldset>
+
+</section>   
+
+
+
+             

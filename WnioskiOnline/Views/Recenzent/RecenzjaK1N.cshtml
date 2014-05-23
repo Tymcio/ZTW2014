@@ -153,17 +153,13 @@
             </div>
 
      <br/>
-            <div class="display-label">
-                 @Html.DisplayNameFor(model => model.Wniosek.Ocena)
-            </div>
-            <div class="display-field">
-                @Html.DisplayFor(model => model.Wniosek.Ocena)
-            </div>
 
              <ol>
             <li>
                 @Html.LabelFor(m => m.Wniosek.Ocena)
-                @Html.EditorFor(m => m.Wniosek.Ocena)
+                @Html.RadioButtonFor(m => m.Wniosek.Ocena, 0) 0
+                @Html.RadioButtonFor(m => m.Wniosek.Ocena, 1) 1
+                @Html.RadioButtonFor(m => m.Wniosek.Ocena, 2) 2
             </li>
                  <li>
                     @Html.HiddenFor(model => model.IdWniosku)
