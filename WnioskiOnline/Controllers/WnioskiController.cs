@@ -20,61 +20,68 @@ namespace WnioskiOnline.Controllers
         // GET: /Wnioski/
 
         public ActionResult Index()
-        {
-            List<Status> Statusy = db.Statusy.ToList();
-            List<Konkurs> Konkursy = db.Konkursy.ToList();
-            List<string> NazwyStatusow = new List<string>();
-            List<string> NazwyKonkursow = new List<string>();
-
+        { 
             WnioskiViewModel model = new WnioskiViewModel();
-            foreach (Konkurs k in Konkursy)
-            {
-                NazwyKonkursow.Add(k.NazwaKonkursu);
-            }
-            model.Konkursy = NazwyKonkursow;
+            List<Status> statusy = db.Statusy.ToList();       
+            List<Konkurs> konkursy = db.Konkursy.ToList();
+            Status wszystkieStatusy = new Status();
+            Konkurs wszystkie = new Konkurs();
+            wszystkie.IdKonkursu = 0;
+            wszystkie.NazwaKonkursu = "Wszystkie";
+            konkursy.Insert(0,wszystkie);
+            model.Konkursy = new SelectList(konkursy, "IdKonkursu", "NazwaKonkursu", 0);
+
 
             if (User.IsInRole("Wnioskodawca"))
             {
-                foreach (Status s in Statusy)
-                {
-                    NazwyStatusow.Add(s.NazwaStatusu);
-                }
-                model.Statusy = NazwyStatusow;
+                wszystkieStatusy.IdStatusu = 0;
+                wszystkieStatusy.NazwaStatusu = "Wszystkie";
+                statusy.Insert(0, wszystkieStatusy);
+                model.Statusy = new SelectList(statusy,"IdStatusu","NazwaStatusu");
                 model.Wnioski = db.Wnioski.ToList().FindAll(x => x.Wnioskodawca.UserId == WebSecurity.GetUserId(User.Identity.Name));
                 return View(model);
             }
 
             else if (User.IsInRole("Recenzent"))
             {
-                Statusy.RemoveAt(0);
-                foreach (Status s in Statusy)
-                {
-                    NazwyStatusow.Add(s.NazwaStatusu);
-                }
-                model.Statusy = NazwyStatusow;
+                statusy.RemoveAt(0);
+                wszystkieStatusy.IdStatusu = 0;
+                wszystkieStatusy.NazwaStatusu = "Wszystkie";
+                statusy.Insert(0, wszystkieStatusy);
+                model.Statusy = new SelectList(statusy, "IdStatusu", "NazwaStatusu");
                 model.Wnioski = db.Wnioski.ToList().FindAll(x => x.Recenzent.UserId == WebSecurity.GetUserId(User.Identity.Name));
                 return View(model);
             }
             else if (User.IsInRole("Komisja"))
             {
-                Statusy.RemoveAt(0);
-                Statusy.RemoveAt(1);
-                foreach (Status s in Statusy)
-                {
-                    NazwyStatusow.Add(s.NazwaStatusu);
-                }
-                model.Statusy = NazwyStatusow;
+                statusy.RemoveAt(0);
+                statusy.RemoveAt(1);
+                model.Statusy = new SelectList(statusy, "IdStatusu", "NazwaStatusu");
                 model.Wnioski = db.Wnioski.ToList().FindAll(x => x.CzlonekKomisji.UserId == WebSecurity.GetUserId(User.Identity.Name));
                 return View(model);
             }
             else
-                foreach (Status s in Statusy)
-                {
-                    NazwyStatusow.Add(s.NazwaStatusu);
-                }
-            model.Statusy = NazwyStatusow;
+            wszystkieStatusy.IdStatusu = 0;
+            wszystkieStatusy.NazwaStatusu = "Wszystkie";
+            statusy.Insert(0, wszystkieStatusy);
+            model.Statusy = new SelectList(statusy, "IdStatusu", "NazwaStatusu");
             model.Wnioski = db.Wnioski.ToList();
             return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult FiltrujWnioski(WnioskiViewModel model)
+        {
+            List<Wniosek> wnioski = db.Wnioski.ToList();
+            if (model.Konkurs != 0)
+            {   
+                wnioski = wnioski.FindAll(w => w.IdKonkursu == model.Konkurs);
+            }
+            if (model.Status != 0)
+            {
+                wnioski = wnioski.FindAll(w => w.IdStatusu == model.Status);
+            }
+            return PartialView("ListaWnioskow", wnioski);
         }
 
 

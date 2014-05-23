@@ -22,80 +22,30 @@
 }
 else
 {
-    using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary()
+ using (Ajax.BeginForm("FiltrujWnioski", "Wnioski", new AjaxOptions { 
+    HttpMethod = "Post", UpdateTargetId = "ListaWnioskow" }))
+    {
 
     <fieldset>
         <legend>Wyszukaj</legend>
         <ol>
             <li>
                 @Html.Label("Konkurs: ")
-                @Html.DropDownListFor(m => m.Konkurs, new SelectList(Model.Konkursy, "Konkurs"))
+                @Html.DropDownListFor(m => m.Konkurs, Model.Konkursy)
             </li>
 
             <li>
                 @Html.Label("Status: ")
-                @Html.DropDownListFor(m => m.Status, new SelectList(Model.Statusy, "Status"))
+                @Html.DropDownListFor(m => m.Status, Model.Statusy)
             </li>
 
         </ol>
         <input type="submit" value="Wyszukaj" />
     </fieldset>
     }
-    <table>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Wnioski.First().Konkurs.NazwaKonkursu)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Wnioski.First().TytulWniosku)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Wnioski.First().Dziedzina)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Wnioski.First().DataZlozenia)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model =>model.Wnioski.First().Status.NazwaStatusu)
-            </th>
-            <th></th>
-        </tr>
-
-    @foreach (var item in Model.Wnioski) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Konkurs.NazwaKonkursu)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TytulWniosku)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Dziedzina.NazwaDziedziny)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataZlozenia)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status.NazwaStatusu)
-            </td>
-            <td>
-                @{ if (item.Status.NazwaStatusu == "Do zatwierdzenia")
-                   {
-                    @Html.ActionLink("Edytuj", "Edytuj", new { id=item.IdWniosku, konkurs = item.Konkurs.NazwaKonkursu }) 
-                    }
-                    else
-                    {
-                       @Html.ActionLink("Szczegóły", "Szczegoly", new { id=item.IdWniosku, konkurs = item.Konkurs.NazwaKonkursu }) 
-                    }
-                }
-
-            </td>
-        </tr>
-    }
-
-    </table>
+    <div id="ListaWnioskow">
+     @Html.Partial("ListaWnioskow", Model.Wnioski)
+    </div>
 
 }
 

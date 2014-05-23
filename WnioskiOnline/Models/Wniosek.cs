@@ -53,7 +53,7 @@ namespace WnioskiOnline.Models
         public int IdStatusu { get; set; }
 
         [ForeignKey("IdStatusu")]
-        public Status Status { get; set; }
+        public virtual Status Status { get; set; }
 
         public DateTime? DataOceny { get; set; }
         public DateTime? DataRozpatrzenia { get; set; }

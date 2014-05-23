@@ -488,6 +488,7 @@
     <Content Include="Views\Wnioski\EdytujK3.cshtml" />
     <Content Include="Views\Wnioski\SzczegolyK1N.cshtml" />
     <Content Include="Views\Wnioski\SzczegolyK2.cshtml" />
+    <Content Include="Views\Wnioski\ListaWnioskow.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
