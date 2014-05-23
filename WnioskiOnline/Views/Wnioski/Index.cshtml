@@ -52,6 +52,9 @@ else
                 @Html.DisplayNameFor(model => model.Wnioski.First().TytulWniosku)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Wnioski.First().Dziedzina)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Wnioski.First().DataZlozenia)
             </th>
             <th>
@@ -67,6 +70,9 @@ else
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TytulWniosku)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dziedzina.NazwaDziedziny)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DataZlozenia)

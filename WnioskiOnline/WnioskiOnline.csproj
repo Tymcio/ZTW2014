@@ -308,6 +308,22 @@
     <Compile Include="Migrations\201405192344218_Idwniosku1.Designer.cs">
       <DependentUpon>201405192344218_Idwniosku1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201405231056584_dziedziny.cs" />
+    <Compile Include="Migrations\201405231056584_dziedziny.Designer.cs">
+      <DependentUpon>201405231056584_dziedziny.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405231102271_dziedziny1.cs" />
+    <Compile Include="Migrations\201405231102271_dziedziny1.Designer.cs">
+      <DependentUpon>201405231102271_dziedziny1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405231104217_new.cs" />
+    <Compile Include="Migrations\201405231104217_new.Designer.cs">
+      <DependentUpon>201405231104217_new.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405231105049_dziedziny2.cs" />
+    <Compile Include="Migrations\201405231105049_dziedziny2.Designer.cs">
+      <DependentUpon>201405231105049_dziedziny2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Charakter.cs" />
@@ -566,6 +582,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201405192344218_Idwniosku1.resx">
       <DependentUpon>201405192344218_Idwniosku1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405231056584_dziedziny.resx">
+      <DependentUpon>201405231056584_dziedziny.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405231102271_dziedziny1.resx">
+      <DependentUpon>201405231102271_dziedziny1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405231104217_new.resx">
+      <DependentUpon>201405231104217_new.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405231105049_dziedziny2.resx">
+      <DependentUpon>201405231105049_dziedziny2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

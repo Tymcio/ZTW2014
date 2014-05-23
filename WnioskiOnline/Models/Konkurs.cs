@@ -15,7 +15,7 @@ namespace WnioskiOnline.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int IdKonkursu { get; set; }
 
-        [Display(Name = "Nazwa konkursu ")]
+        [Display(Name = "Konkurs ")]
         public string NazwaKonkursu { get; set; }
         public DateTime DataRozpoczecia { get; set; }
         public DateTime DataZakonczenia { get; set; }

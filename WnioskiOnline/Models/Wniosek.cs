@@ -15,13 +15,19 @@ namespace WnioskiOnline.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int IdWniosku { get; set; }
 
-        [Display(Name = "Tytuł wniosku ")]
+        [Display(Name = "Tytuł")]
         public string TytulWniosku { get; set; }
 
         public int IdKonkursu { get; set; }
 
         [ForeignKey("IdKonkursu")]
         public virtual Konkurs Konkurs { get; set; }
+
+        [ForeignKey("Dziedzina")]
+        public int? IdDziedziny { get; set; }
+
+        [Display(Name = "Dziedzina")]
+        public virtual Dziedzina Dziedzina { get; set; }
 
         public int IdWnioskodawcy { get; set; }
 

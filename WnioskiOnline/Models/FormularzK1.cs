@@ -20,12 +20,6 @@ namespace WnioskiOnline.Models
         [ForeignKey("IdWniosku")]
         public virtual Wniosek Wniosek { get; set; }
 
-        [ForeignKey("Dziedzina")]
-        public int IdDziedziny { get; set; }
-
-        [Display(Name = "Dziedzina projektu: ")]
-        public virtual Dziedzina Dziedzina { get; set; }
-
         [ForeignKey("Organizacja")]
         public int IdOrganizacji { get; set; }
 

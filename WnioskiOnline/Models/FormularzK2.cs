@@ -40,13 +40,6 @@ namespace WnioskiOnline.Models
         [Display(Name = "Kwota wnioskowana: ")]
         public double KwotaWnioskowana { get; set; }
 
-        [Display(Name = "Dziedzina zadania")]
-        public int IdDziedziny { get; set; }
-
-      
-        [ForeignKey("IdDziedziny")]
-        public virtual Dziedzina Dziedzina { get; set; }
-
         // koszty
 
         // harmonogram 

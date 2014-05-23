@@ -39,12 +39,6 @@ namespace WnioskiOnline.Models
         [ForeignKey("IdDrugiegoKoord")]
         public virtual Koordynator DrugiKoord { get; set; }
 
-        [ForeignKey("Dziedzina")]
-        public int IdDziedziny { get; set; }
-
-        [Display(Name = "Dziedzina projektu: ")]
-        public virtual Dziedzina Dziedzina { get; set; }
-
         [Display(Name = "Termin projektu: ")]
         public DateTime Termin { get; set; }
 
