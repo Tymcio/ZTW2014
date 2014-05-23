@@ -5,13 +5,13 @@ namespace WnioskiOnline.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    public sealed partial class n : IMigrationMetadata
+    public sealed partial class _new : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(n));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(_new));
         
         string IMigrationMetadata.Id
         {
-            get { return "201405192131057_n"; }
+            get { return "201405231343531_new"; }
         }
         
         string IMigrationMetadata.Source

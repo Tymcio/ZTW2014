@@ -192,137 +192,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201405021644440_InitialCreate.cs" />
-    <Compile Include="Migrations\201405021644440_InitialCreate.Designer.cs">
-      <DependentUpon>201405021644440_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201405231319224_dziedzina2.cs" />
+    <Compile Include="Migrations\201405231319224_dziedzina2.Designer.cs">
+      <DependentUpon>201405231319224_dziedzina2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201405022108547_initial.cs" />
-    <Compile Include="Migrations\201405022108547_initial.Designer.cs">
-      <DependentUpon>201405022108547_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405031038550_Wnioski.cs" />
-    <Compile Include="Migrations\201405031038550_Wnioski.Designer.cs">
-      <DependentUpon>201405031038550_Wnioski.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405041851392_mergeContext.cs" />
-    <Compile Include="Migrations\201405041851392_mergeContext.Designer.cs">
-      <DependentUpon>201405041851392_mergeContext.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405041853153_rename.cs" />
-    <Compile Include="Migrations\201405041853153_rename.Designer.cs">
-      <DependentUpon>201405041853153_rename.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405041856005_rename2.cs" />
-    <Compile Include="Migrations\201405041856005_rename2.Designer.cs">
-      <DependentUpon>201405041856005_rename2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405042042467_newTables.cs" />
-    <Compile Include="Migrations\201405042042467_newTables.Designer.cs">
-      <DependentUpon>201405042042467_newTables.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405042203516_Formularze.cs" />
-    <Compile Include="Migrations\201405042203516_Formularze.Designer.cs">
-      <DependentUpon>201405042203516_Formularze.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405042206293_formularze2.cs" />
-    <Compile Include="Migrations\201405042206293_formularze2.Designer.cs">
-      <DependentUpon>201405042206293_formularze2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405042209119_formularze3.cs" />
-    <Compile Include="Migrations\201405042209119_formularze3.Designer.cs">
-      <DependentUpon>201405042209119_formularze3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405051217420_foreign_keys.cs" />
-    <Compile Include="Migrations\201405051217420_foreign_keys.Designer.cs">
-      <DependentUpon>201405051217420_foreign_keys.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405051221568_foreign_keys2.cs" />
-    <Compile Include="Migrations\201405051221568_foreign_keys2.Designer.cs">
-      <DependentUpon>201405051221568_foreign_keys2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405051226573_foreign_keys3.cs" />
-    <Compile Include="Migrations\201405051226573_foreign_keys3.Designer.cs">
-      <DependentUpon>201405051226573_foreign_keys3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405051644163_wnioski_tytul.cs" />
-    <Compile Include="Migrations\201405051644163_wnioski_tytul.Designer.cs">
-      <DependentUpon>201405051644163_wnioski_tytul.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405051655106_wniosek_zmiana.cs" />
-    <Compile Include="Migrations\201405051655106_wniosek_zmiana.Designer.cs">
-      <DependentUpon>201405051655106_wniosek_zmiana.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405052223261_charaktery.cs" />
-    <Compile Include="Migrations\201405052223261_charaktery.Designer.cs">
-      <DependentUpon>201405052223261_charaktery.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405052344028_rodzaj_wydatku.cs" />
-    <Compile Include="Migrations\201405052344028_rodzaj_wydatku.Designer.cs">
-      <DependentUpon>201405052344028_rodzaj_wydatku.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405052356022_rodzaj_wydatku2.cs" />
-    <Compile Include="Migrations\201405052356022_rodzaj_wydatku2.Designer.cs">
-      <DependentUpon>201405052356022_rodzaj_wydatku2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405181020275_foreign_keys1.cs" />
-    <Compile Include="Migrations\201405181020275_foreign_keys1.Designer.cs">
-      <DependentUpon>201405181020275_foreign_keys1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405181117496_null.cs" />
-    <Compile Include="Migrations\201405181117496_null.Designer.cs">
-      <DependentUpon>201405181117496_null.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405192125520_K1N.cs" />
-    <Compile Include="Migrations\201405192125520_K1N.Designer.cs">
-      <DependentUpon>201405192125520_K1N.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405192127579_nowa.cs" />
-    <Compile Include="Migrations\201405192127579_nowa.Designer.cs">
-      <DependentUpon>201405192127579_nowa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405192128355_org.cs" />
-    <Compile Include="Migrations\201405192128355_org.Designer.cs">
-      <DependentUpon>201405192128355_org.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405192129371_dziedzina.cs" />
-    <Compile Include="Migrations\201405192129371_dziedzina.Designer.cs">
-      <DependentUpon>201405192129371_dziedzina.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405192131057_n.cs" />
-    <Compile Include="Migrations\201405192131057_n.Designer.cs">
-      <DependentUpon>201405192131057_n.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405192131496_dziedzina1.cs" />
-    <Compile Include="Migrations\201405192131496_dziedzina1.Designer.cs">
-      <DependentUpon>201405192131496_dziedzina1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405192247389_formK2.cs" />
-    <Compile Include="Migrations\201405192247389_formK2.Designer.cs">
-      <DependentUpon>201405192247389_formK2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405192340144_Idwniosku.cs" />
-    <Compile Include="Migrations\201405192340144_Idwniosku.Designer.cs">
-      <DependentUpon>201405192340144_Idwniosku.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405192344218_Idwniosku1.cs" />
-    <Compile Include="Migrations\201405192344218_Idwniosku1.Designer.cs">
-      <DependentUpon>201405192344218_Idwniosku1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405231056584_dziedziny.cs" />
-    <Compile Include="Migrations\201405231056584_dziedziny.Designer.cs">
-      <DependentUpon>201405231056584_dziedziny.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405231102271_dziedziny1.cs" />
-    <Compile Include="Migrations\201405231102271_dziedziny1.Designer.cs">
-      <DependentUpon>201405231102271_dziedziny1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405231104217_new.cs" />
-    <Compile Include="Migrations\201405231104217_new.Designer.cs">
-      <DependentUpon>201405231104217_new.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405231105049_dziedziny2.cs" />
-    <Compile Include="Migrations\201405231105049_dziedziny2.Designer.cs">
-      <DependentUpon>201405231105049_dziedziny2.cs</DependentUpon>
+    <Compile Include="Migrations\201405231343531_new.cs" />
+    <Compile Include="Migrations\201405231343531_new.Designer.cs">
+      <DependentUpon>201405231343531_new.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -472,23 +348,23 @@
     <Content Include="Views\Admin\Uzytkownicy.cshtml" />
     <Content Include="Views\Admin\SzczegolyKonta.cshtml" />
     <Content Include="Views\Recenzent\Wniosek.cshtml" />
-    <Content Include="Views\Wnioskodawca\Wnioski.cshtml" />
-    <Content Include="Views\Wnioskodawca\Wniosek.cshtml" />
     <Content Include="Views\Admin\PrzypiszRec.cshtml" />
     <Content Include="Views\Wnioski\Index.cshtml" />
     <Content Include="Views\Wnioski\Details.cshtml" />
     <Content Include="Views\Wnioski\Create.cshtml" />
     <Content Include="Views\Wnioski\Edit.cshtml" />
     <Content Include="Views\Wnioski\Delete.cshtml" />
-    <Content Include="Views\Wnioski\DodajK3.cshtml" />
-    <Content Include="Views\Wnioski\DodajK1N.cshtml" />
-    <Content Include="Views\Wnioski\DodajK2.cshtml" />
-    <Content Include="Views\Wnioski\EdytujK1N.cshtml" />
-    <Content Include="Views\Wnioski\EdytujK2.cshtml" />
-    <Content Include="Views\Wnioski\EdytujK3.cshtml" />
-    <Content Include="Views\Wnioski\SzczegolyK1N.cshtml" />
-    <Content Include="Views\Wnioski\SzczegolyK2.cshtml" />
+    <Content Include="Views\Wnioskodawca\DodajK3.cshtml" />
+    <Content Include="Views\Wnioskodawca\DodajK1N.cshtml" />
+    <Content Include="Views\Wnioskodawca\DodajK2.cshtml" />
+    <Content Include="Views\Wnioskodawca\EdytujK1N.cshtml" />
+    <Content Include="Views\Wnioskodawca\EdytujK2.cshtml" />
+    <Content Include="Views\Wnioskodawca\EdytujK3.cshtml" />
+    <Content Include="Views\Wnioskodawca\SzczegolyK1N.cshtml" />
+    <Content Include="Views\Wnioskodawca\SzczegolyK2.cshtml" />
     <Content Include="Views\Wnioski\ListaWnioskow.cshtml" />
+    <Content Include="Views\Wnioskodawca\Index.cshtml" />
+    <Content Include="Views\Wnioskodawca\ListaWnioskow.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -497,104 +373,11 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201405021644440_InitialCreate.resx">
-      <DependentUpon>201405021644440_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201405231319224_dziedzina2.resx">
+      <DependentUpon>201405231319224_dziedzina2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405022108547_initial.resx">
-      <DependentUpon>201405022108547_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405031038550_Wnioski.resx">
-      <DependentUpon>201405031038550_Wnioski.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405041851392_mergeContext.resx">
-      <DependentUpon>201405041851392_mergeContext.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405041853153_rename.resx">
-      <DependentUpon>201405041853153_rename.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405041856005_rename2.resx">
-      <DependentUpon>201405041856005_rename2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405042042467_newTables.resx">
-      <DependentUpon>201405042042467_newTables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405042203516_Formularze.resx">
-      <DependentUpon>201405042203516_Formularze.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405042206293_formularze2.resx">
-      <DependentUpon>201405042206293_formularze2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405042209119_formularze3.resx">
-      <DependentUpon>201405042209119_formularze3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405051217420_foreign_keys.resx">
-      <DependentUpon>201405051217420_foreign_keys.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405051221568_foreign_keys2.resx">
-      <DependentUpon>201405051221568_foreign_keys2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405051226573_foreign_keys3.resx">
-      <DependentUpon>201405051226573_foreign_keys3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405051644163_wnioski_tytul.resx">
-      <DependentUpon>201405051644163_wnioski_tytul.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405051655106_wniosek_zmiana.resx">
-      <DependentUpon>201405051655106_wniosek_zmiana.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405052223261_charaktery.resx">
-      <DependentUpon>201405052223261_charaktery.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405052344028_rodzaj_wydatku.resx">
-      <DependentUpon>201405052344028_rodzaj_wydatku.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405052356022_rodzaj_wydatku2.resx">
-      <DependentUpon>201405052356022_rodzaj_wydatku2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405181020275_foreign_keys1.resx">
-      <DependentUpon>201405181020275_foreign_keys1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405181117496_null.resx">
-      <DependentUpon>201405181117496_null.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405192125520_K1N.resx">
-      <DependentUpon>201405192125520_K1N.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405192127579_nowa.resx">
-      <DependentUpon>201405192127579_nowa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405192128355_org.resx">
-      <DependentUpon>201405192128355_org.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405192129371_dziedzina.resx">
-      <DependentUpon>201405192129371_dziedzina.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405192131057_n.resx">
-      <DependentUpon>201405192131057_n.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405192131496_dziedzina1.resx">
-      <DependentUpon>201405192131496_dziedzina1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405192247389_formK2.resx">
-      <DependentUpon>201405192247389_formK2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405192340144_Idwniosku.resx">
-      <DependentUpon>201405192340144_Idwniosku.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405192344218_Idwniosku1.resx">
-      <DependentUpon>201405192344218_Idwniosku1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405231056584_dziedziny.resx">
-      <DependentUpon>201405231056584_dziedziny.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405231102271_dziedziny1.resx">
-      <DependentUpon>201405231102271_dziedziny1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405231104217_new.resx">
-      <DependentUpon>201405231104217_new.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405231105049_dziedziny2.resx">
-      <DependentUpon>201405231105049_dziedziny2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201405231343531_new.resx">
+      <DependentUpon>201405231343531_new.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

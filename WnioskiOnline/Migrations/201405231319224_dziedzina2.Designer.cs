@@ -5,13 +5,13 @@ namespace WnioskiOnline.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class dziedzina2 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(dziedzina2));
         
         string IMigrationMetadata.Id
         {
-            get { return "201405021644440_InitialCreate"; }
+            get { return "201405231319224_dziedzina2"; }
         }
         
         string IMigrationMetadata.Source

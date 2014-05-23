@@ -15,6 +15,7 @@ namespace WnioskiOnline.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int IdFormularza{ get; set; }
 
+
         public int IdWniosku { get; set; }
 
         [ForeignKey("IdWniosku")]

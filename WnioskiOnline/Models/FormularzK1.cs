@@ -20,6 +20,7 @@ namespace WnioskiOnline.Models
         [ForeignKey("IdWniosku")]
         public virtual Wniosek Wniosek { get; set; }
 
+
         [ForeignKey("Organizacja")]
         public int IdOrganizacji { get; set; }
 
