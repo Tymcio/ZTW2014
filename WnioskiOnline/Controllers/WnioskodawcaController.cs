@@ -168,8 +168,8 @@ namespace WnioskiOnline.Controllers
             {
                 model.Formularz.Wniosek.DataZlozenia = DateTime.Now;
                 model.Formularz.Wniosek.IdKonkursu = db.Konkursy.ToList().Find(k => k.NazwaKonkursu == "K3").IdKonkursu;
-                //    model.Wniosek.IdWnioskodawcy = WebSecurity.GetUserId(User.Identity.Name);
-                model.Formularz.Wniosek.IdWnioskodawcy = 1;
+                model.Formularz.Wniosek.IdWnioskodawcy = WebSecurity.GetUserId(User.Identity.Name);
+             //   model.Formularz.Wniosek.IdWnioskodawcy = 1;
 
                 if (ZapiszRobocza != null)
                     model.Formularz.Wniosek.IdStatusu = db.Statusy.ToList().First().IdStatusu;
@@ -266,7 +266,7 @@ namespace WnioskiOnline.Controllers
                 return RedirectToAction("Index");
             }
             System.Diagnostics.Debug.WriteLine("Not valid");
-            return RedirectToAction("Invalid");
+            return View(model);
         }
 
         [HttpPost]
@@ -294,7 +294,7 @@ namespace WnioskiOnline.Controllers
                 return RedirectToAction("Index");
             }
             System.Diagnostics.Debug.WriteLine("Not valid");
-            return RedirectToAction("Invalid");
+            return View(model);
         }
 
         [HttpPost]
@@ -321,7 +321,7 @@ namespace WnioskiOnline.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return RedirectToAction("Invalid");
+            return View(model);
         }
 
         public ActionResult Szczegoly(string konkurs, int id = 0)

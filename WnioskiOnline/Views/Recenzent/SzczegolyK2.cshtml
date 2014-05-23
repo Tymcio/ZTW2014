@@ -1,0 +1,267 @@
+﻿@model WnioskiOnline.Models.FormularzK2
+
+
+@{
+    ViewBag.Title = "Szczegoly wniosku K2";
+}
+
+<h3>WNIOSEK O DOFINANSOWANIE PROJEKTU STUDENCKIEGO ŚREDNIOTERMINOWEGO/ŚREDNIOBUDŻETOWEGO ZE ŚRODKÓW PRZEZNACZONYCH PRZEZ UCZELNI NA DZIAŁALNOŚĆ STUDENCKĄ I DOKTORANCKĄ</h3>
+
+
+<fieldset>
+ <legend>Wypełnij wniosek</legend>
+<section class="szczegolywniosku">
+
+        <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Wniosek.Dziedzina)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Wniosek.Dziedzina.NazwaDziedziny)
+            </div>
+    <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Organizacja)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Organizacja.NazwaOrganizacji)
+            </div>
+    <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Wniosek.TytulWniosku)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Wniosek.TytulWniosku)
+            </div>
+    <br/>
+            <div>
+                @Html.Label("Główny koordynator projektu: ")
+            </div>
+    <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.PierwszyKoord.Imie)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.PierwszyKoord.Imie)
+            </div>
+    <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.PierwszyKoord.Nazwisko)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.PierwszyKoord.Nazwisko)
+            </div>
+    <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.PierwszyKoord.Telefon)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.PierwszyKoord.Telefon)
+            </div>
+    <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.PierwszyKoord.Email)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.PierwszyKoord.Email)
+            </div>
+    <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.PierwszyKoord.NrIndeksu)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.PierwszyKoord.NrIndeksu)
+            </div>
+<br/>
+            <div>
+                @Html.Label("Drugi koordynator projektu: ")
+            </div>
+    <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.DrugiKoord.Imie)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.DrugiKoord.Imie)
+            </div>
+    <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.DrugiKoord.Nazwisko)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.DrugiKoord.Nazwisko)
+            </div>
+    <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.DrugiKoord.Telefon)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.DrugiKoord.Telefon)
+            </div>
+    <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.DrugiKoord.Email)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.DrugiKoord.Email)
+            </div>
+    <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.DrugiKoord.NrIndeksu)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.DrugiKoord.NrIndeksu)
+            </div>
+    <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.KwotaWnioskowana)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.KwotaWnioskowana)
+            </div>
+    <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Zasieg)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Zasieg.NazwaZasiegu)
+            </div>
+    <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Charakter)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Charakter.NazwaCharakteru)
+            </div>
+    <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Celowosc)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Celowosc)
+            </div>
+    <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.DlaczegoZasluguje)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.DlaczegoZasluguje)
+            </div>
+    <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.DlaczegoLepszy)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.DlaczegoLepszy)
+            </div>
+    <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.StopienInnowacji)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.StopienInnowacji)
+            </div>
+    <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.JakAngazuje)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.JakAngazuje)
+            </div>
+    <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.JakieWarunki)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.JakieWarunki)
+            </div>
+    <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.JakiePodobnePierwszy)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.JakiePodobnePierwszy)
+            </div>
+    <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.JakiePodobneDrugi)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.JakiePodobneDrugi)
+            </div>
+    <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.WkladFinansowy)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.WkladFinansowy)
+            </div>
+    <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Sponsorzy)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Sponsorzy)
+            </div>
+    <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.JakPromuje)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.JakPromuje)
+            </div>
+    <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.InneInformacje)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.InneInformacje)
+            </div>
+
+     <br/>
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Wniosek.Ocena)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Wniosek.Ocena)
+            </div>
+@*<section class="wnioski">
+        <table>
+        <tr>
+            <th>
+               Rodzaj wydatku
+            </th>
+            <th>
+               Wyszczególnienie
+            </th>
+            <th>
+                Kwota ogółem
+            </th>
+            <th>
+               Kwota do sfinansowania
+            </th>
+            <th></th>
+        </tr>
+          <tr>
+            <td>
+                @Html.DropDownListFor(m => m.Wydatek.RodzajWydatku, Model.RodzajeWydatku)
+            </td>
+            <td>
+                @Html.EditorFor(m => m.Wydatek.Wyszczegolnienie)
+            </td>
+            <td>
+                @Html.EditorFor(m => m.Wydatek.KwotaOgolem)
+            </td>
+            <td>
+                @Html.EditorFor(m => m.Wydatek.KwotaDoSfinans)
+            </td>
+            <td>
+                @Html.ActionLink("Usuń","Index")
+            </td>
+        </tr>
+    </table>
+    </section>
+    <input type="button" name="dodajkoszt" value=" + Dodaj wiersz + "/>*@
+</section>    
+</fieldset>
+
+             

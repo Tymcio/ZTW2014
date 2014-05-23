@@ -338,7 +338,6 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Recenzent\Wnioski.cshtml" />
     <Content Include="Views\Komisja\Wnioski.cshtml" />
     <Content Include="Views\Komisja\SzczegolyWnioskow.cshtml" />
     <Content Include="Views\Account\Dane.cshtml" />
@@ -347,7 +346,6 @@
     <Content Include="Views\Admin\SzczegolyKonkursu.cshtml" />
     <Content Include="Views\Admin\Uzytkownicy.cshtml" />
     <Content Include="Views\Admin\SzczegolyKonta.cshtml" />
-    <Content Include="Views\Recenzent\Wniosek.cshtml" />
     <Content Include="Views\Admin\PrzypiszRec.cshtml" />
     <Content Include="Views\Wnioski\Index.cshtml" />
     <Content Include="Views\Wnioski\Details.cshtml" />
@@ -365,6 +363,15 @@
     <Content Include="Views\Wnioski\ListaWnioskow.cshtml" />
     <Content Include="Views\Wnioskodawca\Index.cshtml" />
     <Content Include="Views\Wnioskodawca\ListaWnioskow.cshtml" />
+    <Content Include="Views\Wnioskodawca\SzczegolyK3.cshtml" />
+    <Content Include="Views\Recenzent\Index.cshtml" />
+    <Content Include="Views\Recenzent\ListaWnioskow.cshtml" />
+    <Content Include="Views\Recenzent\SzczegolyK1N.cshtml" />
+    <Content Include="Views\Recenzent\SzczegolyK2.cshtml" />
+    <Content Include="Views\Recenzent\SzczegolyK3.cshtml" />
+    <Content Include="Views\Recenzent\RecenzjaK1N.cshtml" />
+    <Content Include="Views\Recenzent\RecenzjaK2.cshtml" />
+    <Content Include="Views\Recenzent\RecenzjaK3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

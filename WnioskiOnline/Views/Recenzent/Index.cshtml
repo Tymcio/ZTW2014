@@ -1,0 +1,49 @@
+﻿@model WnioskiOnline.ViewModels.WnioskiViewModel
+
+@{
+    ViewBag.Title = "Wnioski";
+}
+
+<h2>Wnioski</h2>
+
+<section class="wnioski">
+
+
+
+@if (!Model.Wnioski.Any())
+{
+    <p>
+       Nie masz żadnych wniosków do zrecenzowania.
+    </p>
+  
+}
+else
+{
+ using (Ajax.BeginForm("FiltrujWnioski", "Recenzent", new AjaxOptions { 
+    HttpMethod = "Post", UpdateTargetId = "ListaWnioskow" }))
+    {
+
+    <fieldset>
+        <legend>Wyszukaj</legend>
+        <ol>
+            <li>
+                @Html.Label("Konkurs: ")
+                @Html.DropDownListFor(m => m.Konkurs, Model.Konkursy)
+            </li>
+
+            <li>
+                @Html.Label("Status: ")
+                @Html.DropDownListFor(m => m.Status, Model.Statusy)
+            </li>
+
+        </ol>
+        <input type="submit" value="Wyszukaj" />
+    </fieldset>
+    }
+    <div id="ListaWnioskow">
+     @Html.Partial("ListaWnioskow", Model.Wnioski)
+    </div>
+
+}
+
+</section>

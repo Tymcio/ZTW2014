@@ -1,0 +1,65 @@
+﻿@model IEnumerable<WnioskiOnline.Models.Wniosek>
+
+@if (!Model.Any())
+{
+    <p>
+       Nie znaleziono wniosków o podanych kryteriach.
+    </p>
+  
+}
+else
+{
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Konkurs.NazwaKonkursu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().TytulWniosku)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Dziedzina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().DataZlozenia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model =>model.First().Status.NazwaStatusu)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Konkurs.NazwaKonkursu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TytulWniosku)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dziedzina.NazwaDziedziny)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataZlozenia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status.NazwaStatusu)
+            </td>
+            <td>
+               @{ if (item.Status.NazwaStatusu == "Do zatwierdzenia")
+                   {
+                    @Html.ActionLink("Edytuj", "Edytuj", new { id=item.IdWniosku, konkurs = item.Konkurs.NazwaKonkursu }) 
+                    }
+                    else
+                    {
+                       @Html.ActionLink("Szczegóły", "Szczegoly", new { id=item.IdWniosku, konkurs = item.Konkurs.NazwaKonkursu }) 
+                    }
+                }
+
+            </td>
+        </tr>
+    }
+
+    </table>
+}

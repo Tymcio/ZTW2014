@@ -11,35 +11,8 @@
 <fieldset>
  <legend>Wypełnij wniosek</legend>
 <section class="szczegolywniosku">
-        <ol>
-            <li>
-                @Html.HiddenFor(model => model.Wniosek.IdKonkursu)
-            </li>
-            <li>
-                @Html.HiddenFor(model => model.Wniosek.IdWnioskodawcy)
-            </li>
-             <li>
-                @Html.HiddenFor(model => model.IdFormularza)
-            </li>
-             <li>
-                @Html.HiddenFor(model => model.IdWniosku)
-            </li>
-             <li>
-                @Html.HiddenFor(model => model.Wniosek.IdWniosku)
-            </li>
-            <li>
-                @Html.HiddenFor(model => model.IdPierwszegoKoord)
-            </li>
-            <li>
-                @Html.HiddenFor(model => model.PierwszyKoord.IdKoord)
-            </li>
-            <li>
-                @Html.HiddenFor(model => model.IdDrugiegoKoord)
-            </li>
-            <li>
-                @Html.HiddenFor(model => model.DrugiKoord.IdKoord)
-            </li>
-   </ol>
+
+        <br/>
             <div class="display-label">
                  @Html.DisplayNameFor(model => model.Wniosek.Dziedzina)
             </div>
@@ -281,6 +254,7 @@
     </table>
     </section>
     <input type="button" name="dodajkoszt" value=" + Dodaj wiersz + "/>*@
+
 </section>    
 </fieldset>
 

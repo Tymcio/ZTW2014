@@ -33,10 +33,10 @@
                 <ul id="menu">
                             <li>@Html.ActionLink("Strona główna", "Index", "Home")</li>
                             <li>@Html.ActionLink("Dane osobowe", "Dane", "Account")</li>
-                            <li>@Html.ActionLink("Wnioski", "Index", "Wnioskodawca")</li>  
+                            <li>@Html.ActionLink("Wnioski", "Index", "Recenzent")</li>  
 
                 </ul>
-                     @if (User.IsInRole("Administrator"))
+@*                     @if (User.IsInRole("Administrator"))
                 {
                 <p>Administrator:</p>        
                 <ul>
@@ -44,7 +44,7 @@
                   <li>@Html.ActionLink("Konkursy", "Konkursy", "Admin")</li>
                   <li>@Html.ActionLink("Ustawienia", "Ustawienia", "Admin")</li>
                 </ul>
-                }
+                }*@
 
             </nav>
                 @RenderBody()

@@ -11,26 +11,11 @@
 <section class="szczegolywniosku">
  <fieldset>
      <legend>Wniosek K1N</legend>
+      <br/>
    <div>
     
    </div>
-        <ol>
-            <li>
-                @Html.HiddenFor(model => model.Wniosek.IdKonkursu)
-            </li>
-            <li>
-                @Html.HiddenFor(model => model.Wniosek.IdWnioskodawcy)
-            </li>
-             <li>
-                @Html.HiddenFor(model => model.IdFormularza)
-            </li>
-             <li>
-                @Html.HiddenFor(model => model.IdWniosku)
-            </li>
-             <li>
-                @Html.HiddenFor(model => model.Wniosek.IdWniosku)
-            </li>
-      </ol>
+
 
             <div class="display-label">
                  @Html.DisplayNameFor(model => model.Wniosek.Dziedzina)
@@ -165,7 +150,6 @@
                 @Html.DisplayFor(model => model.PozyskiwanieSponsorow)
             </div>
      
-
 </fieldset>
 
 </section>   

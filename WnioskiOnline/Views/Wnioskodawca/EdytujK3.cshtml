@@ -8,7 +8,7 @@
 <h3>WNIOSEK O DOFINANSOWANIE NISKOBUDŻETOWEGO/KRÓTKOTERMINOWEGO PROJEKTU STUDENCKIEGO</h3>
 
 
-@using (Html.BeginForm("EdytujK3", "Wnioski"))
+@using (Html.BeginForm("EdytujK3", "Wnioskodawca"))
 {
     @Html.AntiForgeryToken()
  
@@ -30,6 +30,18 @@
             </li>
              <li>
                 @Html.HiddenFor(model => model.Formularz.Wniosek.IdWniosku)
+            </li>
+            <li>
+                @Html.HiddenFor(model => model.Formularz.IdPierwszegoKoord)
+            </li>
+            <li>
+                @Html.HiddenFor(model => model.Formularz.PierwszyKoord.IdKoord)
+            </li>
+            <li>
+                @Html.HiddenFor(model => model.Formularz.IdDrugiegoKoord)
+            </li>
+            <li>
+                @Html.HiddenFor(model => model.Formularz.DrugiKoord.IdKoord)
             </li>
             <li>
                 @Html.Label("Dziedzina: ")
