@@ -15,6 +15,8 @@ namespace WnioskiOnline.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int IdStatusu { get; set; }
         [Display(Name = "Status")]
+        [MaxLength(30)]
+        [StringLength(30, ErrorMessage = "Status nie może mieć więcej niż 30 znaków.")]
         public string NazwaStatusu { get; set; }
 
 

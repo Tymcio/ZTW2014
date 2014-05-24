@@ -17,18 +17,24 @@ namespace WnioskiOnline.Models
         public int UserId { get; set; }
 
         [Display(Name = "Login")]
+        [MaxLength(40)]
+        [StringLength(40, ErrorMessage = "Login nie może mieć więcej niż 40 znaków.")]
         public string UserName { get; set; }
 
         [Display(Name = "Imię")]
+        [MaxLength(40)]
         public string Imie { get; set; }
 
         [Display(Name = "Nazwisko")]
+        [MaxLength(40)]
         public string Nazwisko { get; set; }
 
         [Display(Name = "Email")]
+        [MaxLength(40)]
         public string Email { get; set; }
 
         [Display(Name = "Telefon")]
+        [MaxLength(15)]
         public string Telefon { get; set; }
     }
 
@@ -83,14 +89,17 @@ namespace WnioskiOnline.Models
 
         [Required]
         [Display(Name = "Imię")]
+        [StringLength(40, ErrorMessage = "Imię nie może mieć więcej niż 40 znaków.")]
         public string Imie { get; set; }
 
         [Required]
         [Display(Name = "Nazwisko")]
+        [StringLength(40, ErrorMessage = "Nazwisko nie może mieć więcej niż 40 znaków.")]
         public string Nazwisko { get; set; }
 
         [Required]
         [Display(Name = "E-mail")]
+        [StringLength(40, ErrorMessage = "Adres email nie może mieć więcej niż 40 znaków.")]
         public string Email { get; set; }
 
 
@@ -107,6 +116,7 @@ namespace WnioskiOnline.Models
 
 
         [Display(Name = "Telefon")]
+        [StringLength(15, ErrorMessage = "Telefon nie może mieć więcej niż 15 znaków.")]
         public string Telefon { get; set; }
 
         [Display(Name = "Rola")]

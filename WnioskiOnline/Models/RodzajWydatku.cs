@@ -14,6 +14,9 @@ namespace WnioskiOnline.Models
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int IdRodzaju { get; set; }
+
+        [MaxLength(100)]
+        [StringLength(100, ErrorMessage = "Rodzaj wydatku nie może mieć więcej niż 100 znaków.")]
         public string NazwaRodzaju { get; set; }
 
 

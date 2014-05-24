@@ -14,7 +14,13 @@ namespace WnioskiOnline.Models
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int IdZrodla { get; set; }
+
+        [MaxLength(100)]
+        [StringLength(100, ErrorMessage = "Źrodlo dofinansowania nie może mieć więcej niż 100 znaków.")]
         public string NazwaZrodla { get; set; }
+
+        [MaxLength(500)]
+        [StringLength(500, ErrorMessage = "Wyszczególnienie nie może mieć więcej niż 500 znaków.")]
         public string Wyszczegolnienie { get; set; }
         public double Kwota { get; set; }
 

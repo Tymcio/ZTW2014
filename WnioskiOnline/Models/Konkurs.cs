@@ -16,6 +16,8 @@ namespace WnioskiOnline.Models
         public int IdKonkursu { get; set; }
 
         [Display(Name = "Konkurs ")]
+        [MaxLength(20)]
+        [StringLength(20, ErrorMessage = "Nazwa konkursu nie może mieć więcej niż 20 znaków.")]
         public string NazwaKonkursu { get; set; }
         public DateTime DataRozpoczecia { get; set; }
         public DateTime DataZakonczenia { get; set; }

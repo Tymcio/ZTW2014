@@ -14,6 +14,9 @@ namespace WnioskiOnline.Models
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int IdZasiegu { get; set; }
+
+        [MaxLength(50)]
+        [StringLength(50, ErrorMessage = "Zasięg nie może mieć więcej niż 50 znaków.")]
         public string NazwaZasiegu { get; set; }
 
 

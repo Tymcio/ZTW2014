@@ -14,6 +14,9 @@ namespace WnioskiOnline.Models
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int IdDziedziny { get; set; }
+
+        [MaxLength(40)]
+        [StringLength(40, ErrorMessage = "Dziedzina zadania nie może mieć więcej niż 40 znaków.")]
         public string NazwaDziedziny { get; set; }
 
 

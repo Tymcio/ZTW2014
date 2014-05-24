@@ -16,6 +16,8 @@ namespace WnioskiOnline.Models
         public int IdWniosku { get; set; }
 
         [Display(Name = "Tytuł")]
+        [MaxLength(100)]
+        [StringLength(100, ErrorMessage = "Tytuł wniosku nie może mieć więcej niż 100 znaków.")]
         public string TytulWniosku { get; set; }
 
         public int IdKonkursu { get; set; }

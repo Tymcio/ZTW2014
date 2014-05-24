@@ -14,6 +14,9 @@ namespace WnioskiOnline.Models
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int IdDecyzji { get; set; }
+
+        [MaxLength(20)]
+        [StringLength(20, ErrorMessage = "Decyzja nie może mieć więcej niż 40 znaków.")]
         public string NazwaDecyzji { get; set; }
 
 

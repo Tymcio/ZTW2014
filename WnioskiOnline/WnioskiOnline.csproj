@@ -204,6 +204,106 @@
     <Compile Include="Migrations\201405232211084_decyzja.Designer.cs">
       <DependentUpon>201405232211084_decyzja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201405241336531_length.cs" />
+    <Compile Include="Migrations\201405241336531_length.Designer.cs">
+      <DependentUpon>201405241336531_length.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405241341369_size.cs" />
+    <Compile Include="Migrations\201405241341369_size.Designer.cs">
+      <DependentUpon>201405241341369_size.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405241344197_size1.cs" />
+    <Compile Include="Migrations\201405241344197_size1.Designer.cs">
+      <DependentUpon>201405241344197_size1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405241349011_size2.cs" />
+    <Compile Include="Migrations\201405241349011_size2.Designer.cs">
+      <DependentUpon>201405241349011_size2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405241355490_size3.cs" />
+    <Compile Include="Migrations\201405241355490_size3.Designer.cs">
+      <DependentUpon>201405241355490_size3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405241356492_size_decyzja.cs" />
+    <Compile Include="Migrations\201405241356492_size_decyzja.Designer.cs">
+      <DependentUpon>201405241356492_size_decyzja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405241357336_size_dziedzina.cs" />
+    <Compile Include="Migrations\201405241357336_size_dziedzina.Designer.cs">
+      <DependentUpon>201405241357336_size_dziedzina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405241358453_size_dormularzK1.cs" />
+    <Compile Include="Migrations\201405241358453_size_dormularzK1.Designer.cs">
+      <DependentUpon>201405241358453_size_dormularzK1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405241400562_size_K1.cs" />
+    <Compile Include="Migrations\201405241400562_size_K1.Designer.cs">
+      <DependentUpon>201405241400562_size_K1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405241407347_size_K2.cs" />
+    <Compile Include="Migrations\201405241407347_size_K2.Designer.cs">
+      <DependentUpon>201405241407347_size_K2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405241408369_usuniecie.cs" />
+    <Compile Include="Migrations\201405241408369_usuniecie.Designer.cs">
+      <DependentUpon>201405241408369_usuniecie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405241409290_size_K3.cs" />
+    <Compile Include="Migrations\201405241409290_size_K3.Designer.cs">
+      <DependentUpon>201405241409290_size_K3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405241410283_konkurs.cs" />
+    <Compile Include="Migrations\201405241410283_konkurs.Designer.cs">
+      <DependentUpon>201405241410283_konkurs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405241412160_size_koordynator.cs" />
+    <Compile Include="Migrations\201405241412160_size_koordynator.Designer.cs">
+      <DependentUpon>201405241412160_size_koordynator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405241414349_size_organizacja.cs" />
+    <Compile Include="Migrations\201405241414349_size_organizacja.Designer.cs">
+      <DependentUpon>201405241414349_size_organizacja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405241418258_org.cs" />
+    <Compile Include="Migrations\201405241418258_org.Designer.cs">
+      <DependentUpon>201405241418258_org.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405241421085_org1.cs" />
+    <Compile Include="Migrations\201405241421085_org1.Designer.cs">
+      <DependentUpon>201405241421085_org1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405241423013_kod_pocztowy.cs" />
+    <Compile Include="Migrations\201405241423013_kod_pocztowy.Designer.cs">
+      <DependentUpon>201405241423013_kod_pocztowy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405241424004_status.cs" />
+    <Compile Include="Migrations\201405241424004_status.Designer.cs">
+      <DependentUpon>201405241424004_status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405241424475_wniosek.cs" />
+    <Compile Include="Migrations\201405241424475_wniosek.Designer.cs">
+      <DependentUpon>201405241424475_wniosek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405241425273_wydatek.cs" />
+    <Compile Include="Migrations\201405241425273_wydatek.Designer.cs">
+      <DependentUpon>201405241425273_wydatek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405241426039_zadanie.cs" />
+    <Compile Include="Migrations\201405241426039_zadanie.Designer.cs">
+      <DependentUpon>201405241426039_zadanie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405241428151_zrodlo.cs" />
+    <Compile Include="Migrations\201405241428151_zrodlo.Designer.cs">
+      <DependentUpon>201405241428151_zrodlo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405241428506_wydatek1.cs" />
+    <Compile Include="Migrations\201405241428506_wydatek1.Designer.cs">
+      <DependentUpon>201405241428506_wydatek1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405241431140_user.cs" />
+    <Compile Include="Migrations\201405241431140_user.Designer.cs">
+      <DependentUpon>201405241431140_user.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Charakter.cs" />
@@ -399,6 +499,81 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201405232211084_decyzja.resx">
       <DependentUpon>201405232211084_decyzja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405241336531_length.resx">
+      <DependentUpon>201405241336531_length.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405241341369_size.resx">
+      <DependentUpon>201405241341369_size.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405241344197_size1.resx">
+      <DependentUpon>201405241344197_size1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405241349011_size2.resx">
+      <DependentUpon>201405241349011_size2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405241355490_size3.resx">
+      <DependentUpon>201405241355490_size3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405241356492_size_decyzja.resx">
+      <DependentUpon>201405241356492_size_decyzja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405241357336_size_dziedzina.resx">
+      <DependentUpon>201405241357336_size_dziedzina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405241358453_size_dormularzK1.resx">
+      <DependentUpon>201405241358453_size_dormularzK1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405241400562_size_K1.resx">
+      <DependentUpon>201405241400562_size_K1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405241407347_size_K2.resx">
+      <DependentUpon>201405241407347_size_K2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405241408369_usuniecie.resx">
+      <DependentUpon>201405241408369_usuniecie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405241409290_size_K3.resx">
+      <DependentUpon>201405241409290_size_K3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405241410283_konkurs.resx">
+      <DependentUpon>201405241410283_konkurs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405241412160_size_koordynator.resx">
+      <DependentUpon>201405241412160_size_koordynator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405241414349_size_organizacja.resx">
+      <DependentUpon>201405241414349_size_organizacja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405241418258_org.resx">
+      <DependentUpon>201405241418258_org.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405241421085_org1.resx">
+      <DependentUpon>201405241421085_org1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405241423013_kod_pocztowy.resx">
+      <DependentUpon>201405241423013_kod_pocztowy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405241424004_status.resx">
+      <DependentUpon>201405241424004_status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405241424475_wniosek.resx">
+      <DependentUpon>201405241424475_wniosek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405241425273_wydatek.resx">
+      <DependentUpon>201405241425273_wydatek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405241426039_zadanie.resx">
+      <DependentUpon>201405241426039_zadanie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405241428151_zrodlo.resx">
+      <DependentUpon>201405241428151_zrodlo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405241428506_wydatek1.resx">
+      <DependentUpon>201405241428506_wydatek1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405241431140_user.resx">
+      <DependentUpon>201405241431140_user.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

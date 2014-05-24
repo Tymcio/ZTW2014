@@ -14,6 +14,9 @@ namespace WnioskiOnline.Models
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int IdZadania { get; set; }
+
+        [MaxLength(100)]
+        [StringLength(100, ErrorMessage = "Nazwa zadania nie może mieć więcej niż 100 znaków.")]
         public string NazwaZadania { get; set; }
         public DateTime DataRozpoczecia { get; set; }
         public DateTime DataZakonczenia { get; set; }

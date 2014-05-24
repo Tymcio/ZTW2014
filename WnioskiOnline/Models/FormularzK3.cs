@@ -25,8 +25,6 @@ namespace WnioskiOnline.Models
 
         public virtual Organizacja Organizacja { get; set; }
 
-        public string NazwaProjektu { get; set; }
-
         public int? IdPierwszegoKoord { get; set; }
 
         [Display(Name = "Koordynator projektu: ")]
@@ -61,14 +59,18 @@ namespace WnioskiOnline.Models
         public virtual Charakter Charakter { get; set; }
 
         [Display(Name = "Uzasadnienie celowości realizowanego zadania, przewidywane efekty merytoryczne: ")]
+        [MaxLength(500)]
+        [StringLength(500, ErrorMessage = "Informacja nie może mieć więcej niż 500 znaków.")]
         public string Uzasadnienie { get; set; }
 
         [Display(Name = "Uwagi dodatkowe: ")]
+        [MaxLength(500)]
+        [StringLength(500, ErrorMessage = "Informacja nie może mieć więcej niż 500 znaków.")]
         public string Uwagi { get; set; }
 
         [Display(Name = "Wniosek zawiera: ")]
+        [MaxLength(500)]
+        [StringLength(500, ErrorMessage = "Informacja nie może mieć więcej niż 500 znaków.")]
         public string WniosekZawiera { get; set; }
-
-        public string Zalacznik { get; set; }
     }
 }
