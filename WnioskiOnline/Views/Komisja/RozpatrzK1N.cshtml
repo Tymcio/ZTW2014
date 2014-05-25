@@ -183,8 +183,8 @@
             </ol>
     
     <div style="display:inline;">
-        <input type="submit" name="Zapisz" value="Zapisz decyzję" />
-        <input type="submit" name="Anuluj" value="Anuluj"/>
+        <input type="submit" name="Zapisz" value="Zapisz decyzję" onclick="return confirm('Czy na pewno chcesz zapisać decyzję?');"/>
+        <input type="submit" name="Anuluj" value="Anuluj" onclick="return confirm('Czy na pewno chcesz anulować?');"/>
     </div>
 
 </fieldset>

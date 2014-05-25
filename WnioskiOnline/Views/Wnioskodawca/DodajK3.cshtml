@@ -163,9 +163,9 @@
     </section>
     <input type="button" name="dodajkoszt" value=" + Dodaj wiersz + "/>*@
     <div style="display:inline;">
-        <input class="przycisk-wn" type="submit" name="ZapiszRobocza" value="Zapisz wersję roboczą" />
-        <input class="przycisk-wn" type="submit" name="WyslijDoRec" value="Wyślij do recenzji"/>
-        <input class="przycisk-wn" type="submit" name="Anuluj" value="Anuluj"/>
+        <input class="przycisk-wn" type="submit" name="ZapiszRobocza" value="Zapisz wersję roboczą" onclick="return confirm('Czy na pewno chcesz zapisać wersję roboczą?');"/>
+        <input class="przycisk-wn" type="submit" name="WyslijDoRec" value="Wyślij do recenzji" onclick="return confirm('Czy na pewno chcesz wysłać wniosek do recenzji?');"/>
+        <input class="przycisk-wn" type="submit" name="Anuluj" value="Anuluj" onclick="return confirm('Czy na pewno chcesz anulować?');"/>
     </div>
 </section>    
 </fieldset>
