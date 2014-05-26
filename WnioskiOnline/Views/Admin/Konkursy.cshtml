@@ -1,58 +1,59 @@
-﻿@{
+﻿@model IEnumerable<WnioskiOnline.Models.Konkurs>
+
+@{
     ViewBag.Title = "Konkursy";
 }
+
+
 
 <h2>Konkursy</h2>
 
 <section class="konkursy">
 
-<table class="konkAdmin">
-    <thead>
-        <tr>
-            <td class="lp">LP.</td>
-            <td>Konkurs</td>
-            <td>Termin zakończenia</td>
-            <td colspan="2">Status</td>
-        </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td class="lp">1</td>
-        <td>Konkurs 1</td>
-        <td>02-02-2015</td>
-        <td>aktywny</td>
-        <td><a href="szczegolyKonkursu">Szczegóły</a></td>
-    </tr>
-        <tr>
-        <td class="lp">2</td>
-        <td>Konkurs 2</td>
-        <td>05-06-2014</td>
-        <td>Nieaktywny</td>
-        <td><a href="szczegolyKonkursu">Szczegóły</a></td>
-    </tr>
-        <tr>
-        <td class="lp">3</td>
-        <td>Konkurs 3</td>
-        <td>01-03-2014</td>
-        <td>Nieaktywny</td>
-        <td><a href="szczegolyKonkursu">Szczegóły</a></td>
-    </tr>
-        <tr>
-        <td class="lp">4</td>
-        <td>Konkurs 4</td>
-        <td>05-10-2014</td>
-        <td>Aktywny</td>
-        <td><a href="szczegolyKonkursu">Szczegóły</a></td>
-   </tr>
-        <tr>
-        <td class="lp">5</td>
-        <td>Konkurs 5</td>
-        <td>10-10-2013</td>
-        <td>Aktywny</td>
-        <td><a href="szczegolyKonkursu">Szczegóły</a></td>
 
-    </tr>
-    </tbody>
-</table>
+@if (!Model.Any())
+{
+    <p>
+       Nie znaleziono żadnych konkursów.
+    </p>
+  
+}
+else
+{
+
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.First().NazwaKonkursu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().DataRozpoczecia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().DataZakonczenia)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NazwaKonkursu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataRozpoczecia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataZakonczenia)
+            </td>
+            <td>
+                @Html.ActionLink("Edytuj", "EdytujKonkurs", new { id=item.IdKonkursu}) 
+
+            </td>
+        </tr>
+    }
+
+    </table>
+}
 </section>
 

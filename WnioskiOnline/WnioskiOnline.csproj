@@ -339,7 +339,7 @@
     <Content Include="Views\Account\Dane.cshtml" />
     <Content Include="Views\Account\ZmianaHasla.cshtml" />
     <Content Include="Views\Admin\Konkursy.cshtml" />
-    <Content Include="Views\Admin\SzczegolyKonkursu.cshtml" />
+    <Content Include="Views\Admin\EdytujKonkurs.cshtml" />
     <Content Include="Views\Admin\Uzytkownicy.cshtml" />
     <Content Include="Views\Admin\SzczegolyKonta.cshtml" />
     <Content Include="Views\Admin\PrzypiszRec.cshtml" />
@@ -376,6 +376,11 @@
     <Content Include="Views\Komisja\SzczegolyK1N.cshtml" />
     <Content Include="Views\Komisja\SzczegolyK2.cshtml" />
     <Content Include="Views\Komisja\SzczegolyK3.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\ListaWnioskow.cshtml" />
+    <Content Include="Views\Admin\EdytujK1N.cshtml" />
+    <Content Include="Views\Admin\EdytujK2.cshtml" />
+    <Content Include="Views\Admin\EdytujK3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

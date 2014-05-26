@@ -1,0 +1,295 @@
+﻿@model WnioskiOnline.ViewModels.SzczegolyK3ViewModel
+
+
+@{
+    ViewBag.Title = "Edycja wniosku K3";
+}
+
+<h3>WNIOSEK O DOFINANSOWANIE NISKOBUDŻETOWEGO/KRÓTKOTERMINOWEGO PROJEKTU STUDENCKIEGO</h3>
+
+
+@using (Html.BeginForm("EdytujK3", "Admin"))
+{
+    @Html.AntiForgeryToken()
+ 
+<fieldset>
+ <legend>Wypełnij wniosek</legend>
+<section class="szczegolywniosku">
+        <ol>
+
+            <li>
+                @Html.Label("Dziedzina: ")
+                @Html.DropDownListFor(m => m.Formularz.Wniosek.IdDziedziny, Model.Dziedziny)
+            </li>
+
+            <li>
+                @Html.Label("Organizacja wnioskująca: ")
+                @Html.DropDownListFor(m => m.Formularz.IdOrganizacji, Model.Organizacje)
+            </li>
+
+            <li>
+                @Html.Label("Nazwa projektu: ")
+                @Html.EditorFor(m => m.Formularz.Wniosek.TytulWniosku)
+            </li>
+
+            <li>
+                @Html.Label("Główny koordynator projektu: ")
+            </li>
+
+            <li>
+                @Html.Label("Imię ")
+                @Html.EditorFor(m => m.Formularz.PierwszyKoord.Imie)
+            </li>
+
+            <li>
+                @Html.Label("Nazwisko ")
+                @Html.EditorFor(m => m.Formularz.PierwszyKoord.Nazwisko)
+            </li>
+
+            <li>
+                @Html.Label("Telefon ")
+                @Html.EditorFor(m => m.Formularz.PierwszyKoord.Telefon)
+            </li>
+
+            <li>
+                @Html.Label("Email ")
+                @Html.EditorFor(m => m.Formularz.PierwszyKoord.Email)
+            </li>
+
+            <li>
+                @Html.Label("Numer indeksu ")
+                @Html.EditorFor(m => m.Formularz.PierwszyKoord.NrIndeksu)
+            </li>
+
+            <li>
+                @Html.Label("Drugi koordynator projektu: ")
+            </li>
+
+            <li>
+                @Html.Label("Imię ")
+                @Html.EditorFor(m => m.Formularz.DrugiKoord.Imie)
+            </li>
+
+            <li>
+                @Html.Label("Nazwisko ")
+                @Html.EditorFor(m => m.Formularz.DrugiKoord.Nazwisko)
+            </li>
+
+            <li>
+                @Html.Label("Telefon ")
+                @Html.EditorFor(m => m.Formularz.DrugiKoord.Telefon)
+            </li>
+
+            <li>
+                @Html.Label("Email ")
+                @Html.EditorFor(m => m.Formularz.DrugiKoord.Email)
+            </li>
+
+            <li>
+                @Html.Label("Numer indeksu ")
+                @Html.EditorFor(m => m.Formularz.DrugiKoord.NrIndeksu)
+            </li>
+
+             <li>
+                @Html.Label("Termin projektu: ")
+                @Html.EditorFor(m => m.Formularz.Termin)
+            </li>
+
+            <li>
+                @Html.LabelFor(m =>m.Formularz.LiczbaStudKorzyst)
+                @Html.EditorFor(m => m.Formularz.LiczbaStudKorzyst)
+            </li>
+
+             <li>
+                @Html.LabelFor(m =>m.Formularz.LiczbaStudZaang)
+                @Html.EditorFor(m => m.Formularz.LiczbaStudZaang)
+            </li>
+
+            <li>
+                @Html.Label("Zasięg zadania: ")
+                @Html.DropDownListFor(m => m.Formularz.IdZasiegu, Model.Zasiegi)
+            </li>
+
+            <li>
+                @Html.Label("Charakter zadania: ")
+                @Html.DropDownListFor(m => m.Formularz.IdCharakteru, Model.Charaktery)
+            </li>
+
+            <li>
+                @Html.LabelFor(m => m.Formularz.Uzasadnienie)
+                @Html.TextAreaFor(m => m.Formularz.Uzasadnienie)
+            </li>
+
+            <li>
+                @Html.LabelFor(m => m.Formularz.Uwagi)
+                @Html.TextAreaFor(m => m.Formularz.Uwagi)
+            </li>
+
+         @if (Model.Formularz.Wniosek.Ocena != null)
+           {
+            <li>
+                @Html.LabelFor(m => m.Formularz.Wniosek.Ocena)
+                @if(Model.Formularz.Wniosek.Ocena == 0)
+                {
+                    <label> @Html.RadioButtonFor(m => m.Formularz.Wniosek.Ocena, 0, new { @Checked = "checked"}) 0 </label>
+                }
+                else
+                {
+                    <label>@Html.RadioButtonFor(m => m.Formularz.Wniosek.Ocena, 0) 0</label>
+                }
+
+
+                @if(Model.Formularz.Wniosek.Ocena == 1)
+                {
+                    <label>@Html.RadioButtonFor(m => m.Formularz.Wniosek.Ocena, 1, new { @Checked = "checked" }) 1</label>
+                }
+                else
+                {
+                    <label>@Html.RadioButtonFor(m => m.Formularz.Wniosek.Ocena, 1) 1</label>
+                }
+
+
+
+                @if(Model.Formularz.Wniosek.Ocena == 2)
+                {
+                    <label>@Html.RadioButtonFor(m => m.Formularz.Wniosek.Ocena, 2, new { @Checked = "checked" }) 2</label>
+                }
+                else
+                {
+                    <label>@Html.RadioButtonFor(m => m.Formularz.Wniosek.Ocena, 2) 2</label>
+                }
+            </li>
+           }
+
+            @if (Model.Formularz.Wniosek.Decyzja != null)
+            {
+              <li>
+                @Html.LabelFor(m => m.Formularz.Wniosek.Decyzja)
+
+
+                 @if(Model.Formularz.Wniosek.IdDecyzji == 1)
+                {
+                    <label>@Html.RadioButtonFor(m => m.Formularz.Wniosek.IdDecyzji, 1, new { @Checked = "checked" }) Pozytywna</label>
+                }
+                else
+                {
+                    <label>@Html.RadioButtonFor(m => m.Formularz.Wniosek.IdDecyzji, 1) Pozytywna</label>
+                }
+
+
+                 @if(Model.Formularz.Wniosek.IdDecyzji == 2)
+                {
+                    <label>@Html.RadioButtonFor(m => m.Formularz.Wniosek.IdDecyzji, 2, new { @Checked = "checked" }) Negatywna</label>
+                }
+                else
+                {
+                   <label> @Html.RadioButtonFor(m => m.Formularz.Wniosek.IdDecyzji, 2) Negatywna</label>
+                }
+              </li>
+            }
+
+        </ol>
+
+@*<section class="wnioski">
+        <table>
+        <tr>
+            <th>
+               Rodzaj wydatku
+            </th>
+            <th>
+               Wyszczególnienie
+            </th>
+            <th>
+                Kwota ogółem
+            </th>
+            <th>
+               Kwota do sfinansowania
+            </th>
+            <th></th>
+        </tr>
+          <tr>
+            <td>
+                @Html.DropDownListFor(m => m.Wydatek.RodzajWydatku, Model.RodzajeWydatku)
+            </td>
+            <td>
+                @Html.EditorFor(m => m.Wydatek.Wyszczegolnienie)
+            </td>
+            <td>
+                @Html.EditorFor(m => m.Wydatek.KwotaOgolem)
+            </td>
+            <td>
+                @Html.EditorFor(m => m.Wydatek.KwotaDoSfinans)
+            </td>
+            <td>
+                @Html.ActionLink("Usuń","Index")
+            </td>
+        </tr>
+    </table>
+    </section>
+    <input type="button" name="dodajkoszt" value=" + Dodaj wiersz + "/>*@
+    <br /><br />
+    <div style="display:inline;">
+        <input type="submit" name="Zapisz" value="Zapisz zmiany" onclick="return confirm('Czy na pewno chcesz zapisać zmiany?');"/>
+        <input type="submit" name="Anuluj" value="Anuluj" onclick="return confirm('Czy na pewno chcesz anulować?');"/>
+    </div>
+
+    <ol>
+            <li>
+                @Html.HiddenFor(model => model.Formularz.Wniosek.IdKonkursu)
+            </li>
+            <li>
+                @Html.HiddenFor(model => model.Formularz.Wniosek.IdWnioskodawcy)
+            </li>
+             <li>
+                @Html.HiddenFor(model => model.Formularz.IdFormularza)
+            </li>
+             <li>
+                @Html.HiddenFor(model => model.Formularz.IdWniosku)
+            </li>
+             <li>
+                @Html.HiddenFor(model => model.Formularz.Wniosek.IdWniosku)
+            </li>
+            <li>
+                @Html.HiddenFor(model => model.Formularz.IdPierwszegoKoord)
+            </li>
+            <li>
+                @Html.HiddenFor(model => model.Formularz.PierwszyKoord.IdKoord)
+            </li>
+            <li>
+                @Html.HiddenFor(model => model.Formularz.IdDrugiegoKoord)
+            </li>
+            <li>
+                @Html.HiddenFor(model => model.Formularz.DrugiKoord.IdKoord)
+
+            </li>
+
+            <li>
+                @Html.HiddenFor(model => model.Formularz.Wniosek.IdStatusu)
+            </li>
+
+            <li>
+                @Html.HiddenFor(model => model.Formularz.Wniosek.DataZlozenia)
+            </li>
+
+            <li>
+                @Html.HiddenFor(model => model.Formularz.Wniosek.DataOceny)
+            </li>
+
+            <li>
+                @Html.HiddenFor(model => model.Formularz.Wniosek.DataRozpatrzenia)
+            </li>
+
+             <li>
+                @Html.HiddenFor(model => model.Formularz.Wniosek.IdRecenzenta)
+            </li>
+
+             <li>
+                @Html.HiddenFor(model => model.Formularz.Wniosek.IdCzlonkaKomisji)
+            </li>
+    </ol>
+</section>    
+</fieldset>
+
+}
+
+             
