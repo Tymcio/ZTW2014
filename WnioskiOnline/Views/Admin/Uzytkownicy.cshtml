@@ -1,70 +1,44 @@
-﻿@{
-    ViewBag.Title = "Uzytkownicy";
+﻿@model WnioskiOnline.ViewModels.UzytkownicyViewModel
+
+
+@{
+    ViewBag.Title = "Użytkownicy";
 }
 
-<h2>Uzytkownicy</h2>
+<h2>Użytkownicy</h2>
 
 <section class="wnioski">
 
-<select name="rola" class="dropdown">
-    <option>Wybierz rolę</option>
-    <option value="1">Recenzent</option>
-    <option value="2">Wnioskodawca</option>
-    <option value="2">Członek komisji</option>
-</select>
+@if (!Model.Uzytkownicy.Any())
+{
+    <p>
+       Nie ma jeszcze żadnych użytkowników.
+    </p>
+  
+}
+else
+{
+ using (Ajax.BeginForm("FiltrujUzytkownikow", "Admin", new AjaxOptions { 
+    HttpMethod = "Post", UpdateTargetId = "ListaUzytkownikow" }))
+    {
 
-<form class="status">
-    <input type="radio"name="status"/>Wszyscy
-    <input type="radio"name="status"/>Autoryzowani
-    <input type="radio"name="status"/>Nieautoryzowani
-</form>
+    <fieldset>
+        <legend>Wyszukaj</legend>
+        <ol>
+            <li>
+                @Html.Label("Rola: ")
+                @Html.DropDownListFor(m => m.Rola, Model.Role)
+            </li>
 
-<table class="uzytkAdmin">
-    <thead>
-        <tr>
-            <td class="lp">LP.</td>
-            <td>Rola</td>
-            <td>Email</td>
-            <td colspan="2">Autoryzowany</td>
-        </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td class="lp">1</td>
-        <td>Recenzent</td>
-        <td>jan.kowalski@pwr.edu.pl</td>
-        <td>Tak</td>
-        <td><a href="szczegolyKonta">Szczegóły</a></td>
-    </tr>
-        <tr>
-        <td class="lp">2</td>
-        <td>Członek komisji</td>
-        <td>tadeusz.nowak@pwr.edu.pl</td>
-        <td>Nie</td>
-        <td><a href="szczegolyKonta">Szczegóły</a></td>
-    </tr>
-        <tr>
-        <td class="lp">3</td>
-        <td>Wnioskodawca</td>
-        <td>192222@pwr.edu.pl</td>
-        <td>Tak</td>
-        <td><a href="szczegolyKonta">Szczegóły</a></td>
-    </tr>
-        <tr>
-        <td class="lp">4</td>
-        <td>Wnioskodawca</td>
-        <td>191111@pwr.edu.pl</td>
-        <td>Nie</td>
-        <td><a href="szczegolyKonta">Szczegóły</a></td>
-   </tr>
-        <tr>
-        <td class="lp">5</td>
-        <td>Recenzent</td>
-        <td>jan.nowak@pwr.edu.pl</td>
-        <td>Tak</td>
-        <td><a href="szczegolyKonta">Szczegóły</a></td>
 
-    </tr>
-    </tbody>
-</table>
+        </ol>
+        <input type="submit" value="Wyszukaj" />
+    </fieldset>
+    }
+    <div id="ListaUzytkownikow">
+     @Html.Partial("ListaUzytkownikow", Model.Uzytkownicy)
+    </div>
+
+}
+
 </section>

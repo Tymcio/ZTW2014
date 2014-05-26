@@ -197,7 +197,25 @@ namespace WnioskiOnline.Controllers
 
         public ActionResult Uzytkownicy()
         {
-            return View();
+            UzytkownicyViewModel model = new UzytkownicyViewModel();
+            model.Uzytkownicy = db.UserProfiles.OrderBy(u => u.UserName).ToList();
+            List<string> role = Roles.GetAllRoles().ToList();
+            role.Insert(0, "Wszystkie");
+            model.Role = new SelectList(role, "Wszystkie");
+            return View(model);
+        }
+
+
+        [HttpPost]
+        public ActionResult FiltrujUzytkownikow(UzytkownicyViewModel model)
+        {
+            List<UserProfile> uzytkownicy = db.UserProfiles.OrderBy(u => u.UserName).ToList();
+
+            if (model.Rola != "Wszystkie")
+            {
+                uzytkownicy = uzytkownicy.FindAll(u => Roles.GetRolesForUser(u.UserName).First() == model.Rola);
+            }
+            return PartialView("ListaUzytkownikow", uzytkownicy);
         }
 
         public ActionResult SzczegolyKonta()

@@ -221,6 +221,7 @@
     <Compile Include="ViewModels\SzczegolyK1NViewModel.cs" />
     <Compile Include="ViewModels\SzczegolyK2ViewModel.cs" />
     <Compile Include="ViewModels\SzczegolyK3ViewModel.cs" />
+    <Compile Include="ViewModels\UzytkownicyViewModel.cs" />
     <Compile Include="ViewModels\WnioskiViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -381,6 +382,7 @@
     <Content Include="Views\Admin\EdytujK1N.cshtml" />
     <Content Include="Views\Admin\EdytujK2.cshtml" />
     <Content Include="Views\Admin\EdytujK3.cshtml" />
+    <Content Include="Views\Admin\ListaUzytkownikow.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
