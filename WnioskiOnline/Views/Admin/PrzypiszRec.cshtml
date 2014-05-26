@@ -1,77 +1,127 @@
-﻿@{
+﻿@model WnioskiOnline.ViewModels.PrzypiszRecenzentaViewModel
+
+
+@{
     ViewBag.Title = "Przypisz recenzenta do wniosku - Administrator";
 }
 
+<script src="@Url.Content("~/Scripts/jquery-1.8.2.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery-ui-1.8.24.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(function () {
+            $(".recenzent_draggable").draggable({
+                revert: true
+            });
+
+            $(".recenzent").droppable({
+        
+                drop: function (event, ui) {
+                    alert("dropped");
+                    var recid = ui.draggable.attr("id");
+                    var idwniosku = $(this).attr("id")
+                    alert(idwniosku);
+                    $.post('@Url.Action("Przypisz", "Admin")', { "IdRec": recid, "IdWniosku": idwniosku },
+                                        function (data) {
+ 
+                                            alert(idwniosku);
+                                            $('#' + idwniosku).html('<ul style="background:aliceblue;"> <li > Imię: ' + data.Imie + '</li> <li > Nazwisko: ' + data.Nazwisko + '</li> <li> Email: ' + data.Email + '</li> </ul>');
+                                        },'json');
+                }
+
+            });
+        });
+    });
+</script>
+
+<style>
+    .recenzent_draggable {
+           background-color: white;
+            margin:10px;
+            cursor:move;
+             -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.5);
+            -moz-box-shadow: 0 1px 2px rgba(0,0,0,.5);
+            box-shadow: 0 1px 2px rgba(0,0,0,.5);
+    }
+    .recenzent {
+        background-color:aliceblue;
+        width: 300px; 
+        height: 75px;
+        margin-bottom:10px;
+                     -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.5);
+            -moz-box-shadow: 0 1px 2px rgba(0,0,0,.5);
+            box-shadow: 0 1px 2px rgba(0,0,0,.5);
+    }
+
+    .wnioski {
+            float: left;
+            width:500px;
+    }
+
+    .recenzenci {
+        float: right;
+    }
+</style>
+
+
 <h2>Wnioski - Recenzenci</h2>
 
-<section class="wnioski">
+<br />
+
 
 <div class="float-left">
+
     <label>Wnioski:</label>
-    <table style="width:350px;">
-        <thead>
-            <tr>
-                <td class="lp">LP</td>
-                <td>Nazwa wniosku</td>
-                <td>Dziedzina nauki</td>
-                <td style="width:auto;">Przypisz recenzenta</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="lp">1</td>
-                <td>Wniosek 1</td>
-                <td>Dziedzina 1</td>
-                <td style="width:auto;">1</td>
-            </tr>
-            <tr>
-                <td class="lp">2</td>
-                <td>Wniosek 2</td>
-                <td>Dziedzina 2</td>
-                <td style="width:auto;">2</td>
-            </tr>
-        </tbody>
-    </table>
+
+  @foreach (var item in Model.Wnioski) {
+   
+        <div id="wniosek@(item.IdWniosku)" class="recenzent" >
+            @if (item.IdRecenzenta == null)
+            {
+                @Html.Label("Brak Recenzenta")
+            }
+            else
+            {
+             <ul style="background:aliceblue;">
+                 <li > Recenzent dla wniosku:</li>
+                <li > Imię: @Html.DisplayFor(modelItem => item.Recenzent.Imie)</li>
+                <li > Nazwisko: @Html.DisplayFor(modelItem => item.Recenzent.Nazwisko)</li>
+                <li> Email: @Html.DisplayFor(modelItem => item.Recenzent.Email)</li>
+            </ul>
+            }
+        </div>
+        <ul style="background:white; margin-top:10px;">
+            <li > Konkurs: @Html.DisplayFor(modelItem => item.Konkurs.NazwaKonkursu)</li>
+            <li > Nazwa wniosku: @Html.DisplayFor(modelItem => item.TytulWniosku)</li>
+            <li> Dziedzina: @Html.DisplayFor(modelItem => item.Dziedzina.NazwaDziedziny)</li>
+            <li> Data złożenia: @Html.DisplayFor(modelItem => item.DataZlozenia)</li>
+        </ul>
+      
+
+
+  }
+
 </div>
+
 
 <div class="float-right">
+
     <label>Recenzenci:</label>
-    <table style="width:370px;">
-        <thead>
-            <tr>
-                <td class="lp">LP</td>
-                <td>Imię</td>
-                <td>Nazwisko</td>
-                <td>Dziedzina</td>
-                <td style="width:auto;">Liczba wniosków</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="lp">1</td>
-                <td>Imię 1</td>
-                <td>Nazwisko 1</td>
-                <td>Dziedzina 1</td>
-                <td style="width:auto;">1</td>
-            </tr>
-            <tr>
-                <td class="lp">2</td>
-                <td>Imię 2</td>
-                <td>Nazwisko 2</td>
-                <td>Dziedzina 2</td>
-                <td style="width:auto;">2</td>
-            </tr>
-        </tbody>
-    </table>
+    
+ @foreach (var item in Model.Recenzenci) {
+
+        <ul  id="rec@(item.UserId)" class="recenzent_draggable" >
+            <li > Imię: @Html.DisplayFor(modelItem => item.Imie)</li>
+            <li > Nazwisko: @Html.DisplayFor(modelItem => item.Nazwisko)</li>
+            <li> Email: @Html.DisplayFor(modelItem => item.Email)</li>
+            <li> Dziedzina: @Html.DisplayFor(modelItem => item.Imie)</li>
+        </ul>
+
+
+  }
 </div>
 
 
 
-
-
-
-
-
-
-
-</section>

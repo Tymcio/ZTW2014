@@ -18,7 +18,7 @@ namespace WnioskiOnline.Controllers
     public class AccountController : Controller
     {
 
-        WnioskiContext db = new WnioskiContext();
+        private WnioskiContext db = new WnioskiContext();
 
         public ActionResult Dane()
         {
