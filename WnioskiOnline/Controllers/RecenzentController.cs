@@ -39,7 +39,7 @@ namespace WnioskiOnline.Controllers
             model.Konkursy = new SelectList(konkursy, "IdKonkursu", "NazwaKonkursu", 0);
             model.Statusy = new SelectList(statusy, "IdStatusu", "NazwaStatusu");
          //   model.Wnioski = db.Wnioski.OrderBy(w => w.Konkurs.NazwaKonkursu).ToList().FindAll(x => x.Recenzent.UserId == WebSecurity.GetUserId(User.Identity.Name));
-            model.Wnioski = db.Wnioski.OrderBy(w => w.Konkurs.NazwaKonkursu).ToList();
+            model.Wnioski = db.Wnioski.OrderBy(w => w.Konkurs.NazwaKonkursu).ToList().FindAll(w => w.Status.NazwaStatusu != "Do zatwierdzenia");
             return View(model);
 
         }

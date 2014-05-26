@@ -1,16 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
 using System.Linq;
+using System.Transactions;
 using System.Web;
 using System.Web.Mvc;
-using WnioskiOnline.Models;
+using System.Web.Security;
+using DotNetOpenAuth.AspNet;
+using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
+using WnioskiOnline.Filters;
+using WnioskiOnline.Models;
 using WnioskiOnline.ViewModels;
 
 namespace WnioskiOnline.Controllers
 {
+    [InitializeSimpleMembership]
     public class AdminController : Controller
     {
         private WnioskiContext db = new WnioskiContext();
@@ -41,16 +45,16 @@ namespace WnioskiOnline.Controllers
         {
             PrzypiszRecenzentaViewModel model = new PrzypiszRecenzentaViewModel();
            
-            model.Recenzenci = db.UserProfiles.ToList();
-            model.Wnioski = db.Wnioski.ToList();
+         //   model.Recenzenci = db.UserProfiles.ToList();
+            model.Recenzenci = db.UserProfiles.ToList().FindAll(r => Roles.FindUsersInRole("Recenzent",r.UserName).Length > 0);
+            model.Wnioski = db.Wnioski.ToList().FindAll(w => w.Status.NazwaStatusu == "Do recenzji");
 
             return View(model);
         }
 
         public ActionResult Przypisz(string IdRec, string IdWniosku)
         {
-            // This returned data is a sample. You should get it using some logic
-            // This can be an object or an anonymous object like this:
+
             System.Diagnostics.Debug.WriteLine("Przypisz");
             int IdR =  Convert.ToInt32(IdRec.Substring(3));
             int IdW = Convert.ToInt32(IdWniosku.Substring(7));
@@ -63,10 +67,6 @@ namespace WnioskiOnline.Controllers
             dbWniosek.IdRecenzenta = IdR;
             dbWniosek.Recenzent = db.UserProfiles.Find(IdR);
             db.SaveChanges();
-            PrzypiszRecenzentaViewModel model = new PrzypiszRecenzentaViewModel();
-
-            model.Recenzenci = db.UserProfiles.ToList();
-            model.Wnioski = db.Wnioski.ToList();
 
             return Json(db.UserProfiles.Find(IdR));
         }
