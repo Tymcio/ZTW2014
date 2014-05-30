@@ -87,7 +87,6 @@ namespace WnioskiOnline.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            ViewBag.Roles = Roles.GetAllRoles().ToList();
             return View();
         }
 

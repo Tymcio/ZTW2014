@@ -69,6 +69,92 @@ namespace WnioskiOnline.Controllers
             return View(db.Konkursy.ToList());
         }
 
+        public ActionResult EdytujProfil(int id = 0)
+        {
+            EdycjaUzytkownikaViewModel model = new EdycjaUzytkownikaViewModel();
+            model.Uzytkownik = db.UserProfiles.Find(id);
+            model.Rola = Roles.GetRolesForUser(model.Uzytkownik.UserName).First();
+            model.Role = Roles.GetAllRoles();
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult EdytujProfil(string Zapisz, string Anuluj, EdycjaUzytkownikaViewModel model)
+        {
+            if (Anuluj != null)
+            {
+                return RedirectToAction("Uzytkownicy");
+            }
+
+            if (ModelState.IsValid)
+            {
+                string ObecnaRola = Roles.GetRolesForUser(model.Uzytkownik.UserName).First();
+                if (ObecnaRola != model.Rola)
+                {
+                    Roles.RemoveUserFromRole(model.Uzytkownik.UserName, ObecnaRola);
+                    Roles.AddUserToRole(model.Uzytkownik.UserName, model.Rola);
+                }
+                db.Entry(model.Uzytkownik).State = System.Data.EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Uzytkownicy");
+            }
+            System.Diagnostics.Debug.WriteLine("Not valid");
+
+            model.Role = Roles.GetAllRoles();
+            return View(model);
+        }
+
+        public ActionResult PrzypiszDziedzine(int id = 0)
+        {
+            PrzypiszDziedzineViewModel model = new PrzypiszDziedzineViewModel();
+            model.Recenzent = db.UserProfiles.Find(id);
+            List<Kompetencja> komp = db.Kompetencje.Where(k => k.IdRecenzenta == model.Recenzent.UserId).ToList();
+            if (komp.Any())
+            {
+                 model.MaKompetencje = true;
+                 model.Kompetencja = komp.First();
+                 model.Dziedziny = new SelectList(db.Dziedziny, "IdDziedziny", "NazwaDziedziny", model.Kompetencja.IdDziedziny);
+            }
+            else
+            {
+                model.MaKompetencje = false;
+                model.Dziedziny = new SelectList(db.Dziedziny, "IdDziedziny", "NazwaDziedziny"); 
+            }
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult PrzypiszDziedzine(string Zapisz, string Anuluj, PrzypiszDziedzineViewModel model)
+        {
+            if (Anuluj != null)
+            {
+                return RedirectToAction("Recenzenci");
+            }
+
+            System.Diagnostics.Debug.WriteLine(model.MaKompetencje);
+
+            if (ModelState.IsValid)
+            {
+                if (model.MaKompetencje)
+                {
+                    db.Entry(model.Kompetencja).State = System.Data.EntityState.Modified;
+                }
+                else
+                {
+                    model.Kompetencja.IdRecenzenta = model.Recenzent.UserId;
+                    db.Kompetencje.Add(model.Kompetencja);
+                }
+                db.SaveChanges();
+                return RedirectToAction("Recenzenci");
+            }
+            System.Diagnostics.Debug.WriteLine("Not valid");
+
+            model.Dziedziny = new SelectList(db.Dziedziny, "IdDziedziny", "NazwaDziedziny", model.Kompetencja.IdDziedziny); 
+            return View(model);
+        }
+
         public ActionResult EdytujKonkurs(int id = 0)
         {
             return View(db.Konkursy.Find(id));
@@ -203,6 +289,13 @@ namespace WnioskiOnline.Controllers
             role.Insert(0, "Wszystkie");
             model.Role = new SelectList(role, "Wszystkie");
             return View(model);
+        }
+
+
+        public ActionResult Recenzenci()
+        {
+
+            return View(db.UserProfiles.ToList().FindAll(u => Roles.GetRolesForUser(u.UserName).First() == "Recenzent"));
         }
 
 
