@@ -5,40 +5,72 @@
     ViewBag.Title = "Użytkownicy";
 }
 
-<h2>Użytkownicy</h2>
+@if (Request.IsAuthenticated) {
 
-<section class="wnioski">
-
-@if (!Model.Uzytkownicy.Any())
-{
-    <p>
-       Nie ma jeszcze żadnych użytkowników.
-    </p>
-  
-}
-else
-{
- using (Ajax.BeginForm("FiltrujUzytkownikow", "Admin", new AjaxOptions { 
-    HttpMethod = "Post", UpdateTargetId = "ListaUzytkownikow" }))
+    
+    if (User.IsInRole("Administrator"))
     {
 
-    <fieldset>
-        <legend>Wyszukaj</legend>
-        <ol>
-            <li>
-                @Html.Label("Rola: ")
-                @Html.DropDownListFor(m => m.Rola, Model.Role)
-            </li>
+        <h2>Użytkownicy</h2>
+
+        <section class="wnioski">
 
 
-        </ol>
-        <input type="submit" value="Wyszukaj" />
-    </fieldset>
+        @if (!Model.Uzytkownicy.Any())
+        {
+            <p>
+               Nie ma jeszcze żadnych użytkowników.
+            </p>
+  
+        }
+        else
+        {
+    
+            <p>
+                @Html.ActionLink("Przypisz dziedzinę dla recenzenta", "Recenzenci", "Admin")
+            </p>
+    
+         using (Ajax.BeginForm("FiltrujUzytkownikow", "Admin", new AjaxOptions { 
+            HttpMethod = "Post", UpdateTargetId = "ListaUzytkownikow" }))
+            {
+
+            <fieldset>
+                <legend>Wyszukaj</legend>
+                <ol>
+                    <li>
+                        @Html.Label("Rola: ")
+                        @Html.DropDownListFor(m => m.Rola, Model.Role)
+                    </li>
+
+
+                </ol>
+                <input type="submit" value="Wyszukaj" />
+            </fieldset>
+            }
+            <div id="ListaUzytkownikow">
+             @Html.Partial("ListaUzytkownikow", Model.Uzytkownicy)
+            </div>
+
+        }
+
+        </section>
+
+
     }
-    <div id="ListaUzytkownikow">
-     @Html.Partial("ListaUzytkownikow", Model.Uzytkownicy)
-    </div>
-
+    else
+    {
+        <p>
+            Nie masz dostępu do tego zasobu.
+        </p>
+    }
 }
 
-</section>
+else
+{
+    
+    <p>
+        Dostęp do tego zasobu jest możliwy tylko dla zalogowanych użytkowników.
+    </p>
+    @Html.ActionLink("Zaloguj się", "Login", "Account", routeValues: null,  htmlAttributes: new { id = "loginLink" })
+    
+}

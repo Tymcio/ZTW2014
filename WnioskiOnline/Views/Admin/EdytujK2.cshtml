@@ -2,8 +2,14 @@
 
 
 @{
-    ViewBag.Title = "Edycja wniosku Kw";
+    ViewBag.Title = "Edycja wniosku K2";
 }
+
+@if (Request.IsAuthenticated) {
+    
+    
+    if (User.IsInRole("Administrator"))
+    {
 
 <h3>WNIOSEK O DOFINANSOWANIE PROJEKTU STUDENCKIEGO ŚREDNIOTERMINOWEGO/ŚREDNIOBUDŻETOWEGO ZE ŚRODKÓW PRZEZNACZONYCH PRZEZ UCZELNI NA DZIAŁALNOŚĆ STUDENCKĄ I DOKTORANCKĄ</h3>
 
@@ -329,6 +335,25 @@
 </section>    
 </fieldset>
 
+
+}
+    }
+    else
+    {
+        <p>
+            Nie masz dostępu do tego zasobu.
+        </p>
+    }
+}
+
+else
+{
+    
+    <p>
+        Dostęp do tego zasobu jest możliwy tylko dla zalogowanych użytkowników.
+    </p>
+    @Html.ActionLink("Zaloguj się", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+    
 }
 
              

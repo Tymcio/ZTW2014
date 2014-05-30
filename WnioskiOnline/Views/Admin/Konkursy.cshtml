@@ -4,56 +4,80 @@
     ViewBag.Title = "Konkursy";
 }
 
+@if (Request.IsAuthenticated) {
+    
+    
+    if (User.IsInRole("Administrator"))
+    {
+
+        <h2>Konkursy</h2>
+
+        <section class="konkursy">
 
 
-<h2>Konkursy</h2>
-
-<section class="konkursy">
-
-
-@if (!Model.Any())
-{
-    <p>
-       Nie znaleziono żadnych konkursów.
-    </p>
+        @if (!Model.Any())
+        {
+            <p>
+               Nie znaleziono żadnych konkursów.
+            </p>
   
+        }
+        else
+        {
+
+            <table>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.First().NazwaKonkursu)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.First().DataRozpoczecia)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.First().DataZakonczenia)
+                    </th>
+                    <th></th>
+                </tr>
+
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NazwaKonkursu)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataRozpoczecia)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataZakonczenia)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edytuj", "EdytujKonkurs", new { id=item.IdKonkursu}) 
+
+                    </td>
+                </tr>
+            }
+
+            </table>
+        }
+        </section>
+
+
+    }
+    else
+    {
+        <p>
+            Nie masz dostępu do tego zasobu.
+        </p>
+    }
 }
+
 else
 {
-
-    <table>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.First().NazwaKonkursu)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.First().DataRozpoczecia)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.First().DataZakonczenia)
-            </th>
-            <th></th>
-        </tr>
-
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.NazwaKonkursu)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataRozpoczecia)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataZakonczenia)
-            </td>
-            <td>
-                @Html.ActionLink("Edytuj", "EdytujKonkurs", new { id=item.IdKonkursu}) 
-
-            </td>
-        </tr>
-    }
-
-    </table>
+    
+    <p>
+        Dostęp do tego zasobu jest możliwy tylko dla zalogowanych użytkowników.
+    </p>
+    @Html.ActionLink("Zaloguj się", "Login", "Account", routeValues: null,  htmlAttributes: new { id = "loginLink" })
+    
 }
-</section>
 

@@ -4,64 +4,89 @@
     ViewBag.Title = "Edycja profilu użytkownika";
 }
 
-<h2>Edycja profilu użytkownika</h2>
-
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
- 
-<fieldset>
- <legend>Zmiana danych</legend>
-<section>
-   <div>
+@if (Request.IsAuthenticated) {
     
-   </div>
+    
+    if (User.IsInRole("Administrator"))
+    {
+
+        <h2>Edycja profilu użytkownika</h2>
+
+        using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+ 
+        <fieldset>
+         <legend>Zmiana danych</legend>
+        <section>
+           <div>
+    
+           </div>
+                <ol>
+                    <li>
+                        @Html.Label("Rola użytkownika: ")
+                        @Html.DropDownListFor(m => m.Rola, new SelectList(Model.Role, "Rola"))
+                    </li> 
+
+                    <li>
+                        @Html.DisplayNameFor(m => m.Uzytkownik.UserName)
+                        @Html.EditorFor(m => m.Uzytkownik.UserName)
+                    </li>
+
+                    <li>
+                        @Html.DisplayNameFor(m => m.Uzytkownik.Imie)
+                        @Html.EditorFor(m => m.Uzytkownik.Imie)
+                    </li>
+
+                     <li>
+                        @Html.DisplayNameFor(m => m.Uzytkownik.Nazwisko)
+                        @Html.EditorFor(m => m.Uzytkownik.Nazwisko)
+                    </li>
+
+                    <li>
+                        @Html.DisplayNameFor(m => m.Uzytkownik.Email)
+                        @Html.EditorFor(m => m.Uzytkownik.Email)
+                    </li>
+
+                    <li>
+                        @Html.DisplayNameFor(m => m.Uzytkownik.Telefon)
+                        @Html.EditorFor(m => m.Uzytkownik.Telefon)
+                    </li>
+
+
+            </ol>
+
+               <br /><br />
+            <div style="display:inline;">
+                <input type="submit" name="Zapisz" value="Zapisz zmiany" onclick="return confirm('Czy na pewno chcesz zapisać zmiany?');"/>
+                <input type="submit" name="Anuluj" value="Anuluj" onclick="return confirm('Czy na pewno chcesz anulować?');"/>
+            </div>
         <ol>
-            <li>
-                @Html.Label("Rola użytkownika: ")
-                @Html.DropDownListFor(m => m.Rola, new SelectList(Model.Role, "Rola"))
-            </li> 
+                    <li>
+                        @Html.HiddenFor(model => model.Uzytkownik.UserId)
+                    </li>
 
-            <li>
-                @Html.DisplayNameFor(m => m.Uzytkownik.UserName)
-                @Html.EditorFor(m => m.Uzytkownik.UserName)
-            </li>
+        </ol>
+        </section>   
 
-            <li>
-                @Html.DisplayNameFor(m => m.Uzytkownik.Imie)
-                @Html.EditorFor(m => m.Uzytkownik.Imie)
-            </li>
-
-             <li>
-                @Html.DisplayNameFor(m => m.Uzytkownik.Nazwisko)
-                @Html.EditorFor(m => m.Uzytkownik.Nazwisko)
-            </li>
-
-            <li>
-                @Html.DisplayNameFor(m => m.Uzytkownik.Email)
-                @Html.EditorFor(m => m.Uzytkownik.Email)
-            </li>
-
-            <li>
-                @Html.DisplayNameFor(m => m.Uzytkownik.Telefon)
-                @Html.EditorFor(m => m.Uzytkownik.Telefon)
-            </li>
+        </fieldset>
 
 
-    </ol>
+        }
+    }
+    else
+    {
+        <p>
+            Nie masz dostępu do tego zasobu.
+        </p>
+    }
+}
 
-       <br /><br />
-    <div style="display:inline;">
-        <input type="submit" name="Zapisz" value="Zapisz zmiany" onclick="return confirm('Czy na pewno chcesz zapisać zmiany?');"/>
-        <input type="submit" name="Anuluj" value="Anuluj" onclick="return confirm('Czy na pewno chcesz anulować?');"/>
-    </div>
-<ol>
-            <li>
-                @Html.HiddenFor(model => model.Uzytkownik.UserId)
-            </li>
-
-</ol>
-</section>   
-
-</fieldset>
-
+else
+{
+    
+    <p>
+        Dostęp do tego zasobu jest możliwy tylko dla zalogowanych użytkowników.
+    </p>
+    @Html.ActionLink("Zaloguj się", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+    
 }

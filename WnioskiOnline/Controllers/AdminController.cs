@@ -321,7 +321,7 @@ namespace WnioskiOnline.Controllers
             PrzypiszRecenzentaViewModel model = new PrzypiszRecenzentaViewModel();
            
          //   model.Recenzenci = db.UserProfiles.ToList();
-            model.Recenzenci = db.UserProfiles.ToList().FindAll(r => Roles.FindUsersInRole("Recenzent",r.UserName).Length > 0);
+            model.Recenzenci = db.Kompetencje.ToList();
             model.Wnioski = db.Wnioski.ToList().FindAll(w => w.Status.NazwaStatusu == "Do recenzji");
 
             return View(model);

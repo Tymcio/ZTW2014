@@ -7,7 +7,7 @@ namespace WnioskiOnline.ViewModels
 {
     public class PrzypiszRecenzentaViewModel
     {
-        public IEnumerable<WnioskiOnline.Models.UserProfile> Recenzenci { get; set; }
+        public IEnumerable<WnioskiOnline.Models.Kompetencja> Recenzenci { get; set; }
         public IEnumerable<WnioskiOnline.Models.Wniosek> Wnioski { get; set; }
     }
 }

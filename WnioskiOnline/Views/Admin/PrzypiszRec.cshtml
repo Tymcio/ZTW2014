@@ -5,133 +5,159 @@
     ViewBag.Title = "Przypisz recenzenta do wniosku - Administrator";
 }
 
-<script src="@Url.Content("~/Scripts/jquery-1.8.2.min.js")" type="text/javascript"></script>
-<script src="@Url.Content("~/Scripts/jquery-ui-1.8.24.min.js")" type="text/javascript"></script>
-<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
+@if (Request.IsAuthenticated) {
+    
+    
+    if (User.IsInRole("Administrator"))
+    {
 
-<script type="text/javascript">
-    $(document).ready(function () {
-        $(function () {
-            $(".recenzent_draggable").draggable({
-                revert: true,
-                revertDuration: 0
-            });
+        <script src="@Url.Content("~/Scripts/jquery-1.8.2.min.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/jquery-ui-1.8.24.min.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
 
-            $(".recenzent").droppable({
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $(function () {
+                    $(".recenzent_draggable").draggable({
+                        revert: true,
+                        revertDuration: 0
+                    });
+
+                    $(".recenzent").droppable({
         
-                drop: function (event, ui) {
-                    var recid = ui.draggable.attr("id");
-                    var idwniosku = $(this).attr("id");
+                        drop: function (event, ui) {
+                            var recid = ui.draggable.attr("id");
+                            var idwniosku = $(this).attr("id");
 
-                    $.post('@Url.Action("Przypisz", "Admin")', { "IdRec": recid, "IdWniosku": idwniosku },
-                                        function (data) {
+                            $.post('@Url.Action("Przypisz", "Admin")', { "IdRec": recid, "IdWniosku": idwniosku },
+                                                function (data) {
 
-                                            alert("Przypisano recenzenta!");
-                                            $('#' + idwniosku).html('<Label><b>Recenzent</b></Label> <ul style="background:lightblue; margin-top:0px"> <li > Imię: ' + data.Imie + '</li> <li > Nazwisko: ' + data.Nazwisko + '</li> <li> Email: ' + data.Email + '</li> </ul>');
-                                        },'json');
-                }
+                                                    alert("Przypisano recenzenta!");
+                                                    $('#' + idwniosku).html('<Label><b>Recenzent</b></Label> <ul style="background:lightblue; margin-top:0px"> <li > Imię: ' + data.Imie + '</li> <li > Nazwisko: ' + data.Nazwisko + '</li> <li> Email: ' + data.Email + '</li> </ul>');
+                                                },'json');
+                        }
 
+                    });
+                });
             });
-        });
-    });
-</script>
+        </script>
 
-<style>
-    .recenzent_draggable {
-           background-color: aliceblue;
-            margin:10px;
-            cursor:move;
-             -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.5);
-            -moz-box-shadow: 0 1px 2px rgba(0,0,0,.5);
-            box-shadow: 0 1px 2px rgba(0,0,0,.5);
-    }
-    .recenzent {
-        background-color:lightblue;
-        width: 300px; 
-        height: 80px;
+        <style>
+            .recenzent_draggable {
+                   background-color: aliceblue;
+                    margin:10px;
+                    cursor:move;
                      -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.5);
-            -moz-box-shadow: 0 1px 2px rgba(0,0,0,.5);
-            box-shadow: 0 1px 2px rgba(0,0,0,.5);
-    }
+                    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.5);
+                    box-shadow: 0 1px 2px rgba(0,0,0,.5);
+            }
+            .recenzent {
+                background-color:lightblue;
+                width: 300px; 
+                height: 80px;
+                             -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.5);
+                    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.5);
+                    box-shadow: 0 1px 2px rgba(0,0,0,.5);
+            }
 
-    .wnioski {
-            float: left;
-            width:500px;
-    }
+            .wnioski {
+                    float: left;
+                    width:500px;
+            }
 
-        .wniosek {
-            margin-bottom:10px;
-            background-color:white;
-            border-style:groove;
+                .wniosek {
+                    margin-bottom:10px;
+                    background-color:white;
+                    border-style:groove;
 
             
-    }
+            }
 
 
-</style>
+        </style>
 
-<h2>Wnioski - recenzenci</h2>
-<p>(aby przypisać recenzeta do wniosku przeciągnij dane recenzenta i upuść je w niebieskim polu)</p>
+        <h2>Wnioski - recenzenci</h2>
+        <p>(aby przypisać recenzeta do wniosku przeciągnij dane recenzenta i upuść je w niebieskim polu)</p>
 
 
 
-<div class="float-left">
+        <div class="float-left">
 
-    <h2>Wnioski:</h2>
-    <br />
+            <h2>Wnioski:</h2>
+            <br />
 
-  @foreach (var item in Model.Wnioski) {
+          @foreach (var item in Model.Wnioski) {
       
-      <div class="wniosek">
+              <div class="wniosek">
    
 
-        <Label><b>Wniosek</b></Label>   
-        <ul style="background:white; margin-top:0px;">
-            <li > Konkurs: @Html.DisplayFor(modelItem => item.Konkurs.NazwaKonkursu)</li>
-            <li > Nazwa wniosku: @Html.DisplayFor(modelItem => item.TytulWniosku)</li>
-            <li> Dziedzina: @Html.DisplayFor(modelItem => item.Dziedzina.NazwaDziedziny)</li>
-            <li> Data złożenia: @Html.DisplayFor(modelItem => item.DataZlozenia)</li>
-        </ul>
-              <div id="wniosek@(item.IdWniosku)" class="recenzent">
-            @if (item.IdRecenzenta == null)
-            {
-                @Html.Label("Brak Recenzenta")
-            }
-            else
-            {
-             <Label><b>Recenzent</b></Label>    
-             <ul style="background-color:lightblue; margin-top:0px">
+                <Label><b>Wniosek</b></Label>   
+                <ul style="background:white; margin-top:0px;">
+                    <li > Konkurs: @Html.DisplayFor(modelItem => item.Konkurs.NazwaKonkursu)</li>
+                    <li > Nazwa wniosku: @Html.DisplayFor(modelItem => item.TytulWniosku)</li>
+                    <li> Dziedzina: @Html.DisplayFor(modelItem => item.Dziedzina.NazwaDziedziny)</li>
+                    <li> Data złożenia: @Html.DisplayFor(modelItem => item.DataZlozenia)</li>
+                </ul>
+                      <div id="wniosek@(item.IdWniosku)" class="recenzent">
+                    @if (item.IdRecenzenta == null)
+                    {
+                        @Html.Label("Brak Recenzenta")
+                    }
+                    else
+                    {
+                     <Label><b>Recenzent</b></Label>    
+                     <ul style="background-color:lightblue; margin-top:0px">
 
-                <li > Imię: @Html.DisplayFor(modelItem => item.Recenzent.Imie)</li>
-                <li > Nazwisko: @Html.DisplayFor(modelItem => item.Recenzent.Nazwisko)</li>
-                <li> Adres email: @Html.DisplayFor(modelItem => item.Recenzent.Email)</li>
-            </ul>
-            }
+                        <li > Imię: @Html.DisplayFor(modelItem => item.Recenzent.Imie)</li>
+                        <li > Nazwisko: @Html.DisplayFor(modelItem => item.Recenzent.Nazwisko)</li>
+                        <li> Adres email: @Html.DisplayFor(modelItem => item.Recenzent.Email)</li>
+                    </ul>
+                    }
+                </div>
         </div>
-</div>
 
-  }
+          }
 
-</div>
+        </div>
 
 
-<div class="float-right">
+        <div class="float-right">
 
-  <h2>Recenzenci:</h2>  
+          <h2>Recenzenci:</h2>  
     
- @foreach (var item in Model.Recenzenci) {
-     <div>
+         @foreach (var item in Model.Recenzenci) {
+             <div>
  
-        <ul  id="rec@(item.UserId)" class="recenzent_draggable" >
-            <li > Imię: @Html.DisplayFor(modelItem => item.Imie)</li>
-            <li > Nazwisko: @Html.DisplayFor(modelItem => item.Nazwisko)</li>
-            <li> Adres email: @Html.DisplayFor(modelItem => item.Email)</li>
-            <li> Dziedzina: @Html.DisplayFor(modelItem => item.Imie)</li>
-        </ul>
-</div>
+                <ul  id="rec@(item.Recenzent.UserId)" class="recenzent_draggable" >
+                    <li > Imię: @Html.DisplayFor(modelItem => item.Recenzent.Imie)</li>
+                    <li > Nazwisko: @Html.DisplayFor(modelItem => item.Recenzent.Nazwisko)</li>
+                    <li> Adres email: @Html.DisplayFor(modelItem => item.Recenzent.Email)</li>
+                    <li> Dziedzina: @Html.DisplayFor(modelItem => item.Dziedzina.NazwaDziedziny)</li>
+                </ul>
+        </div>
 
-  }
-</div>
+          }
+        </div>
+
+
+    }
+    else
+    {
+        <p>
+            Nie masz dostępu do tego zasobu.
+        </p>
+    }
+}
+
+else
+{
+    
+    <p>
+        Dostęp do tego zasobu jest możliwy tylko dla zalogowanych użytkowników.
+    </p>
+    @Html.ActionLink("Zaloguj się", "Login", "Account", routeValues: null,  htmlAttributes: new { id = "loginLink" })
+    
+}
 
 
 

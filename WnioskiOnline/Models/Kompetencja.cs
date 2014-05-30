@@ -28,11 +28,4 @@ namespace WnioskiOnline.Models
 
     }
 
-    public class ModelRecenzenta
-    {
-        public string Dziedzina { get; set; }
-        public virtual UserProfile Recenzent {get; set;}
-
-
-    }
 }

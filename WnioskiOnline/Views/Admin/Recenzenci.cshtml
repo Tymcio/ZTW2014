@@ -4,61 +4,88 @@
     ViewBag.Title = "Recenzenci";
 }
 
-<h2>Recenzenci</h2>
+
+@if (Request.IsAuthenticated) {
+    
+    
+    if (User.IsInRole("Administrator"))
+    {
+        
+        <h2>Recenzenci</h2>
 
 
-@if (!Model.Any())
-{
-    <p>
-       Nie ma dodanych żadnych recenzentów.
-    </p>
+        if (!Model.Any())
+        {
+            <p>
+               Nie ma dodanych żadnych recenzentów.
+            </p>
   
+        }
+        else
+        {
+            <table>
+                <tr>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.First().UserName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.First().Imie)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.First().Nazwisko)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.First().Email)
+                    </th>
+                    <th>
+                        Rola
+                    </th>
+                    <th></th>
+                </tr>
+
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Imie)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nazwisko)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                       @Roles.GetRolesForUser(item.UserName).First()
+                    </td>
+                    <td>
+                        @Html.ActionLink("Przypisz dziedzinę", "PrzypiszDziedzine", new { id=item.UserId }) 
+                    </td>
+                </tr>
+            }
+
+            </table>
+        }
+
+
+    }
+    else
+    {
+        <p>
+            Nie masz dostępu do tego zasobu.
+        </p>
+    }
 }
+
 else
 {
-    <table>
-        <tr>
-
-            <th>
-                @Html.DisplayNameFor(model => model.First().UserName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.First().Imie)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.First().Nazwisko)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.First().Email)
-            </th>
-            <th>
-                Rola
-            </th>
-            <th></th>
-        </tr>
-
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Imie)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nazwisko)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-               @Roles.GetRolesForUser(item.UserName).First()
-            </td>
-            <td>
-                @Html.ActionLink("Przypisz dziedzinę", "PrzypiszDziedzine", new { id=item.UserId }) 
-            </td>
-        </tr>
-    }
-
-    </table>
+    
+    <p>
+        Dostęp do tego zasobu jest możliwy tylko dla zalogowanych użytkowników.
+    </p>
+    @Html.ActionLink("Zaloguj się", "Login", "Account", routeValues: null,  htmlAttributes: new { id = "loginLink" })
+    
 }

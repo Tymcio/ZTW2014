@@ -4,82 +4,107 @@
     ViewBag.Title = "Przypisz dziedzinę";
 }
 
-<h2>Przypisz dziedzinę recenzentowi</h2>
-
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
- 
-<fieldset>
- <legend>Zmiana danych</legend>
-<section>
-   <div>
+@if (Request.IsAuthenticated) {
     
-   </div>
+    
+    if (User.IsInRole("Administrator"))
+    {
+
+        <h2>Przypisz dziedzinę recenzentowi</h2>
+
+        using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+ 
+        <fieldset>
+         <legend>Zmiana danych</legend>
+        <section>
+           <div>
+    
+           </div>
+                <ol>
+
+                    <li>
+                        @Html.Label("Dziedzina recenzenta: ")
+                        @Html.DropDownListFor(m => m.Kompetencja.IdDziedziny, Model.Dziedziny)
+                    </li> 
+
+
+                    <li>
+                        @Html.DisplayNameFor(m => m.Recenzent.UserName)
+                        @Html.TextBoxFor(m => m.Recenzent.UserName, new {@readonly = "readonly" })
+                    </li>
+
+                    <li>
+                        @Html.DisplayNameFor(m => m.Recenzent.Imie)
+                        @Html.TextBoxFor(m => m.Recenzent.Imie,new {@readonly = "readonly" })
+                    </li>
+
+                     <li>
+                        @Html.DisplayNameFor(m => m.Recenzent.Nazwisko)
+                        @Html.TextBoxFor(m => m.Recenzent.Nazwisko, new {@readonly = "readonly" })
+                    </li>
+
+                    <li>
+                        @Html.DisplayNameFor(m => m.Recenzent.Email)
+                        @Html.TextBoxFor(m => m.Recenzent.Email, new {@readonly = "readonly" })
+                    </li>
+
+                    <li>
+                        @Html.DisplayNameFor(m => m.Recenzent.Telefon)
+                        @Html.TextBoxFor(m => m.Recenzent.Telefon, new {@readonly = "readonly" })
+                    </li>
+
+
+            </ol>
+
+               <br /><br />
+            <div style="display:inline;">
+                <input type="submit" name="Zapisz" value="Zapisz zmiany" onclick="return confirm('Czy na pewno chcesz zapisać zmiany?');"/>
+                <input type="submit" name="Anuluj" value="Anuluj" onclick="return confirm('Czy na pewno chcesz anulować?');"/>
+            </div>
         <ol>
-
-            <li>
-                @Html.Label("Dziedzina recenzenta: ")
-                @Html.DropDownListFor(m => m.Kompetencja.IdDziedziny, Model.Dziedziny)
-            </li> 
-
-
-            <li>
-                @Html.DisplayNameFor(m => m.Recenzent.UserName)
-                @Html.TextBoxFor(m => m.Recenzent.UserName, new {@readonly = "readonly" })
-            </li>
-
-            <li>
-                @Html.DisplayNameFor(m => m.Recenzent.Imie)
-                @Html.TextBoxFor(m => m.Recenzent.Imie,new {@readonly = "readonly" })
-            </li>
-
-             <li>
-                @Html.DisplayNameFor(m => m.Recenzent.Nazwisko)
-                @Html.TextBoxFor(m => m.Recenzent.Nazwisko, new {@readonly = "readonly" })
-            </li>
-
-            <li>
-                @Html.DisplayNameFor(m => m.Recenzent.Email)
-                @Html.TextBoxFor(m => m.Recenzent.Email, new {@readonly = "readonly" })
-            </li>
-
-            <li>
-                @Html.DisplayNameFor(m => m.Recenzent.Telefon)
-                @Html.TextBoxFor(m => m.Recenzent.Telefon, new {@readonly = "readonly" })
-            </li>
-
-
-    </ol>
-
-       <br /><br />
-    <div style="display:inline;">
-        <input type="submit" name="Zapisz" value="Zapisz zmiany" onclick="return confirm('Czy na pewno chcesz zapisać zmiany?');"/>
-        <input type="submit" name="Anuluj" value="Anuluj" onclick="return confirm('Czy na pewno chcesz anulować?');"/>
-    </div>
-<ol>
-            <li>
-                @Html.HiddenFor(model => model.Recenzent.UserId)
-            </li>
-                <li>
-                @Html.HiddenFor(model => model.MaKompetencje)
-            </li>
-                 @if (Model.MaKompetencje)
-                 {
-                   <li>
-                        @Html.HiddenFor(model => model.Kompetencja.IdKompetencji)
-                   </li>
+                    <li>
+                        @Html.HiddenFor(model => model.Recenzent.UserId)
+                    </li>
+                        <li>
+                        @Html.HiddenFor(model => model.MaKompetencje)
+                    </li>
+                         @if (Model.MaKompetencje)
+                         {
+                           <li>
+                                @Html.HiddenFor(model => model.Kompetencja.IdKompetencji)
+                           </li>
                      
-                   <li>
-                      @Html.HiddenFor(model => model.Kompetencja.IdDziedziny)
-                  </li> 
-                  <li>
-                      @Html.HiddenFor(model => model.Kompetencja.IdRecenzenta)
-                  </li> 
-                 }
+                           <li>
+                              @Html.HiddenFor(model => model.Kompetencja.IdDziedziny)
+                          </li> 
+                          <li>
+                              @Html.HiddenFor(model => model.Kompetencja.IdRecenzenta)
+                          </li> 
+                         }
 
-</ol>
-</section>   
+        </ol>
+        </section>   
 
-</fieldset>
+        </fieldset>
 
+
+        }
+    }
+    else
+    {
+        <p>
+            Nie masz dostępu do tego zasobu.
+        </p>
+    }
+}
+
+else
+{
+    
+    <p>
+        Dostęp do tego zasobu jest możliwy tylko dla zalogowanych użytkowników.
+    </p>
+    @Html.ActionLink("Zaloguj się", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+    
 }

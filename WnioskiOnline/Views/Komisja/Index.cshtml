@@ -4,46 +4,70 @@
     ViewBag.Title = "Wnioski";
 }
 
-<h2>Wnioski</h2>
-
-<section class="wnioski">
-
-
-
-@if (!Model.Wnioski.Any())
-{
-    <p>
-       Nie masz żadnych wniosków do zrecenzowania.
-    </p>
-  
-}
-else
-{
- using (Ajax.BeginForm("FiltrujWnioski", "Komisja", new AjaxOptions { 
-    HttpMethod = "Post", UpdateTargetId = "ListaWnioskow" }))
+@if (Request.IsAuthenticated) {
+    
+    if (User.IsInRole("Komisja"))
     {
 
-    <fieldset>
-        <legend>Wyszukaj</legend>
-        <ol>
-            <li>
-                @Html.Label("Konkurs: ")
-                @Html.DropDownListFor(m => m.Konkurs, Model.Konkursy)
-            </li>
+        <h2>Wnioski</h2>
 
-            <li>
-                @Html.Label("Status: ")
-                @Html.DropDownListFor(m => m.Status, Model.Statusy)
-            </li>
+        <section class="wnioski">
 
-        </ol>
-        <input type="submit" value="Wyszukaj" />
-    </fieldset>
+
+
+        @if (!Model.Wnioski.Any())
+        {
+            <p>
+               Nie masz żadnych wniosków do zrecenzowania.
+            </p>
+  
+        }
+        else
+        {
+         using (Ajax.BeginForm("FiltrujWnioski", "Komisja", new AjaxOptions { 
+            HttpMethod = "Post", UpdateTargetId = "ListaWnioskow" }))
+            {
+
+            <fieldset>
+                <legend>Wyszukaj</legend>
+                <ol>
+                    <li>
+                        @Html.Label("Konkurs: ")
+                        @Html.DropDownListFor(m => m.Konkurs, Model.Konkursy)
+                    </li>
+
+                    <li>
+                        @Html.Label("Status: ")
+                        @Html.DropDownListFor(m => m.Status, Model.Statusy)
+                    </li>
+
+                </ol>
+                <input type="submit" value="Wyszukaj" />
+            </fieldset>
+            }
+            <div id="ListaWnioskow">
+             @Html.Partial("ListaWnioskow", Model.Wnioski)
+            </div>
+
+        }
+
+        </section>
+
+   }
+    else
+    {
+        <p>
+            Nie masz dostępu do tego zasobu.
+        </p>
     }
-    <div id="ListaWnioskow">
-     @Html.Partial("ListaWnioskow", Model.Wnioski)
-    </div>
-
 }
 
-</section>
+else
+{
+    
+    <p>
+        Dostęp do tego zasobu jest możliwy tylko dla zalogowanych użytkowników.
+    </p>
+    @Html.ActionLink("Zaloguj się", "Login", "Account", routeValues: null,  htmlAttributes: new { id = "loginLink" })
+    
+}
