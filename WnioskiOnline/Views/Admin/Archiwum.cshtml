@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<WnioskiOnline.Models.Aktualnosc>
+@{
     ViewBag.Title = "Archiwum";
 }
 
@@ -8,7 +9,49 @@
     
     if (User.IsInRole("Administrator"))
     {
-        <h2>Archiwum</h2>       
+
+        <h2>Archiwum</h2>
+
+        <section class="aktualnosc">
+
+
+        @if (!Model.Any())
+        {
+            <p>
+               Brak aktualności.
+            </p>
+  
+        }
+        else
+        {
+
+            <table>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.First().IdAktualnosci)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.First().TrescAktualnosci)
+                    </th>                    
+                    
+                </tr>
+
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdAktualnosci)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TrescAktualnosci)
+                    </td>
+                    
+                    
+                </tr>
+            }
+
+            </table>
+        }
+        </section>
 
 
     }

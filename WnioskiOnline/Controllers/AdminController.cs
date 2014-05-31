@@ -353,7 +353,8 @@ namespace WnioskiOnline.Controllers
         }
         public ActionResult Archiwum()
         {
-            return View();
+           
+            return View(db.Aktualnosci.ToList());
         }
 
     }

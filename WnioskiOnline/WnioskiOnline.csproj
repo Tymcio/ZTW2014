@@ -206,6 +206,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Aktualnosc.cs" />
     <Compile Include="Models\Charakter.cs" />
     <Compile Include="Models\Decyzja.cs" />
     <Compile Include="Models\Dziedzina.cs" />

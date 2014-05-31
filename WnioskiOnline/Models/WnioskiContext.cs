@@ -31,6 +31,7 @@ namespace WnioskiOnline.Models
         public DbSet<FormularzK3> FormularzeK3 { get; set; }
         public DbSet<Status> Statusy { get; set; }
         public DbSet<RodzajWydatku> RodzajeWydatku { get; set; }
+        public DbSet<Aktualnosc> Aktualnosci { get; set; }
         
 
 
