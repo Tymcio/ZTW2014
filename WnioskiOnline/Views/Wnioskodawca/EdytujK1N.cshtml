@@ -5,146 +5,173 @@
     ViewBag.Title = "Edycja wniosku K1N";
 }
 
-<h3>WNIOSEK O DOFINANSOWANIE PROJEKTU NAUKOWO-BADAWCZEGO, INŻYNIERYJNO-KONSTRUKTORSKIEGO ZE ŚRODKÓW PRZEZNACZONYCH PRZEZ UCZELNI NA DZIAŁALNOŚĆ STUDENCKĄ I DOKTORANCKĄ</h3>
 
-<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
-
-
-@using (Html.BeginForm("EdytujK1N","Wnioskodawca")) {
-    @Html.AntiForgeryToken()
- 
-<fieldset>
- <legend>Wypełnij wniosek</legend>
-<section class="szczegolywniosku">
-   <div>
+@if (Request.IsAuthenticated) {
     
-   </div>
-        <ol>
-            <li>
-                @Html.HiddenFor(model => model.Formularz.Wniosek.IdKonkursu)
-            </li>
-            <li>
-                @Html.HiddenFor(model => model.Formularz.Wniosek.IdWnioskodawcy)
-            </li>
-             <li>
-                @Html.HiddenFor(model => model.Formularz.IdFormularza)
-            </li>
-             <li>
-                @Html.HiddenFor(model => model.Formularz.IdWniosku)
-            </li>
-             <li>
-                @Html.HiddenFor(model => model.Formularz.Wniosek.IdWniosku)
-            </li>
+    if (User.IsInRole("Wnioskodawca"))
+    {
 
-            <li>
-                @Html.Label("Dziedzina: ")
-                @Html.DropDownListFor(m => m.Formularz.Wniosek.IdDziedziny, Model.Dziedziny)
-            </li>
+        <h3>WNIOSEK O DOFINANSOWANIE PROJEKTU NAUKOWO-BADAWCZEGO, INŻYNIERYJNO-KONSTRUKTORSKIEGO ZE ŚRODKÓW PRZEZNACZONYCH PRZEZ UCZELNI NA DZIAŁALNOŚĆ STUDENCKĄ I DOKTORANCKĄ</h3>
 
-            <li>
-                @Html.Label("Organizacja wnioskująca: ")
-                @Html.DropDownListFor(m => m.Formularz.IdOrganizacji, Model.Organizacje)
-            </li>
-
-            <li>
-                @Html.Label("Nazwa projektu: ")
-                @Html.EditorFor(m => m.Formularz.Wniosek.TytulWniosku)
-            </li>
-
-            <li>
-                @Html.LabelFor(m => m.Formularz.CelProjektu)
-                @Html.TextAreaFor(m => m.Formularz.CelProjektu)
-            </li>
-
-             <li>
-                @Html.LabelFor(m => m.Formularz.InfoOWarunkach)
-                @Html.TextAreaFor(m => m.Formularz.InfoOWarunkach)
-            </li>
-
-            <li>
-                @Html.LabelFor(m => m.Formularz.StanZaawans)
-                @Html.TextAreaFor(m => m.Formularz.StanZaawans)
-            </li>
-
-            <li>
-                @Html.LabelFor(m => m.Formularz.StanWiedzy)
-                @Html.TextAreaFor(m => m.Formularz.StanWiedzy)
-            </li>
-
-            <li>
-                @Html.LabelFor(m => m.Formularz.SkladZespolu)
-                @Html.TextAreaFor(m => m.Formularz.SkladZespolu)
-            </li>
-
-            <li>
-                @Html.LabelFor(m => m.Formularz.Wspolpraca)
-                @Html.TextAreaFor(m => m.Formularz.Wspolpraca)
-            </li>
-
-            <li>
-                @Html.LabelFor(m => m.Formularz.TytulNumerUmowy)
-                @Html.TextAreaFor(m => m.Formularz.TytulNumerUmowy)
-            </li>
-
-            <li>
-                @Html.LabelFor(m => m.Formularz.RezultatMaterialny)
-                @Html.TextAreaFor(m => m.Formularz.RezultatMaterialny)
-            </li>
-
-            <li>
-                @Html.LabelFor(m => m.Formularz.RezultatPoznawczy)
-                @Html.TextAreaFor(m => m.Formularz.RezultatPoznawczy)
-            </li>
-
-            <li>
-                @Html.LabelFor(m => m.Formularz.RezultatSpoleczny)
-                @Html.TextAreaFor(m => m.Formularz.RezultatSpoleczny)
-            </li>
-
-            <li>
-                @Html.LabelFor(m => m.Formularz.NowosciCelu)
-                @Html.TextAreaFor(m => m.Formularz.NowosciCelu)
-            </li>
-
-            <li>
-                @Html.LabelFor(m => m.Formularz.NowosciRozwiazan)
-                @Html.TextAreaFor(m => m.Formularz.NowosciRozwiazan)
-            </li>
-
-            <li>
-                @Html.LabelFor(m => m.Formularz.NowosciRealizacji)
-                @Html.TextAreaFor(m => m.Formularz.NowosciRealizacji)
-            </li>
-
-            <li>
-                @Html.LabelFor(m => m.Formularz.NowosciDoboru)
-                @Html.TextAreaFor(m => m.Formularz.NowosciDoboru)
-            </li>
-
-            <li>
-                @Html.LabelFor(m => m.Formularz.Upowszechnienie)
-                @Html.TextAreaFor(m => m.Formularz.Upowszechnienie)
-            </li>
-
-            <li>
-                @Html.LabelFor(m => m.Formularz.PozyskiwanieSponsorow)
-                @Html.TextAreaFor(m => m.Formularz.PozyskiwanieSponsorow)
-            </li>
+        <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
 
 
+        using (Html.BeginForm("EdytujK1N","Wnioskodawca")) {
+            @Html.AntiForgeryToken()
+ 
+        <fieldset>
+         <legend>Wypełnij wniosek</legend>
+        <section class="szczegolywniosku">
+           <div>
+    
+           </div>
+                <ol>
+                    <li>
+                        @Html.HiddenFor(model => model.Formularz.Wniosek.IdKonkursu)
+                    </li>
+                    <li>
+                        @Html.HiddenFor(model => model.Formularz.Wniosek.IdWnioskodawcy)
+                    </li>
+                     <li>
+                        @Html.HiddenFor(model => model.Formularz.IdFormularza)
+                    </li>
+                     <li>
+                        @Html.HiddenFor(model => model.Formularz.IdWniosku)
+                    </li>
+                     <li>
+                        @Html.HiddenFor(model => model.Formularz.Wniosek.IdWniosku)
+                    </li>
 
-</ol>
-    <br /><br />
-    <div style="display:inline;">
-        <input type="submit" name="ZapiszRobocza" value="Zapisz wersję roboczą" onclick="return confirm('Czy na pewno chcesz zapisać jako wersję roboczą?');"/>
-        <input type="submit" name="WyslijDoRec" value="Wyślij do recenzji" onclick="return confirm('Czy na pewno chcesz wysłać wniosek do recenzji?');"/>
-        <input type="submit" name="Anuluj" value="Anuluj" onclick="return confirm('Czy na pewno chcesz anulować?');"/>
-    </div>
-</section>   
+                    <li>
+                        @Html.Label("Dziedzina: ")
+                        @Html.DropDownListFor(m => m.Formularz.Wniosek.IdDziedziny, Model.Dziedziny)
+                    </li>
 
-</fieldset>
+                    <li>
+                        @Html.Label("Organizacja wnioskująca: ")
+                        @Html.DropDownListFor(m => m.Formularz.IdOrganizacji, Model.Organizacje)
+                    </li>
 
+                    <li>
+                        @Html.Label("Nazwa projektu: ")
+                        @Html.EditorFor(m => m.Formularz.Wniosek.TytulWniosku)
+                    </li>
+
+                    <li>
+                        @Html.LabelFor(m => m.Formularz.CelProjektu)
+                        @Html.TextAreaFor(m => m.Formularz.CelProjektu)
+                    </li>
+
+                     <li>
+                        @Html.LabelFor(m => m.Formularz.InfoOWarunkach)
+                        @Html.TextAreaFor(m => m.Formularz.InfoOWarunkach)
+                    </li>
+
+                    <li>
+                        @Html.LabelFor(m => m.Formularz.StanZaawans)
+                        @Html.TextAreaFor(m => m.Formularz.StanZaawans)
+                    </li>
+
+                    <li>
+                        @Html.LabelFor(m => m.Formularz.StanWiedzy)
+                        @Html.TextAreaFor(m => m.Formularz.StanWiedzy)
+                    </li>
+
+                    <li>
+                        @Html.LabelFor(m => m.Formularz.SkladZespolu)
+                        @Html.TextAreaFor(m => m.Formularz.SkladZespolu)
+                    </li>
+
+                    <li>
+                        @Html.LabelFor(m => m.Formularz.Wspolpraca)
+                        @Html.TextAreaFor(m => m.Formularz.Wspolpraca)
+                    </li>
+
+                    <li>
+                        @Html.LabelFor(m => m.Formularz.TytulNumerUmowy)
+                        @Html.TextAreaFor(m => m.Formularz.TytulNumerUmowy)
+                    </li>
+
+                    <li>
+                        @Html.LabelFor(m => m.Formularz.RezultatMaterialny)
+                        @Html.TextAreaFor(m => m.Formularz.RezultatMaterialny)
+                    </li>
+
+                    <li>
+                        @Html.LabelFor(m => m.Formularz.RezultatPoznawczy)
+                        @Html.TextAreaFor(m => m.Formularz.RezultatPoznawczy)
+                    </li>
+
+                    <li>
+                        @Html.LabelFor(m => m.Formularz.RezultatSpoleczny)
+                        @Html.TextAreaFor(m => m.Formularz.RezultatSpoleczny)
+                    </li>
+
+                    <li>
+                        @Html.LabelFor(m => m.Formularz.NowosciCelu)
+                        @Html.TextAreaFor(m => m.Formularz.NowosciCelu)
+                    </li>
+
+                    <li>
+                        @Html.LabelFor(m => m.Formularz.NowosciRozwiazan)
+                        @Html.TextAreaFor(m => m.Formularz.NowosciRozwiazan)
+                    </li>
+
+                    <li>
+                        @Html.LabelFor(m => m.Formularz.NowosciRealizacji)
+                        @Html.TextAreaFor(m => m.Formularz.NowosciRealizacji)
+                    </li>
+
+                    <li>
+                        @Html.LabelFor(m => m.Formularz.NowosciDoboru)
+                        @Html.TextAreaFor(m => m.Formularz.NowosciDoboru)
+                    </li>
+
+                    <li>
+                        @Html.LabelFor(m => m.Formularz.Upowszechnienie)
+                        @Html.TextAreaFor(m => m.Formularz.Upowszechnienie)
+                    </li>
+
+                    <li>
+                        @Html.LabelFor(m => m.Formularz.PozyskiwanieSponsorow)
+                        @Html.TextAreaFor(m => m.Formularz.PozyskiwanieSponsorow)
+                    </li>
+
+
+
+        </ol>
+            <br /><br />
+            <div style="display:inline;">
+                <input type="submit" name="ZapiszRobocza" value="Zapisz wersję roboczą" onclick="return confirm('Czy na pewno chcesz zapisać jako wersję roboczą?');"/>
+                <input type="submit" name="WyslijDoRec" value="Wyślij do recenzji" onclick="return confirm('Czy na pewno chcesz wysłać wniosek do recenzji?');"/>
+                <input type="submit" name="Anuluj" value="Anuluj" onclick="return confirm('Czy na pewno chcesz anulować?');"/>
+            </div>
+        </section>   
+
+        </fieldset>
+
+        }
+    
+        }
+    
+    else
+    {
+        <p>
+            Nie masz dostępu do tego zasobu.
+        </p>
+    }
 }
+
+else
+{
+    
+    <p>
+        Dostęp do tego zasobu jest możliwy tylko dla zalogowanych użytkowników.
+    </p>
+    @Html.ActionLink("Zaloguj się", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+    
+}
+
 
 
              
