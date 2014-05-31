@@ -375,5 +375,10 @@ namespace WnioskiOnline.Controllers
             return View(db.Aktualnosci.ToList());
         }
 
+        public ActionResult Aktualnosci()
+        {
+            return View(db.Aktualnosci.ToList());
+        }
+
     }
 }
