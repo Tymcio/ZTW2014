@@ -1,4 +1,5 @@
-﻿@{
+﻿@model WnioskiOnline.Models.Aktualnosc
+@{
     ViewBag.Title = "DodajAktualnosc";
 }
 
@@ -9,13 +10,13 @@
     {
 
         <h2>Dodaj Aktualność</h2>
-		<form method ="post" action "">
+    
+		<form method ="post" action ="DodajAktualnosc">
 			<p>Wpisz treść aktualności</p>
-			<textarea name=" NowaAktualnosc" rows="6" cols="30">
-			</textarea>
+			
+           @Html.EditorFor(model => model.TrescAktualnosci)
 			<input type="submit" value="Dodaj" />
 		</form>
-
 
     }
     else
