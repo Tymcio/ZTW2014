@@ -346,5 +346,15 @@ namespace WnioskiOnline.Controllers
             return Json(db.UserProfiles.Find(IdR));
         }
 
+        public ActionResult DodajAktualnosc(string aktualnosc)
+        {
+            ViewBag.Message = aktualnosc;
+            return View();
+        }
+        public ActionResult Archiwum()
+        {
+            return View();
+        }
+
     }
 }

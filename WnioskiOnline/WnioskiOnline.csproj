@@ -394,6 +394,8 @@
     <Content Include="Views\Admin\EdytujProfil.cshtml" />
     <Content Include="Views\Admin\PrzypiszDziedzine.cshtml" />
     <Content Include="Views\Admin\Recenzenci.cshtml" />
+    <Content Include="Views\Admin\DodajAktualnosc.cshtml" />
+    <Content Include="Views\Admin\Archiwum.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

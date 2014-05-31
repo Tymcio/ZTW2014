@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "DodajAktualnosc";
+}
+
+@if (Request.IsAuthenticated) {
+    
+    
+    if (User.IsInRole("Administrator"))
+    {
+
+        <h2>Dodaj Aktualność</h2>
+		<form method ="post" action "">
+			<p>Wpisz treść aktualności</p>
+			<textarea name=" NowaAktualnosc" rows="6" cols="30">
+			</textarea>
+			<input type="submit" value="Dodaj" />
+		</form>
+
+
+    }
+    else
+    {
+        <p>
+            Nie masz dostępu do tego zasobu.
+        </p>
+    }
+}
+
+else
+{
+    
+    <p>
+        Dostęp do tego zasobu jest możliwy tylko dla zalogowanych użytkowników.
+    </p>
+    @Html.ActionLink("Zaloguj się", "Login", "Account", routeValues: null,  htmlAttributes: new { id = "loginLink" })
+    
+}
