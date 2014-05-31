@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WnioskiOnline.Models.Aktualnosc>
+﻿@model WnioskiOnline.Models.Aktualnosc
 @{
     ViewBag.Title = "Strona Główna";
 }
@@ -25,20 +25,23 @@
 
 <h2>Aktualności</h2>
 
+<section class =" aktualnosc">
 <ul>
     @for (int i = 0; i < 2; i++)
     {        
-    <li>
-        @ViewBag.Message
-    </li>
-    }
+        <li>
+         
+        @Html.DisplayFor(model => model.TrescAktualnosci)
+        
+        </li>
+    }    
+    
 </ul>
-
-
+</section>
 
    @if (User.IsInRole("Administrator"))
-   {    	
-       @Html.ActionLink("Dodaj aktualność", "DodajAktualnosc", "Admin")
-       @Html.ActionLink("Archiwum", "Archiwum", "Admin")
-   }
+    {    	
+       @Html.ActionLink("Dodaj aktualność","DodajAktualnosc","Admin")
+        @Html.ActionLink("Archiwum","Archiwum","Admin")
+    }
 

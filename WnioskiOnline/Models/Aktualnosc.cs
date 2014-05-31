@@ -15,13 +15,14 @@ namespace WnioskiOnline.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int IdAktualnosci { get; set; }
 
-        [MaxLength(20)]
-        [StringLength(20, ErrorMessage = "Aktualnosc nie może mieć więcej niż 50 znaków.")]
+        [MaxLength(250)]
+        [StringLength(250, ErrorMessage = "Aktualnosc nie może mieć więcej niż 250 znaków.")]
         public string TrescAktualnosci { get; set; }
 
         public class AktualnosciDBContext:WnioskiContext{
         public DbSet<Aktualnosc> Aktualnosci{get;set;
         }
+        
 }
 
     }
