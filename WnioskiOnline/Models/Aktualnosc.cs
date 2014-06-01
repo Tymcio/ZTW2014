@@ -20,8 +20,7 @@ namespace WnioskiOnline.Models
         public string TrescAktualnosci { get; set; }
 
         public class AktualnosciDBContext:WnioskiContext{
-        public DbSet<Aktualnosc> Aktualnosci{get;set;
-        }
+        public DbSet<Aktualnosc> Aktualnosci{get;set; }
         
 }
 

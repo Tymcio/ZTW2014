@@ -376,7 +376,9 @@ namespace WnioskiOnline.Controllers
         }
 
         public ActionResult Aktualnosci()
+            
         {
+           
             return View(db.Aktualnosci.ToList());
         }
 
