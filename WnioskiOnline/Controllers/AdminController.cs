@@ -346,5 +346,41 @@ namespace WnioskiOnline.Controllers
             return Json(db.UserProfiles.Find(IdR));
         }
 
+
+
+        public ActionResult DodajAktualnosc()
+        {
+            
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult DodajAktualnosc(Aktualnosc akt)
+        {
+            if (ModelState.IsValid)
+            {
+
+                db.Aktualnosci.Add(akt);
+                db.SaveChanges();
+                return RedirectToAction("Index", "Home");
+            }
+                return View(akt);
+        }
+
+       
+
+        public ActionResult Archiwum()
+        {
+           
+            return View(db.Aktualnosci.ToList());
+        }
+
+        public ActionResult Aktualnosci()
+            
+        {
+           
+            return View(db.Aktualnosci.ToList());
+        }
+
     }
 }

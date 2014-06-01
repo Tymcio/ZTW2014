@@ -206,6 +206,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Aktualnosc.cs" />
     <Compile Include="Models\Charakter.cs" />
     <Compile Include="Models\Decyzja.cs" />
     <Compile Include="Models\Dziedzina.cs" />
@@ -225,6 +226,7 @@
     <Compile Include="Models\Zasieg.cs" />
     <Compile Include="Models\ZrodloDofinansowania.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AktualnoscViewModel.cs" />
     <Compile Include="ViewModels\EdycjaUzytkownikaViewModel.cs" />
     <Compile Include="ViewModels\PrzypiszDziedzineViewModel.cs" />
     <Compile Include="ViewModels\PrzypiszRecenzentaViewModel.cs" />
@@ -394,6 +396,8 @@
     <Content Include="Views\Admin\EdytujProfil.cshtml" />
     <Content Include="Views\Admin\PrzypiszDziedzine.cshtml" />
     <Content Include="Views\Admin\Recenzenci.cshtml" />
+    <Content Include="Views\Admin\DodajAktualnosc.cshtml" />
+    <Content Include="Views\Admin\Archiwum.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
