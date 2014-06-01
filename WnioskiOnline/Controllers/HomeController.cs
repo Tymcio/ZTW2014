@@ -42,10 +42,17 @@ namespace WnioskiOnline.Controllers
 
             return View();
         }
-        public ActionResult Aktualnosci()
+        public  ActionResult Aktualnosci()
         {
-            return View(db.Aktualnosci.ToList());
-        }
+            //var akt = db.Aktualnosci.ToList();
+            //return View(akt);
 
+            var zapyt = from s in db.Aktualnosci
+                        select new Aktualnosc
+                        {
+                            TrescAktualnosci = s.TrescAktualnosci
+                        };
+            return View(zapyt);
+        }
     }
 }
