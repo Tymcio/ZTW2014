@@ -204,6 +204,10 @@
     <Compile Include="Migrations\201405292227452_a.Designer.cs">
       <DependentUpon>201405292227452_a.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201406012018455_aktualnosci.cs" />
+    <Compile Include="Migrations\201406012018455_aktualnosci.Designer.cs">
+      <DependentUpon>201406012018455_aktualnosci.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Aktualnosc.cs" />
@@ -414,6 +418,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201405292227452_a.resx">
       <DependentUpon>201405292227452_a.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406012018455_aktualnosci.resx">
+      <DependentUpon>201406012018455_aktualnosci.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

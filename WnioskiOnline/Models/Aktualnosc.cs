@@ -19,10 +19,5 @@ namespace WnioskiOnline.Models
         [StringLength(250, ErrorMessage = "Aktualnosc nie może mieć więcej niż 250 znaków.")]
         public string TrescAktualnosci { get; set; }
 
-        public class AktualnosciDBContext:WnioskiContext{
-        public DbSet<Aktualnosc> Aktualnosci{get;set; }
-        
-}
-
     }
 }
