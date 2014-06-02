@@ -8,12 +8,10 @@ using System.Web.Mvc;
 using WnioskiOnline.Models;
 using WebMatrix.WebData;
 using WnioskiOnline.ViewModels;
-using WnioskiOnline.Filters;
 
 
 namespace WnioskiOnline.Controllers
 {
-    [InitializeSimpleMembership]
     public class KomisjaController : Controller
     {
         private WnioskiContext db = new WnioskiContext();
