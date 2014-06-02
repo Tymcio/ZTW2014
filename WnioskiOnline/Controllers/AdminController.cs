@@ -11,6 +11,7 @@ using WebMatrix.WebData;
 using WnioskiOnline.Filters;
 using WnioskiOnline.Models;
 using WnioskiOnline.ViewModels;
+using System.Data;
 
 namespace WnioskiOnline.Controllers
 {
@@ -359,7 +360,7 @@ namespace WnioskiOnline.Controllers
         {
             if (ModelState.IsValid)
             {
-
+               
                 db.Aktualnosci.Add(akt);
                 db.SaveChanges();
                 return RedirectToAction("Index", "Home");
@@ -367,12 +368,31 @@ namespace WnioskiOnline.Controllers
                 return View(akt);
         }
 
+        [HttpGet]
+        public ActionResult EdytujAktualnosc(int id = 0)
+        {
+            return View(db.Aktualnosci.Find(id));
+        }
+        [HttpPost]
+        public ActionResult EdytujAktualnosc(string Zapisz, Aktualnosc akt)
+        {
+            if (ModelState.IsValid)
+            {
+
+                db.Entry(akt).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index", "Home", new { id = akt.IdAktualnosci });
+            }
+            return View(akt);
+        }
+ 
        
 
         public ActionResult Archiwum()
         {
-           
-            return View(db.Aktualnosci.ToList());
+
+            return View(db.Aktualnosci.OrderByDescending(u => u.IdAktualnosci).ToList());
+            
         }
 
         public ActionResult Aktualnosci()

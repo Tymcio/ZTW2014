@@ -1,57 +1,23 @@
-﻿@model WnioskiOnline.Models.Aktualnosc
+﻿@model IEnumerable<WnioskiOnline.Models.Aktualnosc>
 @{
     ViewBag.Title = "Strona Główna";
 }
+<article class ="aktualnosci">
+<h2>Aktualności</h2><br />
 
-<h2>Rodzaje wniosków</h2>
-<ul>
-    <li>
-        <p>
-            Wniosek K1N - Wniosek o dofinansowanie projektu naukowo-badawczego, inżynieryjno-konstruktorskiego ze środków przeznaczonych przez uczelni na działalność studencką i doktorancką
-        </p>
-    </li>
-    <li>
-        <p>
-            Wniosek K2 - Wniosek o dofinansowanie projektu studenckiego średnioterminowego/średniobudżetowego ze środków przeznaczonych przez uczelni na działalność studencką i doktorancką
-        </p>
-    </li>
-    <li>
-        <p>
-            Wniosek K3 - Wniosek o dofinansowanie niskobudżetowego/krótkoterminowego projektu studenckiego
-
-        </p>
-    </li>
-</ul>
-
-<h2>Aktualności</h2>
-
-<section class =" aktualnosc">
-<ul>
-    
-          
-        @*<li>         
-            @Html.DisplayFor(model => model.TrescAktualnosci)                
-        </li>
-
-         <li>
-            @Html.DisplayFor(model=> model.TrescAktualnosci)
-         </li>*@
- 
-   
-    <li>
-        Składanie wniosków na konkurs K2 trwa do dnia 30.10.2014
-    </li>
-    <li>
-        Składanie wniosków na konkurs K3 trwa do dnia 30.11.2014
-    </li>
-    
-    
-</ul>
-</section>
-
-   @if (User.IsInRole("Administrator"))
-    {    	
-       @Html.ActionLink("Dodaj aktualność","DodajAktualnosc","Admin")
-        @Html.ActionLink("Archiwum","Archiwum","Admin")
+    @foreach (var item in Model)
+    {
+            <span class="trescakt">@Html.DisplayFor(modelItem => item.TrescAktualnosci)</span>
+            <span class="dataakt">@Html.DisplayFor(modelItem => item.DataDodania)</span><hr />
     }
 
+
+   @if (User.IsInRole("Administrator"))
+    {    
+       	<div class="float-right">
+       @Html.ActionLink("Dodaj aktualność","DodajAktualnosc","Admin")
+        @Html.ActionLink("Archiwum","Archiwum","Admin")
+       </div>
+    }
+
+</article>

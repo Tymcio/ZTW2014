@@ -29,12 +29,12 @@
 
                 <li>
                     @Html.Label("Dziedzina: ")
-                    @Html.DropDownListFor(m => m.Formularz.Wniosek.IdDziedziny, Model.Dziedziny)
+                    @Html.DropDownListFor(m => m.Formularz.Wniosek.IdDziedziny, Model.Dziedziny, new { @class = "dropdown-wnioski" })
                 </li>
 
                 <li>
                     @Html.Label("Organizacja wnioskująca: ")
-                    @Html.DropDownListFor(m => m.Formularz.IdOrganizacji, Model.Organizacje)
+                    @Html.DropDownListFor(m => m.Formularz.IdOrganizacji, Model.Organizacje, new { @class = "dropdown-wnioski" })
                 </li>
 
                 <li>
@@ -187,7 +187,7 @@
 
 
     </ol>
-        <br /><br />
+        <br />
         <div style="display:inline;">
             <input type="submit" name="Zapisz" value="Zapisz zmiany" onclick="return confirm('Czy na pewno chcesz zapisać zmiany?');"/>
             <input type="submit" name="Anuluj" value="Anuluj" onclick="return confirm('Czy na pewno chcesz anulować?');"/>

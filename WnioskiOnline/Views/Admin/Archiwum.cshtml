@@ -12,7 +12,7 @@
 
         <h2>Archiwum</h2>
 
-        <section class="aktualnosc">
+        <article class="aktualnosci">
 
 
         @if (!Model.Any())
@@ -24,34 +24,15 @@
         }
         else
         {
+            foreach (var item in Model) {
 
-            <table>
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.First().IdAktualnosci)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.First().TrescAktualnosci)
-                    </th>                    
-                    
-                </tr>
-
-            @foreach (var item in Model) {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.IdAktualnosci)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.TrescAktualnosci)
-                    </td>
-                    
-                    
-                </tr>
+            <span class="trescakt">@Html.DisplayFor(modelItem => item.TrescAktualnosci)</span>
+            <span class="dataakt">@Html.DisplayFor(modelItem => item.DataDodania)</span>
+            @Html.ActionLink("Edytuj", "EdytujAktualnosc", new { id=item.IdAktualnosci}) 
+<hr />
             }
-
-            </table>
         }
-        </section>
+        </article>
 
 
     }

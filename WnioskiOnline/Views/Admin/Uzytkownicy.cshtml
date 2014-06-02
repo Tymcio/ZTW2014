@@ -39,12 +39,12 @@
                 <ol>
                     <li>
                         @Html.Label("Rola: ")
-                        @Html.DropDownListFor(m => m.Rola, Model.Role)
+                        @Html.DropDownListFor(m => m.Rola, Model.Role, new { @class = "dropdown-wnioski" })
                     </li>
 
 
                 </ol>
-                <input type="submit" value="Wyszukaj" />
+                <input class="przycisk-wn" type="submit" value="Wyszukaj" />
             </fieldset>
             }
             <div id="ListaUzytkownikow">

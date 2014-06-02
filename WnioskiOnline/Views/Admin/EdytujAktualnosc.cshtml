@@ -1,0 +1,40 @@
+﻿@model WnioskiOnline.Models.Aktualnosc
+
+@{
+    ViewBag.Title = "EdytujAktualnosc";
+}
+
+<h2>EdytujAktualnosc</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Aktualnosc</legend>
+
+        @Html.HiddenFor(model => model.IdAktualnosci)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TrescAktualnosci)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.TrescAktualnosci)
+            @Html.ValidationMessageFor(model => model.TrescAktualnosci)
+        </div>
+
+        
+
+        <p>
+            <input type="submit" value="Zapisz" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
