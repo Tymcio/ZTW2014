@@ -41,9 +41,6 @@ namespace WnioskiOnline.Models
         [Display(Name = "Kwota wnioskowana: ")]
         public double KwotaWnioskowana { get; set; }
 
-        // koszty
-
-        // harmonogram 
         
         [Display(Name = "Zasięg zadania: ")]
         public int IdZasiegu { get; set; }
@@ -118,7 +115,6 @@ namespace WnioskiOnline.Models
         [StringLength(500, ErrorMessage = "Informacja nie może mieć więcej niż 500 znaków.")]
         public string InneInformacje { get; set; }
 
-        // zrodla finansowania
 
     }
 }

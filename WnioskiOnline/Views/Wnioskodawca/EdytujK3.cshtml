@@ -123,6 +123,11 @@
                         @Html.EditorFor(m => m.Formularz.DrugiKoord.NrIndeksu)
                     </li>
 
+                    <li>
+                        @Html.LabelFor(m => m.Formularz.KwotaWnioskowana)
+                        @Html.EditorFor(m => m.Formularz.KwotaWnioskowana)
+                    </li>
+
                      <li>
                         @Html.Label("Termin projektu: ")
                         @Html.EditorFor(m => m.Formularz.Termin)
@@ -160,43 +165,6 @@
 
                 </ol>
 
-        @*<section class="wnioski">
-                <table>
-                <tr>
-                    <th>
-                       Rodzaj wydatku
-                    </th>
-                    <th>
-                       Wyszczególnienie
-                    </th>
-                    <th>
-                        Kwota ogółem
-                    </th>
-                    <th>
-                       Kwota do sfinansowania
-                    </th>
-                    <th></th>
-                </tr>
-                  <tr>
-                    <td>
-                        @Html.DropDownListFor(m => m.Wydatek.RodzajWydatku, Model.RodzajeWydatku)
-                    </td>
-                    <td>
-                        @Html.EditorFor(m => m.Wydatek.Wyszczegolnienie)
-                    </td>
-                    <td>
-                        @Html.EditorFor(m => m.Wydatek.KwotaOgolem)
-                    </td>
-                    <td>
-                        @Html.EditorFor(m => m.Wydatek.KwotaDoSfinans)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Usuń","Index")
-                    </td>
-                </tr>
-            </table>
-            </section>
-            <input type="button" name="dodajkoszt" value=" + Dodaj wiersz + "/>*@
             <br /><br />
             <div style="display:inline;">
                 <input type="submit" name="ZapiszRobocza" value="Zapisz wersję roboczą" onclick="return confirm('Czy na pewno chcesz zapisać jako wersję roboczą?');"/>

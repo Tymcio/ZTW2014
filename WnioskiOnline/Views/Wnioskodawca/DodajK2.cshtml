@@ -172,43 +172,6 @@
 
                 </ol>
 
-        @*<section class="wnioski">
-                <table>
-                <tr>
-                    <th>
-                       Rodzaj wydatku
-                    </th>
-                    <th>
-                       Wyszczególnienie
-                    </th>
-                    <th>
-                        Kwota ogółem
-                    </th>
-                    <th>
-                       Kwota do sfinansowania
-                    </th>
-                    <th></th>
-                </tr>
-                  <tr>
-                    <td>
-                        @Html.DropDownListFor(m => m.Wydatek.RodzajWydatku, Model.RodzajeWydatku)
-                    </td>
-                    <td>
-                        @Html.EditorFor(m => m.Wydatek.Wyszczegolnienie)
-                    </td>
-                    <td>
-                        @Html.EditorFor(m => m.Wydatek.KwotaOgolem)
-                    </td>
-                    <td>
-                        @Html.EditorFor(m => m.Wydatek.KwotaDoSfinans)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Usuń","Index")
-                    </td>
-                </tr>
-            </table>
-            </section>
-            <input type="button" name="dodajkoszt" value=" + Dodaj wiersz + "/>*@
             <div style="display:inline;">
                 <input class="przycisk-wn" type="submit" name="ZapiszRobocza" value="Zapisz wersję roboczą" onclick="return confirm('Czy na pewno chcesz zapisać wersję roboczą?');"/>
                 <input class="przycisk-wn" type="submit" name="WyslijDoRec" value="Wyślij do recenzji"onclick="return confirm('Czy na pewno chcesz wysłać wniosek do recenzji?');"/>
