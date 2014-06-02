@@ -27,8 +27,7 @@
             foreach (var item in Model) {
 
             <span class="trescakt">@Html.DisplayFor(modelItem => item.TrescAktualnosci)</span>
-            <span class="dataakt">@Html.DisplayFor(modelItem => item.DataDodania)</span>
-            @Html.ActionLink("Edytuj", "EdytujAktualnosc", new { id=item.IdAktualnosci}) 
+            <span class="dataakt">@Html.DisplayFor(modelItem => item.DataDodania) | @Html.ActionLink("Edytuj", "EdytujAktualnosc", new { id=item.IdAktualnosci})</span> 
 <hr />
             }
         }
