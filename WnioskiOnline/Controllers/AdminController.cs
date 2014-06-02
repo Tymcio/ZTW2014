@@ -372,7 +372,8 @@ namespace WnioskiOnline.Controllers
         public ActionResult Archiwum()
         {
            
-            return View(db.Aktualnosci.ToList());
+            return View(db.Aktualnosci.OrderByDescending(u => u.IdAktualnosci).ToList());
+            
         }
 
         public ActionResult Aktualnosci()
