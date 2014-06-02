@@ -11,16 +11,18 @@
     if (User.IsInRole("Wnioskodawca"))
     {
 
-        <h3>WNIOSEK O DOFINANSOWANIE PROJEKTU STUDENCKIEGO ŚREDNIOTERMINOWEGO/ŚREDNIOBUDŻETOWEGO ZE ŚRODKÓW PRZEZNACZONYCH PRZEZ UCZELNI NA DZIAŁALNOŚĆ STUDENCKĄ I DOKTORANCKĄ</h3>
+        <h3>WNIOSEK O DOFINANSOWANIE PROJEKTU STUDENCKIEGO ŚREDNIOTERMINOWEGO/ŚREDNIOBUDŻETOWEGO</h3><hr />
 
 
         using (Html.BeginForm("EdytujK2", "Wnioskodawca"))
         {
             @Html.AntiForgeryToken()
  
-        <fieldset>
-         <legend>Wypełnij wniosek</legend>
+       
         <section class="szczegolywniosku">
+
+            <fieldset>
+         <legend>Wypełnij wniosek</legend>
                 <ol>
                     <li>
                         @Html.HiddenFor(model => model.Formularz.Wniosek.IdKonkursu)
@@ -242,8 +244,9 @@
                 <input type="submit" name="WyslijDoRec" value="Wyślij do recenzji" onclick="return confirm('Czy na pewno chcesz wysłać wniosek do recenzji?');"/>
                 <input type="submit" name="Anuluj" value="Anuluj" onclick="return confirm('Czy na pewno chcesz anulować?');"/>
             </div>
+                 </fieldset>
         </section>    
-        </fieldset>
+       
 
         }
     

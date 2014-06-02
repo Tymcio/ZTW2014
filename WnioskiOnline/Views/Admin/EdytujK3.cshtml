@@ -18,9 +18,10 @@
         {
             @Html.AntiForgeryToken()
  
-        <fieldset>
-         <legend>Wypełnij wniosek</legend>
+
         <section class="szczegolywniosku">
+            <fieldset>
+ <legend>Wypełnij wniosek</legend>
                 <ol>
 
                     <li>
@@ -293,8 +294,9 @@
                         @Html.HiddenFor(model => model.Formularz.Wniosek.IdCzlonkaKomisji)
                     </li>
             </ol>
+                 </fieldset>
         </section>    
-        </fieldset>
+       
 
 
         }

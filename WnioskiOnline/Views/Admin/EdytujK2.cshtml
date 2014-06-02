@@ -11,16 +11,17 @@
     if (User.IsInRole("Administrator"))
     {
 
-<h3>WNIOSEK O DOFINANSOWANIE PROJEKTU STUDENCKIEGO ŚREDNIOTERMINOWEGO/ŚREDNIOBUDŻETOWEGO ZE ŚRODKÓW PRZEZNACZONYCH PRZEZ UCZELNI NA DZIAŁALNOŚĆ STUDENCKĄ I DOKTORANCKĄ</h3>
+<h3>WNIOSEK O DOFINANSOWANIE PROJEKTU STUDENCKIEGO ŚREDNIOTERMINOWEGO/ŚREDNIOBUDŻETOWEGO</h3>
 
 
 @using (Html.BeginForm("EdytujK2", "Admin"))
 {
     @Html.AntiForgeryToken()
  
-<fieldset>
- <legend>Wypełnij wniosek</legend>
+
 <section class="szczegolywniosku">
+    <fieldset>
+ <legend>Wypełnij wniosek</legend>
         <ol>
 
             <li>
@@ -332,8 +333,9 @@
                 @Html.HiddenFor(model => model.Formularz.Wniosek.IdCzlonkaKomisji)
             </li>
     </ol>
+        </fieldset>
 </section>    
-</fieldset>
+
 
 
 }

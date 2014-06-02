@@ -10,22 +10,19 @@
     if (User.IsInRole("Administrator"))
     {
 
-    <h3>WNIOSEK O DOFINANSOWANIE PROJEKTU NAUKOWO-BADAWCZEGO, INŻYNIERYJNO-KONSTRUKTORSKIEGO ZE ŚRODKÓW PRZEZNACZONYCH PRZEZ UCZELNI NA DZIAŁALNOŚĆ STUDENCKĄ I DOKTORANCKĄ</h3>
+    <h3>WNIOSEK O DOFINANSOWANIE PROJEKTU NAUKOWO-BADAWCZEGO, INŻYNIERYJNO-KONSTRUKTORSKIEGO</h3>
 
 
 
     using (Html.BeginForm("EdytujK1N","Admin")) {
         @Html.AntiForgeryToken()
  
-    <fieldset>
-     <legend>Wypełnij wniosek</legend>
+
     <section class="szczegolywniosku">
-       <div>
-    
-       </div>
+            <fieldset>
+     <legend>Wypełnij wniosek</legend>
+           
             <ol>
-
-
 
                 <li>
                     @Html.Label("Dziedzina: ")
@@ -232,9 +229,10 @@
                     @Html.HiddenFor(model => model.Formularz.Wniosek.IdCzlonkaKomisji)
                 </li>
     </ol>
+                
+    </fieldset>
     </section>   
 
-    </fieldset>
 
     }
     }

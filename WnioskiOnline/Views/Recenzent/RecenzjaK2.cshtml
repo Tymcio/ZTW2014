@@ -10,7 +10,7 @@
     if (User.IsInRole("Recenzent"))
     {
 
-        <h3>WNIOSEK O DOFINANSOWANIE PROJEKTU STUDENCKIEGO ŚREDNIOTERMINOWEGO/ŚREDNIOBUDŻETOWEGO ZE ŚRODKÓW PRZEZNACZONYCH PRZEZ UCZELNI NA DZIAŁALNOŚĆ STUDENCKĄ I DOKTORANCKĄ</h3>
+        <h3>WNIOSEK O DOFINANSOWANIE PROJEKTU STUDENCKIEGO ŚREDNIOTERMINOWEGO/ŚREDNIOBUDŻETOWEGO</h3><hr />
 
 
         using (Html.BeginForm("RecenzjaK2","Recenzent")) {
@@ -18,12 +18,6 @@
         <section class="szczegolywniosku">
          <fieldset>
              <legend>Recenzja wniosku K2</legend>
-              <br/>
-           <div>
-    
-           </div>
-
-                <br/>
                     <div class="display-label">
                          @Html.DisplayNameFor(model => model.Wniosek.Dziedzina)
                     </div>

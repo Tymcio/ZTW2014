@@ -11,15 +11,16 @@
     if (User.IsInRole("Wnioskodawca"))
     {
 
-        <h3>WNIOSEK O DOFINANSOWANIE NISKOBUDŻETOWEGO/KRÓTKOTERMINOWEGO PROJEKTU STUDENCKIEGO</h3>
+        <h3>WNIOSEK O DOFINANSOWANIE NISKOBUDŻETOWEGO/KRÓTKOTERMINOWEGO PROJEKTU STUDENCKIEGO</h3><hr />
 
 
         using (Html.BeginForm()) {
             @Html.AntiForgeryToken()
  
-        <fieldset>
-         <legend>Wypełnij wniosek</legend>
+        
         <section class="szczegolywniosku">
+            <fieldset>
+         <legend>Wypełnij wniosek</legend>
                 <ol>
                     <li>
                         @Html.Label("Dziedzina: ")
@@ -173,8 +174,9 @@
                 <input class="przycisk-wn" type="submit" name="WyslijDoRec" value="Wyślij do recenzji" onclick="return confirm('Czy na pewno chcesz wysłać wniosek do recenzji?');"/>
                 <input class="przycisk-wn" type="submit" name="Anuluj" value="Anuluj" onclick="return confirm('Czy na pewno chcesz anulować?');"/>
             </div>
+                 </fieldset>
         </section>    
-        </fieldset>
+       
 
         }
     

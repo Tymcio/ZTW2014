@@ -11,22 +11,18 @@
     if (User.IsInRole("Wnioskodawca"))
     {
 
-        <h2>Szczegóły wniosku</h2>
+        <h3>WNIOSEK O DOFINANSOWANIE NISKOBUDŻETOWEGO/KRÓTKOTERMINOWEGO PROJEKTU STUDENCKIEGO</h3><hr />
 
+             
         <section class="szczegolywniosku">
-         <fieldset>
-             <legend>Wniosek K1N</legend>
-           <div>
-    
-           </div>
-             <br/>
+            <fieldset>
+             <legend>Wniosek K3</legend>
                     <div class="display-label">
                          @Html.DisplayNameFor(model => model.Wniosek.Dziedzina)
                     </div>
                     <div class="display-field">
                         @Html.DisplayFor(model => model.Wniosek.Dziedzina.NazwaDziedziny)
                     </div>
-              <br/>
 
                     <div class="display-label">
                          @Html.DisplayNameFor(model => model.Organizacja)
@@ -34,138 +30,114 @@
                     <div class="display-field">
                         @Html.DisplayFor(model => model.Organizacja.NazwaOrganizacji)
                     </div>
-              <br/>
                     <div class="display-label">
                          @Html.DisplayNameFor(model => model.Wniosek.TytulWniosku)
                     </div>
                     <div class="display-field">
                         @Html.DisplayFor(model => model.Wniosek.TytulWniosku)
                     </div>
-              <br/>
                     <div>
                         @Html.Label("Główny koordynator projektu: ")
                     </div>
-              <br/>
                     <div class="display-label">
                          @Html.DisplayNameFor(model => model.PierwszyKoord.Imie)
                     </div>
                     <div class="display-field">
                         @Html.DisplayFor(model => model.PierwszyKoord.Imie)
                     </div>
-              <br/>
                     <div class="display-label">
                          @Html.DisplayNameFor(model => model.PierwszyKoord.Nazwisko)
                     </div>
                     <div class="display-field">
                         @Html.DisplayFor(model => model.PierwszyKoord.Nazwisko)
                     </div>
-              <br/>
                     <div class="display-label">
                          @Html.DisplayNameFor(model => model.PierwszyKoord.Telefon)
                     </div>
                     <div class="display-field">
                         @Html.DisplayFor(model => model.PierwszyKoord.Telefon)
                     </div>
-              <br/>
-
                     <div class="display-label">
                          @Html.DisplayNameFor(model => model.PierwszyKoord.Email)
                     </div>
                     <div class="display-field">
                         @Html.DisplayFor(model => model.PierwszyKoord.Email)
                     </div>
-              <br/>
-
                     <div class="display-label">
                          @Html.DisplayNameFor(model => model.PierwszyKoord.NrIndeksu)
                     </div>
                     <div class="display-field">
                         @Html.DisplayFor(model => model.PierwszyKoord.NrIndeksu)
                     </div>
-              <br/>
                     <div>
                         @Html.Label("Drugi koordynator projektu: ")
                     </div>
-              <br/>
                     <div class="display-label">
                          @Html.DisplayNameFor(model => model.DrugiKoord.Imie)
                     </div>
                     <div class="display-field">
                         @Html.DisplayFor(model => model.DrugiKoord.Imie)
                     </div>
-              <br/>
                     <div class="display-label">
                          @Html.DisplayNameFor(model => model.DrugiKoord.Nazwisko)
                     </div>
                     <div class="display-field">
                         @Html.DisplayFor(model => model.DrugiKoord.Nazwisko)
                     </div>
-              <br/>
-                    <div class="display-label">
+                     <div class="display-label">
                          @Html.DisplayNameFor(model => model.DrugiKoord.Telefon)
                     </div>
                     <div class="display-field">
                         @Html.DisplayFor(model => model.DrugiKoord.Telefon)
                     </div>
-              <br/>
                     <div class="display-label">
                          @Html.DisplayNameFor(model => model.DrugiKoord.Email)
                     </div>
                     <div class="display-field">
                         @Html.DisplayFor(model => model.DrugiKoord.Email)
                     </div>
-              <br/>
                     <div class="display-label">
                          @Html.DisplayNameFor(model => model.DrugiKoord.NrIndeksu)
                     </div>
                     <div class="display-field">
                         @Html.DisplayFor(model => model.DrugiKoord.NrIndeksu)
                     </div>
-              <br/>
                      <div class="display-label">
                          @Html.DisplayNameFor(model => model.Termin)
                     </div>
                     <div class="display-field">
                         @Html.DisplayFor(model => model.Termin)
                     </div>
-              <br/>
                     <div class="display-label">
                          @Html.DisplayNameFor(model => model.LiczbaStudKorzyst)
                     </div>
                     <div class="display-field">
                         @Html.DisplayFor(model => model.LiczbaStudKorzyst)
                     </div>
-              <br/>
                      <div class="display-label">
                          @Html.DisplayNameFor(model => model.LiczbaStudZaang)
                     </div>
                     <div class="display-field">
                         @Html.DisplayFor(model => model.LiczbaStudZaang)
                     </div>
-              <br/>
                     <div class="display-label">
                          @Html.DisplayNameFor(model => model.Zasieg)
                     </div>
                     <div class="display-field">
                         @Html.DisplayFor(model => model.Zasieg.NazwaZasiegu)
                     </div>
-              <br/>
                     <div class="display-label">
                          @Html.DisplayNameFor(model => model.Charakter)
                     </div>
                     <div class="display-field">
                         @Html.DisplayFor(model => model.Charakter.NazwaCharakteru)
                     </div>
-
-              <br/>
                     <div class="display-label">
                          @Html.DisplayNameFor(model => model.Uzasadnienie)
                     </div>
                     <div class="display-field">
                         @Html.DisplayFor(model => model.Uzasadnienie)
                     </div>
-
-              <br/>
                    <div class="display-label">
                          @Html.DisplayNameFor(model => model.Uwagi)
                     </div>
@@ -174,10 +146,11 @@
                     </div>
 
      
-        </fieldset>
+         </fieldset>
+
 
         </section>   
-    
+   
         }
     
     else

@@ -26,7 +26,7 @@ else
             <th>
                 @Html.DisplayNameFor(model =>model.First().Status.NazwaStatusu)
             </th>
-            <th></th>
+            <th>Opcje</th>
         </tr>
 
     @foreach (var item in Model) {
@@ -49,7 +49,7 @@ else
             <td>
                @{ if (item.Status.NazwaStatusu == "Do zatwierdzenia")
                    {
-                    @Html.ActionLink("Edytuj", "Edytuj", new { id=item.IdWniosku, konkurs = item.Konkurs.NazwaKonkursu }) 
+                    @Html.ActionLink(" ", "Edytuj", new { id=item.IdWniosku, konkurs = item.Konkurs.NazwaKonkursu }, new { title="Edytuj wniosek", style = "background: url('" + Url.Content("~/images/edit.png") + "') no-repeat center right; display:block; height:20px; width:20px;" }) 
                     }
                     else
                     {

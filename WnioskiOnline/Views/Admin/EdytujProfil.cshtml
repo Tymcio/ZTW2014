@@ -15,9 +15,10 @@
         using (Html.BeginForm()) {
             @Html.AntiForgeryToken()
  
-        <fieldset>
+        
+        <section class="szczegolywniosku">
+            <fieldset>
          <legend>Zmiana danych</legend>
-        <section>
                 <ol>
                     <li>
                         @Html.Label("Rola użytkownika: ")
@@ -83,9 +84,10 @@
                     </li>
 
         </ol>
+                </fieldset>
         </section>   
 
-        </fieldset>
+        
 
 
         }
