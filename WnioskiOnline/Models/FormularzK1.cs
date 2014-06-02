@@ -31,6 +31,9 @@ namespace WnioskiOnline.Models
         [StringLength(300, ErrorMessage = "Charakter zadania nie może mieć więcej niż 300 znaków.")]
         public string CelProjektu { get; set; }
 
+        [Display(Name = "Kwota wnioskowana: ")]
+        public double KwotaWnioskowana { get; set; }
+
         [MaxLength(500)]
         [StringLength(500, ErrorMessage = "Informacja nie może mieć więcej niż 500 znaków.")]
         [Display(Name = "Informacja o posiadaniu warunków niezbędnych do realizacji projektu (finansowych, lokalowych, technicznych, kadrowych): ")]

@@ -25,6 +25,9 @@ namespace WnioskiOnline.Models
 
         public virtual Organizacja Organizacja { get; set; }
 
+        [Display(Name = "Kwota wnioskowana: ")]
+        public double KwotaWnioskowana { get; set; }
+
         public int? IdPierwszegoKoord { get; set; }
 
         [Display(Name = "Koordynator projektu: ")]

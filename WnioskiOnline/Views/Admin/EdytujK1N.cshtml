@@ -44,6 +44,11 @@
                     @Html.TextAreaFor(m => m.Formularz.CelProjektu)
                 </li>
 
+                <li>
+                        @Html.LabelFor(m => m.Formularz.KwotaWnioskowana)
+                        @Html.EditorFor(m => m.Formularz.KwotaWnioskowana)
+                    </li>
+
                  <li>
                     @Html.LabelFor(m => m.Formularz.InfoOWarunkach)
                     @Html.TextAreaFor(m => m.Formularz.InfoOWarunkach)

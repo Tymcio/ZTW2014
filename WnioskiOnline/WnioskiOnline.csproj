@@ -208,6 +208,14 @@
     <Compile Include="Migrations\201406012018455_aktualnosci.Designer.cs">
       <DependentUpon>201406012018455_aktualnosci.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201406021857118_usuniecie_tabel.cs" />
+    <Compile Include="Migrations\201406021857118_usuniecie_tabel.Designer.cs">
+      <DependentUpon>201406021857118_usuniecie_tabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201406021921106_not_null.cs" />
+    <Compile Include="Migrations\201406021921106_not_null.Designer.cs">
+      <DependentUpon>201406021921106_not_null.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Aktualnosc.cs" />
@@ -221,14 +229,10 @@
     <Compile Include="Models\Konkurs.cs" />
     <Compile Include="Models\Koordynator.cs" />
     <Compile Include="Models\Organizacja.cs" />
-    <Compile Include="Models\RodzajWydatku.cs" />
     <Compile Include="Models\Status.cs" />
     <Compile Include="Models\Wniosek.cs" />
     <Compile Include="Models\WnioskiContext.cs" />
-    <Compile Include="Models\Wydatek.cs" />
-    <Compile Include="Models\Zadanie.cs" />
     <Compile Include="Models\Zasieg.cs" />
-    <Compile Include="Models\ZrodloDofinansowania.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AktualnoscViewModel.cs" />
     <Compile Include="ViewModels\EdycjaUzytkownikaViewModel.cs" />
@@ -422,6 +426,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201406012018455_aktualnosci.resx">
       <DependentUpon>201406012018455_aktualnosci.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406021857118_usuniecie_tabel.resx">
+      <DependentUpon>201406021857118_usuniecie_tabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406021921106_not_null.resx">
+      <DependentUpon>201406021921106_not_null.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
