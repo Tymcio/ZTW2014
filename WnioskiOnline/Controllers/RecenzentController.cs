@@ -39,7 +39,7 @@ namespace WnioskiOnline.Controllers
             model.Konkursy = new SelectList(konkursy, "IdKonkursu", "NazwaKonkursu", 0);
             model.Statusy = new SelectList(statusy, "IdStatusu", "NazwaStatusu");
          //   model.Wnioski = db.Wnioski.OrderBy(w => w.Konkurs.NazwaKonkursu).ToList().FindAll(x => x.Recenzent.UserId == WebSecurity.GetUserId(User.Identity.Name));
-            model.Wnioski = db.Wnioski.OrderBy(w => w.Konkurs.NazwaKonkursu).ToList().FindAll(w => w.Status.NazwaStatusu != "Do zatwierdzenia");
+            model.Wnioski = db.Wnioski.OrderBy(w => w.Konkurs.NazwaKonkursu).ToList().FindAll(w => w.Status.NazwaStatusu != "Do zatwierdzenia" && w.IdRecenzenta == WebSecurity.GetUserId(User.Identity.Name));
             return View(model);
 
         }
@@ -207,8 +207,7 @@ namespace WnioskiOnline.Controllers
         [HttpPost]
         public ActionResult FiltrujWnioski(WnioskiViewModel model)
         {
-          //  List<Wniosek> wnioski = db.Wnioski.OrderBy(w => w.Konkurs.NazwaKonkursu).ToList().FindAll(x => x.Recenzent.UserId == WebSecurity.GetUserId(User.Identity.Name));
-            List<Wniosek> wnioski = db.Wnioski.OrderBy(w => w.Konkurs.NazwaKonkursu).ToList();
+            List<Wniosek> wnioski = db.Wnioski.OrderBy(w => w.Konkurs.NazwaKonkursu).ToList().FindAll(w => w.IdRecenzenta == WebSecurity.GetUserId(User.Identity.Name));
 
             if (model.Konkurs != 0)
             {
