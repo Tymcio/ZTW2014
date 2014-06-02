@@ -2,32 +2,22 @@
 @{
     ViewBag.Title = "Strona Główna";
 }
+<article class ="aktualnosci">
+<h2>Aktualności</h2><br />
 
-<h2>Aktualności</h2>
-
-<section class =" aktualnosc">
-<ul>
-    
-          
-     
     @foreach (var item in Model)
     {
-        <li>
-            @item.TrescAktualnosci , @item.DataDodania
-        </li>
+            <span class="trescakt">@Html.DisplayFor(modelItem => item.TrescAktualnosci)</span>
+            <span class="dataakt">@Html.DisplayFor(modelItem => item.DataDodania)</span><hr />
     }
 
- 
-   
-  
-    
-    
-</ul>
-</section>
 
    @if (User.IsInRole("Administrator"))
-    {    	
+    {    
+       	<div class="float-right">
        @Html.ActionLink("Dodaj aktualność","DodajAktualnosc","Admin")
         @Html.ActionLink("Archiwum","Archiwum","Admin")
+       </div>
     }
 
+</article>

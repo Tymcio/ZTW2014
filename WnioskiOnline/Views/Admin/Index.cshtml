@@ -37,16 +37,16 @@
                 <ol>
                     <li>
                         @Html.Label("Konkurs: ")
-                        @Html.DropDownListFor(m => m.Konkurs, Model.Konkursy)
+                        @Html.DropDownListFor(m => m.Konkurs, Model.Konkursy, new { @class = "dropdown-wnioski" })
                     </li>
 
                     <li>
                         @Html.Label("Status: ")
-                        @Html.DropDownListFor(m => m.Status, Model.Statusy)
+                        @Html.DropDownListFor(m => m.Status, Model.Statusy, new { @class = "dropdown-wnioski" })
                     </li>
 
                 </ol>
-                <input type="submit" value="Wyszukaj" />
+                <input class="przycisk-wn" type="submit" value="Wyszukaj" />
             </fieldset>
             }
             <div id="ListaWnioskow">

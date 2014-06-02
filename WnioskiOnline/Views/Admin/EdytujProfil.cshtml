@@ -18,47 +18,64 @@
         <fieldset>
          <legend>Zmiana danych</legend>
         <section>
-           <div>
-    
-           </div>
                 <ol>
                     <li>
                         @Html.Label("Rola użytkownika: ")
-                        @Html.DropDownListFor(m => m.Rola, new SelectList(Model.Role, "Rola"))
+                        @Html.DropDownListFor(m => m.Rola, new SelectList(Model.Role, "Rola"), new { @class = "dropdown-wnioski" })
                     </li> 
 
                     <li>
-                        @Html.DisplayNameFor(m => m.Uzytkownik.UserName)
+                        <div class="editor-label">
+                        @Html.LabelFor(m => m.Uzytkownik.UserName)
+                        </div>
+                        <div class="editor-field">
                         @Html.EditorFor(m => m.Uzytkownik.UserName)
+                        </div>
                     </li>
 
                     <li>
+                        <div class="editor-label">
                         @Html.DisplayNameFor(m => m.Uzytkownik.Imie)
+                        </div>
+                        <div class="editor-field">
                         @Html.EditorFor(m => m.Uzytkownik.Imie)
+                        </div>
                     </li>
 
                      <li>
+                        <div class="editor-label">
                         @Html.DisplayNameFor(m => m.Uzytkownik.Nazwisko)
+                        </div>
+                        <div class="editor-field">
                         @Html.EditorFor(m => m.Uzytkownik.Nazwisko)
+                        </div>
                     </li>
 
                     <li>
+                        <div class="editor-label">
                         @Html.DisplayNameFor(m => m.Uzytkownik.Email)
+                        </div>
+                        <div class="editor-field">
                         @Html.EditorFor(m => m.Uzytkownik.Email)
+                        </div>
                     </li>
 
                     <li>
+                        <div class="editor-label">
                         @Html.DisplayNameFor(m => m.Uzytkownik.Telefon)
+                        </div>
+                        <div class="editor-field">
                         @Html.EditorFor(m => m.Uzytkownik.Telefon)
+                        </div>
                     </li>
 
 
             </ol>
 
-               <br /><br />
+               <br />
             <div style="display:inline;">
-                <input type="submit" name="Zapisz" value="Zapisz zmiany" onclick="return confirm('Czy na pewno chcesz zapisać zmiany?');"/>
-                <input type="submit" name="Anuluj" value="Anuluj" onclick="return confirm('Czy na pewno chcesz anulować?');"/>
+                <input class="przycisk-wn" type="submit" name="Zapisz" value="Zapisz zmiany" onclick="return confirm('Czy na pewno chcesz zapisać zmiany?');" />
+                <input class="przycisk-wn" type="submit" name="Anuluj" value="Anuluj" onclick="return confirm('Czy na pewno chcesz anulować?');"/>
             </div>
         <ol>
                     <li>

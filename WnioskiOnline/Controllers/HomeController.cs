@@ -28,20 +28,6 @@ namespace WnioskiOnline.Controllers
             return View(db.Aktualnosci.OrderByDescending(u => u.IdAktualnosci).Take(2).ToList());
             
         }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your app description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
         public  ActionResult Aktualnosci()
         {
             //var akt = db.Aktualnosci.ToList();

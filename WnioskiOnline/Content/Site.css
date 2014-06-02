@@ -1,17 +1,18 @@
 ﻿html {
-    background-color: #e2e2e2;
     margin: 0;
     padding: 0;
 }
 
 body {
     background-color: #fff;
-    border-top: solid 10px #000;
     color: #333;
     font-size: .85em;
     font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
     margin: 0;
     padding: 0;
+    width:960px;
+    margin: 0 auto;
+
 }
 
 a {
@@ -28,7 +29,7 @@ a {
     }
 
     a:hover {
-        background-color: #c7d1d6;
+        color: #7ac0da;
     }
 
 header, footer, hgroup,
@@ -94,34 +95,28 @@ h5, h6 {
 /* main layout
 ----------------------------------------------------------*/
 .content-wrapper {
-    margin: 0 auto;
-    max-width: 960px;
+    max-width:960px;
 }
 
 #body {
-    background-color: #efeeef;
     clear: both;
-    padding-bottom: 35px;
+    padding-bottom: 10px;
+    background-color:#f5f5f5;
 }
 
     .main-content {
-        padding-left: 10px;
-        padding-top: 30px;
-    }
-
-    .featured + .main-content {
-        background: url("../Images/heroAccent.png") no-repeat;
+    padding: 10px 10px 10px 30px;
+    min-height:350px;
     }
 
 header .content-wrapper {
-    padding-top: 20px; 
+    padding-top: 10px; 
 }
 
 footer {
     clear: both;
-    background-color: #e2e2e2;
+    padding-top:5px;
     font-size: .8em;
-    height: 100px;
 }
 
 
@@ -131,7 +126,6 @@ footer {
     color: #c8c8c8;
     font-family: Rockwell, Consolas, "Courier New", Courier, monospace;
     font-size: 2.3em;
-    margin: 0;
 }
 
 .site-title a, .site-title a:hover, .site-title a:active {
@@ -152,7 +146,7 @@ footer {
 }
 
     #login a {
-        background-color: #d3dce0;
+        font-weight:bold;
         margin-left: 10px;
         margin-right: 3px;
         padding: 2px 3px;
@@ -202,58 +196,6 @@ ul#menu {
 
 /* page elements
 ----------------------------------------------------------*/
-/* featured */
-.featured {
-    background-color: #fff;
-}
-
-    .featured .content-wrapper {
-        background-color: #7ac0da;
-        background-image: -ms-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
-        background-image: -o-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
-        background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #7ac0da), color-stop(1, #a4d4e6));
-        background-image: -webkit-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
-        background-image: linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
-        color: #3e5667;
-        padding: 20px 40px 30px 40px;
-    }
-
-        .featured hgroup.title h1, .featured hgroup.title h2 {
-            color: #fff;
-        }
-
-        .featured p {
-            font-size: 1.1em;
-        }
-
-/* top */
-.logos {
-    float: left;
-    height: 176px;
-    width: 510px;
-    display: inline;
-}
-
-/* page titles */
-hgroup.title {
-    margin-bottom: 10px;
-}
-
-hgroup.title h1, hgroup.title h2 {
-    display: inline;
-}
-
-hgroup.title h2 {
-    font-weight: normal;
-    margin-left: 3px;
-}
-
-/* features */
-section.feature {
-    width: 300px;
-    float: left;
-    padding: 10px;
-}
 
 /* ordered list */
 ol.round {
@@ -307,10 +249,19 @@ ol.round {
         }
 
 /* content */
-article {
-    float: left;
-    width: 70%;
+article .trescakt {
+    padding-left: 5px;
 }
+
+article .dataakt {
+    float: right;
+    color: #9C9C9C;
+    }
+    
+.aktualnosci {
+        padding-top: 10px;
+        padding-left:200px;
+        }
 
 aside {
     float: right;
@@ -327,13 +278,8 @@ aside {
             padding: 2px 0 2px 20px;
         }
 
-.label {
-    font-weight: 700;
-}
-
 /* login page */
 #loginForm {
-    border-right: solid 2px #c8c8c8;
     float: left;
     width: 55%;
 }
@@ -382,26 +328,11 @@ aside {
 #logoutForm {
     display: inline;
 }
-
-/* contact */
-.contact h3 {
-    font-size: 1.2em;
-}
-
-.contact p {
-    margin: 5px 0 0 10px;
-}
-
-.contact iframe {
-    border: 1px solid #333;
-    margin: 5px 0 0 10px;
-}
-
 /* wnioski */
 
 .wnioski {
     display:block;
-    width: 760px;
+    width: 720px;
     float:right;
 }
 
@@ -440,6 +371,8 @@ input, textarea {
     background: #fff;
     color: #333;
     font-size: 1.2em;
+    padding-left: 5px;
+    border-radius: 5px;
 }
 
 textarea {
@@ -455,6 +388,15 @@ textarea {
         background: transparent;
         border: inherit;
         width: auto;
+    }
+    input[type="text"] {
+        height:25px;
+    }
+
+    input[type="submit"] {
+        height: 35px;
+        border-radius: 5px;
+        box-shadow: rgba(0,0,0,0.05) 1px 2px;
     }
 
     input[type="button"],
@@ -561,7 +503,8 @@ table {
 th {
     font-size: 1.2em;
     text-align: left;
-    padding-left: 0;
+    padding-left: 5px;
+    border: 1px solid #6D6D6D;
 }
 
     th a {
@@ -611,7 +554,7 @@ tr.pager td {
 
 table.recPrzeglad, td, tr {
     width:600px;
-    border:1px solid;
+    border:1px solid #6D6D6D;
 }
 
 td.lp {
@@ -634,173 +577,4 @@ td.lp {
 .przycisk-wn {
     height: 35px;
     border-radius:5px;
-}
-
-/********************
-*   Mobile Styles   *
-********************/
-@media only screen and (max-width: 850px) {
-
-    /* header
-    ----------------------------------------------------------*/
-    header .float-left,
-    header .float-right {
-        float: none;
-    }
-
-    /* logo */
-    header .site-title {
-        margin: 10px;
-        text-align: center;
-    }
-
-    /* login */
-    #login {
-        font-size: .85em;
-        margin: 0 0 12px;
-        text-align: center;
-    }
-
-        #login ul {
-            margin: 5px 0;
-            padding: 0;
-        }
-
-        #login li {
-            display: inline;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        #login a {
-            background: none;
-            color: #999;
-            font-weight: 600;
-            margin: 2px;
-            padding: 0;
-        }
-
-        #login a:hover {
-            color: #333;
-        }
-
-    /* menu */
-    nav {
-        margin-bottom: 5px;
-        
-    }
-
-    ul#menu {
-        margin: 0;
-        padding: 0;
-        text-align: center;
-    }
-
-        ul#menu li {
-            margin: 0;
-            padding: 0;
-        }
-
-
-    /* main layout
-    ----------------------------------------------------------*/
-    .main-content,
-    .featured + .main-content {
-        background-position: 10px 0;
-    }
-
-    .content-wrapper {
-        padding-right: 10px;
-        padding-left: 10px;
-    }
-
-    .featured .content-wrapper {
-        padding: 10px;
-    }
-
-    /* page content */
-    article, aside {
-        float: none;
-        width: 100%;
-    }
-
-    /* ordered list */
-    ol.round {
-        list-style-type: none;
-        padding-left: 0;
-    }
-
-        ol.round li {
-            padding-left: 10px;
-            margin: 25px 0;
-        }
-
-            ol.round li.zero,
-            ol.round li.one,
-            ol.round li.two,
-            ol.round li.three,
-            ol.round li.four,
-            ol.round li.five,
-            ol.round li.six,
-            ol.round li.seven,
-            ol.round li.eight,
-            ol.round li.nine {
-                background: none;
-            }
-
-     /* features */
-     section.feature {
-        float: none;
-        padding: 10px;
-        width: auto;
-     }
-
-        section.feature img {
-            color: #999;
-            content: attr(alt);
-            font-size: 1.5em;
-            font-weight: 600;
-        }
-
-    /* forms */
-    input {
-        width: 90%;
-    }
-
-    /* login page */
-    #loginForm {
-        border-right: none;
-        float: none;
-        width: auto;
-    }
-
-        #loginForm .validation-error {
-            display: block;
-            margin-left: 15px;
-        }
-
-    #socialLoginForm {
-        margin-left: 0;
-        float: none;
-        width: auto;
-    }
-
-
-    /* footer
-    ----------------------------------------------------------*/
-    footer .float-left,
-    footer .float-right {
-        float: none;
-    }
-
-    footer {
-        text-align: center;
-        height: auto;
-        padding: 10px 0;
-    }
-
-        footer p {
-            margin: 0;
-        }
-}
+    box-shadow:rgba(0,0,0,0.05) 1px 2px}
