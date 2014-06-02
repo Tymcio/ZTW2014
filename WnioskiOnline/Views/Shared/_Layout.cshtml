@@ -11,13 +11,9 @@
     <body>
         <header>
             <div class="content-wrapper">
-                <div class="float-left" style="padding-bottom:10px;">
-                @Html.ActionLink(" ","Index","Home",null,
-                new {style = "background: url('" + Url.Content("~/images/logoPWR.png") + "') no-repeat bottom right; display:block ;height:176px; width:122px;" })
-                </div>
+                <div class=""
                 <div class="float-left">
-                     @Html.ActionLink(" ", "Index","Home",null , 
-                new {style = "background: url('" + Url.Content("~/images/logo.png") + "') no-repeat center right; display:block;height:59px; width:388px;"})                              
+                    <img src="~/images/logo.png" height="55" width="365" />
                 </div>
                 <div class="float-right">
                     <section id="login">
@@ -27,17 +23,15 @@
             </div>
         </header>
         <div id="body">
-            @RenderSection("featured", required: false)
-            <section class="content-wrapper main-content clear-fix">
+            <section class="main-content clear-fix">
+                <div class="float-left">
                 <nav>
-                    @if (Request.IsAuthenticated) {
-    
-   
                          <ul id="menu">
                                     <li>@Html.ActionLink("Strona główna", "Index", "Home")</li>
+                             @if (Request.IsAuthenticated) {
                                     <li>@Html.ActionLink("Dane osobowe", "Dane", "Account")</li>
 
-                            @if (User.IsInRole("Wnioskodawca"))
+                            if (User.IsInRole("Wnioskodawca"))
                              {
                                     <li>@Html.ActionLink("Wnioski", "Index", "Wnioskodawca")</li>
                               }
@@ -60,22 +54,24 @@
                                       <li>@Html.ActionLink("Wnioski", "Index", "Admin")</li>
                                       <li>@Html.ActionLink("Użytkownicy", "Uzytkownicy", "Admin")</li>
                                       <li>@Html.ActionLink("Konkursy", "Konkursy", "Admin")</li>
-                                      <li>@Html.ActionLink("Ustawienia", "Ustawienia", "Admin")</li>
                                     }  
+                                 }
 
                         </ul>
-                    }
-
             </nav>
+            <img src="~/Images/logoPWR.png" height="158" width="110" />
+            </div>
                 @RenderBody()
+            
             </section>
-        </div>
+            </div>
         <footer>
-            <div class="content-wrapper">
                 <div class="float-left">
                     <p>&copy; @DateTime.Now.Year - Politechnika Wrocławska</p>
                 </div>
-            </div>
+                <div class="float-right" style="padding-top:10px;">
+                    <img src="~/images/logoSS.png" height="90" width="283" />
+                </div>
         </footer>
 
         @Scripts.Render("~/bundles/jquery")
