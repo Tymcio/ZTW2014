@@ -359,7 +359,7 @@ namespace WnioskiOnline.Controllers
         {
             if (ModelState.IsValid)
             {
-
+               
                 db.Aktualnosci.Add(akt);
                 db.SaveChanges();
                 return RedirectToAction("Index", "Home");
@@ -371,7 +371,7 @@ namespace WnioskiOnline.Controllers
 
         public ActionResult Archiwum()
         {
-           
+
             return View(db.Aktualnosci.OrderByDescending(u => u.IdAktualnosci).ToList());
             
         }

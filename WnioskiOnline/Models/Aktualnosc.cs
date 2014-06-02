@@ -19,5 +19,17 @@ namespace WnioskiOnline.Models
         [StringLength(250, ErrorMessage = "Aktualnosc nie może mieć więcej niż 250 znaków.")]
         public string TrescAktualnosci { get; set; }
 
+        
+        //public DateTime DataDodania { get; set; }
+        private DateTime? dataDodania;
+        public DateTime DataDodania
+        {
+
+            get { return dataDodania ?? DateTime.Now; }
+
+            set { dataDodania = value; }
+
+        }
+
     }
 }

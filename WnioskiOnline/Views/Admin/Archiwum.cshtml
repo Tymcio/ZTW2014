@@ -33,7 +33,9 @@
                     <th>
                         @Html.DisplayNameFor(model => model.First().TrescAktualnosci)
                     </th>                    
-                    
+                    <th>
+                        @Html.DisplayNameFor(model => model.First().DataDodania)
+                    </th>
                 </tr>
 
             @foreach (var item in Model) {
@@ -44,7 +46,9 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.TrescAktualnosci)
                     </td>
-                    
+                    <td>
+                        @Html.DisplayFor(model => model.First().DataDodania)
+                    </td>
                     
                 </tr>
             }
