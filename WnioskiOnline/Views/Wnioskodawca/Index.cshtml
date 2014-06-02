@@ -25,7 +25,7 @@
         </li>
 </ul>
         <p>
-            Nowy wniosek: @Html.ActionLink("K1N", "DodajK1N", "Wnioskodawca"), @Html.ActionLink("K2", "DodajK2", "Wnioskodawca"), @Html.ActionLink("K3", "DodajK3", "Wnioskodawca")
+            Nowy wniosek: @if (ViewBag.K1N) {@Html.ActionLink("K1N", "DodajK1N", "Wnioskodawca")}  @if (ViewBag.K2) {@Html.ActionLink("K2", "DodajK2", "Wnioskodawca")}  @if (ViewBag.K3) {@Html.ActionLink("K3", "DodajK3", "Wnioskodawca")}
         </p>
 
         @if (!Model.Wnioski.Any())

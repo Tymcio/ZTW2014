@@ -26,6 +26,35 @@ namespace WnioskiOnline.Controllers
             List<Status> statusy = db.Statusy.ToList();
             List<Konkurs> konkursy = db.Konkursy.ToList();
 
+
+            if (konkursy.Find(k => k.NazwaKonkursu == "K1N").DataZakonczenia < DateTime.Now)
+            {
+                ViewBag.K1N = false;
+            }
+            else
+            {
+                ViewBag.K1N = true;
+            }
+
+
+            if (konkursy.Find(k => k.NazwaKonkursu == "K2").DataZakonczenia < DateTime.Now)
+            {
+                ViewBag.K2 = false;
+            }
+            else
+            {
+                ViewBag.K2 = true;
+            }
+
+            if (konkursy.Find(k => k.NazwaKonkursu == "K3").DataZakonczenia < DateTime.Now)
+            {
+                ViewBag.K3 = false;
+            }
+            else
+            {
+                ViewBag.K3 = true;
+            }
+
             Status wszystkieStatusy = new Status();
             wszystkieStatusy.IdStatusu = 0;
             wszystkieStatusy.NazwaStatusu = "Wszystkie";
